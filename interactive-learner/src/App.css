@@ -1,1 +1,16 @@
+#bodyContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(241, 242, 233);
+}
 
+#mainBox{
+    height: 90%;
+    width: 75%;
+    box-shadow: 0px 0px 10px 0px rgba(196, 195, 195, 0.55);
+    border-radius: 1%;
+    background-color:rgb(255, 255, 255);
+}

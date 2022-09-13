@@ -1,0 +1,10 @@
+#copyright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#footer{
+    background-color: coral;
+    margin-top: auto;
+}
