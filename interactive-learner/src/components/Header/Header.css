@@ -1,0 +1,25 @@
+#header{
+    background-color: var(--keppel);
+    box-shadow: 0 2px 6px var(--boulder);
+    height: 12%;
+    width: 100%;
+}
+
+#myContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logos{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+#logoApp{
+    height: 140%;
+    object-fit: contain;
+    position: relative;
+}

@@ -1,10 +1,22 @@
-#copyright{
+#footer{
+    height: 12%;
+    width: 100%;
+    background-color: var(--keppel);
+    margin-top: auto;
+}
+
+#footerContainer{
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#footer{
-    background-color: coral;
-    margin-top: auto;
+.logos{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
+
+

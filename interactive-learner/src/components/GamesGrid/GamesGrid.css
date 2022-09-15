@@ -20,7 +20,7 @@
 }
 
 #games-container {
-  box-shadow: 0px 0px 10px 0px rgba(196, 195, 195, 0.55);
+  box-shadow: 0px 0px 8px var(--boulder);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -29,11 +29,10 @@
   height: 300px;
   width: 300px;
   border-radius: 0.5rem;
-  /* background-color: white; */
-  background-color: bisque;
+  background-color: var(--carnation);
 }
 
 #games-container:hover {
-  background-color: rgb(248, 237, 223);
+  background-color: var(--geraldine);
   cursor: pointer;
 }

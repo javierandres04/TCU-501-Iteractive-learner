@@ -1,3 +1,17 @@
+/* CSS HEX */
+:root{
+  --cold-purple: #aca4dc;
+  --keppel: #44a49c;
+  --black: #040404;
+  --carnation: #fc5c5c;
+  --pot-pourri: #f4e8e3;
+  --geraldine: #fc8c8c;
+  --boulder: #7c7474;
+  --opal: #acccc4;
+  --bizarre: #ecdcd4;
+  --ebb: #ece4e4;
+}
+
 html{
   height: 100%;
   width: 100%;
