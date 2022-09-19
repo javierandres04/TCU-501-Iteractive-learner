@@ -10,7 +10,7 @@ export const Header = () => {
             <Navbar id='header'>
                 <Container id='myContainer'>
                     <img id='logoApp' src={logo} alt="logo" />
-                    <Navbar.Brand href="#home">Interactive English Learner</Navbar.Brand>
+                    <Navbar.Brand id='title' href="#home">Interactive English Learner</Navbar.Brand>
                 </Container>
             </Navbar>
         </>

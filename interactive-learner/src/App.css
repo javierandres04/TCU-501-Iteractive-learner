@@ -1,18 +1,6 @@
 #bodyContainer {
-    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--pot-pourri);
-}
-
-#mainBox {
-    height: 85%;
-    width: 75%;
-    box-shadow: 0px 0px 10px  var(--boulder);
-    border-radius: 1%;
-    background-color:  var(--ebb);
-    display: flex;
-    flex-direction: column;
 }
