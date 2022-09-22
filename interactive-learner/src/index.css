@@ -13,8 +13,9 @@
 }
 
 html{
-  height: 100%;
   width: 100%;
+  height: 100%;
+  overflow: auto;
 }
 
 body {
@@ -24,8 +25,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
   width: 100%;
+  height: 100%;
+  overflow: auto;
 }
 
 code {
@@ -34,6 +36,7 @@ code {
 }
 
 #root {
-  height: 100%;
   width: 100%;
+  height: 100%;
+  overflow: auto;
 }

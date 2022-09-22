@@ -1,7 +1,6 @@
 #header{
     background-color: var(--keppel);
     box-shadow: 0 2px 6px var(--boulder);
-    height: 12%;
     width: 100%;
 }
 
@@ -10,16 +9,26 @@
     width: 100%;
     display: flex;
     justify-content: flex-start;
-}
-
-.logos{
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
+    margin-left: 5vw;
+    gap: 1vw;
 }
 
 #logoApp{
-    height: 140%;
-    object-fit: contain;
-    position: relative;
+    height: 8vw;
+}
+
+@media only screen and (max-width: 500px) {
+    #myContainer {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    #title{
+        font-size : 5vw;
+    }
+
+    #logoApp{
+        height: 20vw;
+    }
+
 }

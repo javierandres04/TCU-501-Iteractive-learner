@@ -1,22 +1,10 @@
 #games-grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 1.8%;
   gap: 30px;
-  justify-content: center;
-  padding: 20px;
-  height: 100%;
-  overflow-y: scroll;
-}
-
-#games-grid::-webkit-scrollbar {
-  display: none;
-}
-
-#games-grid {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
+  height: 80%;
 }
 
 #games-container {

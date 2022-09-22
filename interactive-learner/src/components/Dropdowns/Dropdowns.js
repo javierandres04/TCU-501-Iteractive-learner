@@ -7,7 +7,7 @@ export const Dropdowns = () => {
   //Cambiar los datos quemados por map
   return (
     <div id='dropdown-bar'>
-      <h4> Select a theme for the games</h4>
+      <h4 id='selectText'> Select a theme for the games</h4>
       <div id='dropdown-container'>
         <Dropdown>
           <Dropdown.Toggle variant='secondary'>
@@ -35,7 +35,6 @@ export const Dropdowns = () => {
           <Dropdown.Toggle variant='secondary'>
             Theme
           </Dropdown.Toggle>
-
           <Dropdown.Menu variant='dark'>
             <Dropdown.Item > Wheather and Seasons </Dropdown.Item>
           </Dropdown.Menu>

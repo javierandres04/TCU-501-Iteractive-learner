@@ -1,8 +1,6 @@
 #footer{
-    height: 12%;
     width: 100%;
     background-color: var(--keppel);
-    margin-top: auto;
 }
 
 #footerContainer{
@@ -10,13 +8,31 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .logos{
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
+    height: 8vw;
+}
+
+#authors{
+    font-size : 1.5vw;
+}
+
+@media only screen and (max-width: 500px) {
+    #footerContainer {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logos{
+        height: 20vw;
+    }
+    
+    #authors{
+        font-size : 5vw;
+    }
+
 }
 
 
