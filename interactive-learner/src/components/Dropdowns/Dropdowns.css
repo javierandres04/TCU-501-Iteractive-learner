@@ -14,22 +14,32 @@
   width: 100%;
 }
 
+#select-dropdown {
+  width: 30%;
+  /* background-color: var(--boulder);
+  color: var(--pot-pourri); */
+}
+
 
 @media only screen and (max-width: 200px) {
-  #selectText{
+  #selectText {
     font-size: 10vw;
   }
 
 }
 
 @media only screen and (max-width: 382px) {
-  #selectText{
+  #selectText {
     font-size: 10vw;
+  }
+
+  #select-dropdown {
+    width: 100%;
   }
 
   #dropdown-container {
     flex-direction: column;
-    gap: 1vh;
+    gap: 3vh;
   }
 
 }
