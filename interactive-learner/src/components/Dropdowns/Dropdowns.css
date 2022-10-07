@@ -20,6 +20,9 @@
   color: var(--pot-pourri); */
 }
 
+#selectText {
+  font-weight: 500;
+}
 
 @media only screen and (max-width: 200px) {
   #selectText {
