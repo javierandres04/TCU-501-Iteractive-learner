@@ -12,18 +12,17 @@ function App() {
     <>
       <Router >
         <Routes>
-          <Route path='/' element={<MainPage></MainPage>} />
-          <Route path='MemoryGame' element={<MemoryGame></MemoryGame>} />
-          <Route path='HangmanGame' element={<HangmanGame></HangmanGame>} />
-          <Route path='LetterSoupGame' element={<LetterSoupGame></LetterSoupGame>} />
-          <Route path='PressTheFigure' element={<PressTheFigureGame></PressTheFigureGame>} />
+            <Route path='/' element={<MainPage></MainPage>} />
+            <Route path='MemoryGame' element={<MemoryGame></MemoryGame>} />
+            <Route path='HangmanGame' element={<HangmanGame></HangmanGame>} />
+            <Route path='LetterSoupGame' element={<LetterSoupGame></LetterSoupGame>} />
+            <Route path='PressTheFigure' element={<PressTheFigureGame></PressTheFigureGame>} />
         </Routes>
       </Router>
     </>
 
   );
 }
-
 
 
 export default App;
