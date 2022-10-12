@@ -75,6 +75,21 @@ export const MemoryGame = () => {
     setDisabled(false);
   }
 
+
+  const cardIsMatched = (card) => {
+    return card.Matched === true
+  }
+
+  const allCardsMatched = () => {
+    return cards.every(cardIsMatched);
+  }
+
+  useEffect(() => {
+    if (allCardsMatched()) {
+      console.log('You win');
+    }
+  }, [cards])
+
   return (
     <div id="mainContainer">
       <Header />
