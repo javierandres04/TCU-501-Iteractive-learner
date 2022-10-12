@@ -1,4 +1,4 @@
-#memoryGameContainer{
+#memoryGameContainer {
     margin: auto;
     font-family: Raleway, sans-serif;
     margin: 0;
@@ -24,7 +24,7 @@ button:hover {
     color: #fff;
 }
 
-#card-grid{
+#card-grid {
     margin-top: 2%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
