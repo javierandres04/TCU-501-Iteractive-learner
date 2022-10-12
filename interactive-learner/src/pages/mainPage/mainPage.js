@@ -5,7 +5,6 @@ import { Dropdowns } from '../../components/Dropdowns/Dropdowns';
 import { GamesGrid } from '../../components/GamesGrid/GamesGrid';
 import { useState } from 'react';
 
-import './mainPage.css';
 import '../../App.css';
 
 export const MainPage = () => {

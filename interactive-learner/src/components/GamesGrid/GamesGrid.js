@@ -24,7 +24,6 @@ export const GamesGrid = ({ grade, unit, theme }) => {
     }
   }
 
-
   return (
     <div id='games-grid'>
       {Games.map((element) => (
