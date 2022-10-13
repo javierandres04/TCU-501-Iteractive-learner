@@ -103,7 +103,7 @@ export const MemoryGame = () => {
             <h1>Memory Game</h1>
             <button onClick={shuffleCards}>New Game</button>
 
-            <div id='games-grid'>
+            <div id='cards-grid'>
               {cards.map(card => (
                 <MemoryCard
                   key={card.id}
