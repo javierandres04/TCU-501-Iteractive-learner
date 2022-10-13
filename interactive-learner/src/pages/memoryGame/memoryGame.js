@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
-
+import Swal from 'sweetalert2';
 import '../../App.css';
 import './memoryGame.css';
 import { useState, useEffect } from 'react';
@@ -77,7 +77,7 @@ export const MemoryGame = () => {
 
 
   const cardIsMatched = (card) => {
-    return card.Matched === true
+    return card.Matched === true;
   }
 
   const allCardsMatched = () => {
@@ -85,8 +85,12 @@ export const MemoryGame = () => {
   }
 
   useEffect(() => {
-    if (allCardsMatched()) {
-      console.log('You win');
+    if (allCardsMatched() && turns > 0) {
+      Swal.fire({
+        title: 'Congratulations, you win!!!',
+        text: 'A new game will begin'
+      })
+      shuffleCards();
     }
   }, [cards])
 
