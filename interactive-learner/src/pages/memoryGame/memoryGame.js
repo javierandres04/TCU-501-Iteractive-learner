@@ -20,14 +20,13 @@ const cardImgs = [
 export const MemoryGame = () => {
 
   const location = useLocation()
+  const selectedTheme = `${location.state.Grade} - ${location.state.Unit} - ${location.state.Theme}`;
 
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
   const [choiseOne, setChoiseOne] = useState(null);
   const [choiseTwo, setChoiseTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
-
-
 
   const shuffleCards = () => {
     const shuffledCards = [...cardImgs, ...cardImgs]
@@ -101,6 +100,9 @@ export const MemoryGame = () => {
         <div id="mainBox" >
           <div id='memoryGameContainer'>
             <h1>Memory Game</h1>
+            <h5 id='selectedTheme'>
+              <div>{selectedTheme}</div>
+            </h5>
             <button onClick={shuffleCards}>New Game</button>
 
             <div id='cards-grid'>
