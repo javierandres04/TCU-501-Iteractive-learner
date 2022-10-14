@@ -3,7 +3,6 @@ import './Dropdowns.css'
 import { dataMap } from '../../data/dataMap';
 import Form from 'react-bootstrap/Form';
 
-
 export const Dropdowns = ({ grade, setGrade, unit, setUnit, theme, setTheme }) => {
   return (
     <div id='dropdown-bar'>
@@ -39,7 +38,7 @@ export const Dropdowns = ({ grade, setGrade, unit, setUnit, theme, setTheme }) =
                 Unit
               </option>
               {dataMap.filter(element => element.Grade === grade)[0].Units.map((element) => (
-                <option key={element.Unit} value={element.Unit} > {element.Unit} </option>
+                <option key={element.Id} value={element.Unit} > {element.Unit} </option>
               ))}
             </Form.Select>
 
@@ -55,7 +54,7 @@ export const Dropdowns = ({ grade, setGrade, unit, setUnit, theme, setTheme }) =
                     Theme
                   </option>
                   {dataMap.filter(element => element.Grade === grade)[0].Units.filter(element =>
-                    element.Unit === parseInt(unit))[0].Themes.map((element) => (
+                    element.Unit === unit)[0].Themes.map((element) => (
                       <option key={element.Name} value={element.Name} > {element.Name} </option>
                     ))
                   }

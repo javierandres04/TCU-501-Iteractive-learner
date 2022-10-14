@@ -4,6 +4,7 @@ export const dataMap = [
     Grade: "4th",
     Units: [
       {
+        Id: 1,
         Unit: "Unit 1",
         Themes: [
           {
@@ -21,6 +22,7 @@ export const dataMap = [
         ]
       },
       {
+        Id: 2,
         Unit: "Unit 2",
         Themes: [
           {
@@ -39,6 +41,7 @@ export const dataMap = [
     Grade: "5th",
     Units: [
       {
+        Id: 1,
         Unit: "Unit 1",
         Themes: [
           {
@@ -52,6 +55,7 @@ export const dataMap = [
         ]
       },
       {
+        Id: 2,
         Unit: "Unit 2",
         Themes: [
           {
