@@ -9,8 +9,6 @@ import './pressTheFigureGame.css';
 export const PressTheFigureGame = () => {
   const location = useLocation();
 
-  console.log(location.state);
-
   return (
     <div id="mainContainer">
       <Header />

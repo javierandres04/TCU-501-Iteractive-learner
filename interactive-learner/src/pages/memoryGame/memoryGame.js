@@ -87,9 +87,8 @@ export const MemoryGame = () => {
     if (allCardsMatched() && turns > 0) {
       Swal.fire({
         title: 'Congratulations, you win!!!',
-        text: 'A new game will begin'
+        text: 'You made ' + turns + ' attempts.'
       })
-      shuffleCards();
     }
   }, [cards])
 
@@ -117,7 +116,7 @@ export const MemoryGame = () => {
               ))
               }
             </div>
-            <p>Turns: {turns}</p>
+            <p>Attempts: {turns}</p>
           </div>
         </div>
       </div>
