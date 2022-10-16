@@ -12,7 +12,7 @@ export const Footer = () => {
                 <Container id="footerContainer">
                     <img className='logos' src={logoUCR} alt="logo" />
                     <img className='logos' src={logoTCU} alt="logo" />
-                    <Navbar.Brand id='authors' href="/">© Sebastián Alfaro, Javier Molina </Navbar.Brand>
+                    <Navbar.Brand id='authors' >© Sebastián Alfaro, Javier Molina </Navbar.Brand>
                 </Container>
             </Navbar>
         </>
