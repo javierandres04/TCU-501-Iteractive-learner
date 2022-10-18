@@ -11,8 +11,8 @@ Proyecto realizado con REACT JS.
 4. Finalmente podemos ejecutar el proyecto mediante el comando `npm start` , esto abrirá una ventana de la aplicación en su navegador predeterminado.
 
 ### **Librerías externas utilizadas**: 
-*React Bootstrap
-*sweetalert2
+* React Bootstrap
+* sweetalert2
 
 ### **Recursos externos utlizados**: 
 * Banco de imagenes TCU 501: https://sites.google.com/site/tcu658ucr/recursos/im%C3%A1genes-did%C3%A1cticas?authuser=0
