@@ -46,11 +46,6 @@ export const dataMap = [
         Themes: [
           {
             Name: "Our Environment",
-          }, {
-            Name: "Protecting my Planet",
-          },
-          {
-            Name: "Solving Environmental Problems",
           }
         ]
       },
@@ -61,8 +56,12 @@ export const dataMap = [
           {
             Name: "What's Going on in Town",
           }, {
-            Name: "Countries and Nationalities",
+            Name: "Countries",
+          },
+          {
+            Name: "Occupations",
           }
+
         ]
       }
     ]
