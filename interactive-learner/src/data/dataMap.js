@@ -54,12 +54,15 @@ export const dataMap = [
         Unit: "Unit 2",
         Themes: [
           {
-            Name: "What's Going on in Town",
+            Name: "Holidays & Celebrations",
           }, {
             Name: "Countries",
           },
           {
             Name: "Occupations",
+          },
+          {
+            Name: "Typical Cuisine"
           }
 
         ]

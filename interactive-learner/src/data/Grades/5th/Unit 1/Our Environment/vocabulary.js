@@ -84,5 +84,25 @@ export const vocabulary = [
     word: 'Classify Garbage',
     imageSrc: '/images/Classify_Garbage.png',
     soundSrc: '/sounds/Classify_Garbage.mp3'
+  },
+  {
+    word: 'Trash',
+    imageSrc: '/images/Trash.png',
+    soundSrc: '/sounds/Trash.mp3'
+  },
+  {
+    word: 'Walk',
+    imageSrc: '/images/Walk.png',
+    soundSrc: '/sounds/Walk.mp3'
+  },
+  {
+    word: 'Save Water',
+    imageSrc: '/images/Save_Water.png',
+    soundSrc: '/sounds/Save_Water.mp3'
+  },
+  {
+    word: 'Use Clean Power',
+    imageSrc: '/images/Use_Clean_Power.png',
+    soundSrc: '/sounds/Use_Clean_Power.mp3'
   }
 ]
