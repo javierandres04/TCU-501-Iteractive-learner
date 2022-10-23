@@ -7,26 +7,47 @@ import '../../App.css';
 import './memoryGame.css';
 import { useState, useEffect } from 'react';
 import { MemoryCard } from '../../components/MemoryCard/MemoryCard';
+import { Themes } from '../../data/themes';
 
-const cardImgs = [
-  { "src": "/images/helmet.png", "Matched": false },
-  { "src": "/images/potion.png", "Matched": false },
-  { "src": "/images/ring.png", "Matched": false },
-  { "src": "/images/scroll.png", "Matched": false },
-  { "src": "/images/shield.png", "Matched": false },
-  { "src": "/images/sword.png", "Matched": false }
-];
+
+const selectWords = (words) => {
+  let options = [];
+  let selectedWords = [];
+  for (let i = 0; i < words.length; i++) {
+    options[i] = i;
+  }
+  options.sort(() => Math.random() - 0.5);
+  options = options.slice(0, 6);
+
+  for (let i = 0; i < 6; i++) {
+    selectedWords[i] = words[options[i]];
+  }
+  return selectedWords;
+}
 
 export const MemoryGame = () => {
-
   const location = useLocation()
   const selectedTheme = `${location.state.Grade} - ${location.state.Unit} - ${location.state.Theme}`;
 
+  const [theme, setTheme] = useState(location.state.Theme);
+  const [words, setWords] = useState(Themes.find(element => element.name === theme).words);
+  const [selectedWords, setSelectedWords] = useState(selectWords(words));
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
   const [choiseOne, setChoiseOne] = useState(null);
   const [choiseTwo, setChoiseTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
+
+console.log(cards);
+
+  let cardImgs = [
+    { "src": "", "Matched": false },
+    { "src": "", "Matched": false },
+    { "src": "", "Matched": false },
+    { "src": "", "Matched": false },
+    { "src": "", "Matched": false },
+    { "src": "", "Matched": false }
+  ];
 
   const shuffleCards = () => {
     const shuffledCards = [...cardImgs, ...cardImgs]
@@ -64,8 +85,14 @@ export const MemoryGame = () => {
   }, [choiseOne, choiseTwo])
 
   useEffect(() => {
-    shuffleCards();
-  }, [])
+    if (selectedWords) {
+      for (let i = 0; i < cardImgs.length; i++) {
+        cardImgs[i].src = selectedWords[i].imageSrc;
+      }
+      shuffleCards();
+    }
+
+  }, [selectedWords])
 
   const resetTurn = () => {
     setChoiseOne(null);
