@@ -765,12 +765,6 @@ export const Themes = [
   {
     name: "National Park",
     words: [
-
-      {
-        word: 'Landmarks',
-        imageSrc: '/images/Landmarks.png',
-        soundSrc: '/sounds/Landmarks.mp3'
-      },
       {
         word: 'Valley',
         imageSrc: '/images/Valley.png',
@@ -804,11 +798,6 @@ export const Themes = [
         word: 'Picnic Areas',
         imageSrc: '/images/Picnic_Areas.png',
         soundSrc: '/sounds/Picnic_Areas.mp3'
-      },
-      {
-        word: 'Flora',
-        imageSrc: '/images/Flora.png',
-        soundSrc: '/sounds/Flora.mp3'
       },
       {
         word: 'Fauna',
@@ -861,34 +850,9 @@ export const Themes = [
         soundSrc: '/sounds/Flower.mp3'
       },
       {
-        word: 'Ecosystem',
-        imageSrc: '/images/Ecosystem.png',
-        soundSrc: '/sounds/Ecosystem.mp3'
-      },
-      {
         word: 'River',
         imageSrc: '/images/River.png',
         soundSrc: '/sounds/River.mp3'
-      },
-      {
-        word: 'Clean',
-        imageSrc: '/images/Clean.png',
-        soundSrc: '/sounds/Clean.mp3'
-      },
-      {
-        word: 'Peaceful',
-        imageSrc: '/images/Peaceful.png',
-        soundSrc: '/sounds/Peaceful.mp3'
-      },
-      {
-        word: 'Blooming',
-        imageSrc: '/images/Blooming.png',
-        soundSrc: '/sounds/Blooming.mp3'
-      },
-      {
-        word: 'Majestic',
-        imageSrc: '/images/Majestic.png',
-        soundSrc: '/sounds/Majestic.mp3'
       },
       {
         word: 'Danger',
@@ -921,34 +885,9 @@ export const Themes = [
         soundSrc: '/sounds/Water.mp3'
       },
       {
-        word: 'Rock',
-        imageSrc: '/images/Rock.png',
-        soundSrc: '/sounds/Rock.mp3'
-      },
-      {
-        word: 'Sky',
-        imageSrc: '/images/Sky.png',
-        soundSrc: '/sounds/Sky.mp3'
-      },
-      {
-        word: 'Sun',
-        imageSrc: '/images/Sun.png',
-        soundSrc: '/sounds/Sun.mp3'
-      },
-      {
-        word: 'Moon',
-        imageSrc: '/images/Moon.png',
-        soundSrc: '/sounds/Moon.mp3'
-      },
-      {
         word: 'Tree',
         imageSrc: '/images/Tree.png',
         soundSrc: '/sounds/Tree.mp3'
-      },
-      {
-        word: 'Bush',
-        imageSrc: '/images/Bush.png',
-        soundSrc: '/sounds/Bush.mp3'
       },
       {
         word: 'Insects',
@@ -959,16 +898,6 @@ export const Themes = [
         word: 'Volcano',
         imageSrc: '/images/Volcano.png',
         soundSrc: '/sounds/Volcano.mp3'
-      },
-      {
-        word: 'Jungle',
-        imageSrc: '/images/Jungle.png',
-        soundSrc: '/sounds/Jungle.mp3'
-      },
-      {
-        word: 'Swamp',
-        imageSrc: '/images/Swamp.png',
-        soundSrc: '/sounds/Swamp.mp3'
       },
       {
         word: 'Sea',
@@ -1236,12 +1165,6 @@ export const Themes = [
   {
     name: "Our Environment",
     words: [
-
-      {
-        word: 'Climate',
-        imageSrc: '/images/Climate.png',
-        soundSrc: '/sounds/Climate.mp3'
-      },
       {
         word: 'Plants',
         imageSrc: '/images/Plants.png',
@@ -1283,11 +1206,6 @@ export const Themes = [
         soundSrc: '/sounds/Recycling.mp3'
       },
       {
-        word: 'Smog',
-        imageSrc: '/images/Smog.png',
-        soundSrc: '/sounds/Smog.mp3'
-      },
-      {
         word: 'Reuse',
         imageSrc: '/images/Reuse.png',
         soundSrc: '/sounds/Reuse.mp3'
@@ -1301,6 +1219,11 @@ export const Themes = [
         word: 'No Littering',
         imageSrc: '/images/No_Littering.png',
         soundSrc: '/sounds/No_Littering.mp3'
+      },
+      {
+        word: 'Littering',
+        imageSrc: '/images/Littering.png',
+        soundSrc: '/sounds/Littering.mp3'
       },
       {
         word: 'Reduce',
