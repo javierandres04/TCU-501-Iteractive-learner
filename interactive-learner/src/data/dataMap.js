@@ -26,7 +26,7 @@ export const dataMap = [
         Unit: "Unit 2",
         Themes: [
           {
-            Name: "Places and People at the Park",
+            Name: "National Park",
           },
           {
             Name: "Wildlife at the Park",
