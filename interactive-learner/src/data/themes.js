@@ -304,11 +304,6 @@ export const Themes = [
         soundSrc: '/sounds/Happy.mp3'
       },
       {
-        word: 'Content',
-        imageSrc: '/images/Content.png',
-        soundSrc: '/sounds/Content.mp3'
-      },
-      {
         word: 'Sad',
         imageSrc: '/images/Sad.png',
         soundSrc: '/sounds/Sad.mp3'
@@ -352,11 +347,6 @@ export const Themes = [
         word: 'Shy',
         imageSrc: '/images/Shy.png',
         soundSrc: '/sounds/Shy.mp3'
-      },
-      {
-        word: 'Shocked',
-        imageSrc: '/images/Shocked.png',
-        soundSrc: '/sounds/Shocked.mp3'
       },
       {
         word: 'Hungry',

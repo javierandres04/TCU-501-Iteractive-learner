@@ -38,7 +38,7 @@ export const MemoryGame = () => {
   const [choiseTwo, setChoiseTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
 
-console.log(cards);
+  console.log(cards);
 
   let cardImgs = [
     { "src": "", "Matched": false },
@@ -50,14 +50,20 @@ console.log(cards);
   ];
 
   const shuffleCards = () => {
-    const shuffledCards = [...cardImgs, ...cardImgs]
-      .sort(() => Math.random() - 0.5)
-      .map((card) => ({ ...card, id: Math.random() }));
+    setSelectedWords(selectWords(words));
+    if (selectedWords) {
+      for (let i = 0; i < cardImgs.length; i++) {
+        cardImgs[i].src = selectedWords[i].imageSrc;
+      }
+      const shuffledCards = [...cardImgs, ...cardImgs]
+        .sort(() => Math.random() - 0.5)
+        .map((card) => ({ ...card, id: Math.random() }));
 
-    setChoiseOne(null);
-    setChoiseTwo(null);
-    setCards(shuffledCards);
-    setTurns(0);
+      setChoiseOne(null);
+      setChoiseTwo(null);
+      setCards(shuffledCards);
+      setTurns(0);
+    }
   }
 
   const handleChoise = (card) => {
@@ -85,14 +91,8 @@ console.log(cards);
   }, [choiseOne, choiseTwo])
 
   useEffect(() => {
-    if (selectedWords) {
-      for (let i = 0; i < cardImgs.length; i++) {
-        cardImgs[i].src = selectedWords[i].imageSrc;
-      }
-      shuffleCards();
-    }
-
-  }, [selectedWords])
+    shuffleCards();
+  }, [])
 
   const resetTurn = () => {
     setChoiseOne(null);
