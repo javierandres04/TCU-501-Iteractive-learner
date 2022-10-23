@@ -216,8 +216,8 @@ export const vocabulary = [
     soundSrc: '/sounds/Firefly.mp3'
   },
   {
-    word: 'Firefly',
-    imageSrc: '/images/Firefly.png',
-    soundSrc: '/sounds/Firefly.mp3'
+    word: 'Quetzal',
+    imageSrc: '/images/Quetzal.png',
+    soundSrc: '/sounds/Quetzal.mp3'
   }
 ]

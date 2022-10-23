@@ -234,5 +234,15 @@ export const vocabulary = [
     word: 'Suit',
     imageSrc: '/images/Suit.png',
     soundSrc: '/sounds/Suit.mp3'
+  },
+  {
+    word: 'Purse',
+    imageSrc: '/images/Purse.png',
+    soundSrc: '/sounds/Purse.mp3'
+  },
+  {
+    word: 'Wallet',
+    imageSrc: '/images/Wallet.png',
+    soundSrc: '/sounds/Wallet.mp3'
   }
 ]

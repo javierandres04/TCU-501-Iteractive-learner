@@ -5,12 +5,19 @@ export const vocabulary = [
     imageSrc: '/images/Landmarks.png',
     soundSrc: '/sounds/Landmarks.mp3'
   },
-
-
   {
-    word: 'Wildlife',
-    imageSrc: '/images/Wildlife.png',
-    soundSrc: '/sounds/Wildlife.mp3'
+    word: 'Valley',
+    imageSrc: '/images/Valley.png',
+    soundSrc: '/sounds/Valley.mp3'
+  },
+  {
+    word: 'Mangrove',
+    imageSrc: '/images/Mangrove.png',
+    soundSrc: '/sounds/Mangrove.mp3'
+  }, {
+    word: 'Hot Springs',
+    imageSrc: '/images/Hot_Springs.png',
+    soundSrc: '/sounds/Hot_Springs.mp3'
   },
   {
     word: 'Forest',
@@ -66,6 +73,11 @@ export const vocabulary = [
     word: 'Hiking',
     imageSrc: '/images/Hiking.png',
     soundSrc: '/sounds/Hiking.mp3'
+  },
+  {
+    word: 'Beach',
+    imageSrc: '/images/Beach.png',
+    soundSrc: '/sounds/Beach.mp3'
   },
   {
     word: 'Plants',
@@ -193,8 +205,34 @@ export const vocabulary = [
     soundSrc: '/sounds/Swamp.mp3'
   },
   {
-    word: 'Cave',
-    imageSrc: '/images/Cave.png',
-    soundSrc: '/sounds/Cave.mp3'
+    word: 'Sea',
+    imageSrc: '/images/Sea.png',
+    soundSrc: '/sounds/Sea.mp3'
+  },
+  {
+    word: 'Island',
+    imageSrc: '/images/Island.png',
+    soundSrc: '/sounds/Island.mp3'
+  },
+  {
+    word: 'Map',
+    imageSrc: '/images/Map.png',
+    soundSrc: '/sounds/Map.mp3'
+  },
+  {
+    word: 'Camera',
+    imageSrc: '/images/Camera.png',
+    soundSrc: '/sounds/Camera.mp3'
+  },
+  {
+    word: 'Guidebook',
+    imageSrc: '/images/Guidebook.png',
+    soundSrc: '/sounds/Guidebook.mp3'
+  },
+  {
+    word: 'First Aid Kit',
+    imageSrc: '/images/First_Aid_Kit.png',
+    soundSrc: '/sounds/First_Aid_Kit.mp3'
   }
+
 ]
