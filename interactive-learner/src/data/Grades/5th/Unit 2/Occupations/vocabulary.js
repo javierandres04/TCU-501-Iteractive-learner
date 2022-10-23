@@ -1,10 +1,5 @@
 export const vocabulary = [
   {
-    word: 'Housewife',
-    imageSrc: '/images/Housewife.png',
-    soundSrc: '/sounds/Housewife.mp3'
-  },
-  {
     word: 'Cowboy',
     imageSrc: '/images/Cowboy.png',
     soundSrc: '/sounds/Cowboy.mp3'

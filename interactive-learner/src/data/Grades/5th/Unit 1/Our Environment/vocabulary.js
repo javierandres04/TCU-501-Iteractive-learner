@@ -61,9 +61,9 @@ export const vocabulary = [
     soundSrc: '/sounds/Undrinkable_Water.mp3'
   },
   {
-    word: 'Littering',
-    imageSrc: '/images/Littering.png',
-    soundSrc: '/sounds/Littering.mp3'
+    word: 'No Littering',
+    imageSrc: '/images/No_Littering.png',
+    soundSrc: '/sounds/No_Littering.mp3'
   },
   {
     word: 'Reduce',

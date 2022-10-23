@@ -121,9 +121,9 @@ export const vocabulary = [
     soundSrc: '/sounds/Horseback_Riding.mp3'
   },
   {
-    word: 'Doing Picnic',
-    imageSrc: '/images/Doing_Picnic.png',
-    soundSrc: '/sounds/Doing_Picnic.mp3'
+    word: 'Having a Picnic',
+    imageSrc: '/images/Having_a_Picnic.png',
+    soundSrc: '/sounds/Having_a_Picnic.mp3'
   },
   {
     word: 'Camping',
@@ -137,8 +137,8 @@ export const vocabulary = [
   },
   {
     word: 'Playing Video Games',
-    imageSrc: '/images/Playing_VideoGames.png',
-    soundSrc: '/sounds/Playing_VideoGames.mp3'
+    imageSrc: '/images/Playing_Video_Games.png',
+    soundSrc: '/sounds/Playing_Video_Games.mp3'
   },
   {
     word: 'Listening To Music',
@@ -226,9 +226,9 @@ export const vocabulary = [
     soundSrc: '/sounds/Go_To_The_Theater.mp3'
   },
   {
-    word: 'Play The Fiddle',
-    imageSrc: '/images/Play_The_Fiddle.png',
-    soundSrc: '/sounds/Play_The_Fiddle.mp3'
+    word: 'Playing The Fiddle',
+    imageSrc: '/images/Playing_The_Fiddle.png',
+    soundSrc: '/sounds/Playing_The_Fiddle.mp3'
   },
   {
     word: 'Working Out',

@@ -8,9 +8,9 @@ export const vocabulary = [
     imageSrc: '/images/Casado.png',
     soundSrc: '/sounds/Casado.mp3'
   },{
-    word: 'Pambon',
-    imageSrc: '/images/Pambon.png',
-    soundSrc: '/sounds/Pambon.mp3'
+    word: 'Bon',
+    imageSrc: '/images/Bon_Bread.png',
+    soundSrc: '/sounds/Bon_Bread.mp3'
   },{
     word: 'Pati',
     imageSrc: '/images/Pati.png',
@@ -28,9 +28,9 @@ export const vocabulary = [
     imageSrc: '/images/Tamal.png',
     soundSrc: '/sounds/Tamal.mp3'
   },{
-    word: 'Rice with chicken',
-    imageSrc: '/images/Rice_with_chicken.png',
-    soundSrc: '/sounds/Rice_with_chicken.mp3'
+    word: 'Rice With Chicken',
+    imageSrc: '/images/Rice_With_Chicken.png',
+    soundSrc: '/sounds/Rice_With_Chicken.mp3'
   },{
     word: 'Soup',
     imageSrc: '/images/Soup.png',

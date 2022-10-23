@@ -236,13 +236,18 @@ export const vocabulary = [
     soundSrc: '/sounds/Suit.mp3'
   },
   {
-    word: 'Purse',
-    imageSrc: '/images/Purse.png',
-    soundSrc: '/sounds/Purse.mp3'
+    word: 'Ring',
+    imageSrc: '/images/Ring.png',
+    soundSrc: '/sounds/Ring.mp3'
   },
   {
-    word: 'Wallet',
-    imageSrc: '/images/Wallet.png',
-    soundSrc: '/sounds/Wallet.mp3'
+    word: 'Tie',
+    imageSrc: '/images/Tie.png',
+    soundSrc: '/sounds/Tie.mp3'
+  },
+  {
+    word: 'Shirt',
+    imageSrc: '/images/Shirt.png',
+    soundSrc: '/sounds/Shirt.mp3'
   }
 ]

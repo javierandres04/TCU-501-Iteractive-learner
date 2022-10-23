@@ -219,5 +219,10 @@ export const vocabulary = [
     word: 'Quetzal',
     imageSrc: '/images/Quetzal.png',
     soundSrc: '/sounds/Quetzal.mp3'
+  },
+  {
+    word: 'Lion',
+    imageSrc: '/images/Lion.png',
+    soundSrc: '/sounds/Lion.mp3'
   }
 ]

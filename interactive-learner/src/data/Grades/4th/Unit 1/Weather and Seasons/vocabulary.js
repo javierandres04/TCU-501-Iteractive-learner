@@ -71,7 +71,7 @@ export const vocabulary = [
     soundSrc: '/sounds/Autumn.mp3'
   },
   {
-    word: 'Sring',
+    word: 'Spring',
     imageSrc: '/images/Spring.png',
     soundSrc: '/sounds/Spring.mp3'
   },
