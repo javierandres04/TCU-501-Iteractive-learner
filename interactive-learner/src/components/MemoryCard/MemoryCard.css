@@ -12,6 +12,7 @@
   border: 2px solid white;
   border-radius: 6px;
   background-color: var(--boulder);
+  object-fit: cover;
 }
 
 @media (min-width: 1050px) {

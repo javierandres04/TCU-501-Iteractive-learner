@@ -586,11 +586,6 @@ export const Themes = [
         soundSrc: '/sounds/Gloves.mp3'
       },
       {
-        word: 'Sneakers',
-        imageSrc: '/images/Sneakers.png',
-        soundSrc: '/sounds/Sneakers.mp3'
-      },
-      {
         word: 'Shoes',
         imageSrc: '/images/Shoes.png',
         soundSrc: '/sounds/Shoes.mp3'
@@ -624,11 +619,6 @@ export const Themes = [
         word: 'Sweater',
         imageSrc: '/images/Sweater.png',
         soundSrc: '/sounds/Sweater.mp3'
-      },
-      {
-        word: 'Shirt',
-        imageSrc: '/images/Shirt.png',
-        soundSrc: '/sounds/Shirt.mp3'
       },
       {
         word: 'T-shirt',
