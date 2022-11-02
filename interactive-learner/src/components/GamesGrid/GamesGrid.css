@@ -19,9 +19,11 @@
   width: 300px;
   border-radius: 0.5rem;
   background-color: var(--carnation);
+  transition: all 0.2s ease-in-out;
 }
 
 #games-container:hover {
   background-color: var(--geraldine);
   cursor: pointer;
+  transform: scale(1.1);
 }

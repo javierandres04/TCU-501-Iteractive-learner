@@ -1,5 +1,5 @@
 #memoryGameContainer {
-  font-family: Raleway, sans-serif;
+  font-family: Montserrat Alternates, Raleway, sans-serif;
   text-align: center;
   background: #fc5c5c;
   color: #fff;
@@ -18,13 +18,13 @@ button {
   font-weight: bold;
   cursor: pointer;
   font-size: 1em;
+  transition: all 0.2s ease-in-out;
 }
 
 button:hover {
   background: #fc8c8c;
   color: #fff;
-  font-size: 1.1em;
-
+  transform: scale(1.1);
 }
 
 #cards-grid {
