@@ -1,5 +1,4 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
 import Swal from 'sweetalert2';
@@ -9,6 +8,8 @@ import { useState, useEffect } from 'react';
 import { MemoryCard } from '../../components/MemoryCard/MemoryCard';
 import { Themes } from '../../data/themes';
 import { motion } from 'framer-motion';
+import { useSelector, useDispatch } from 'react-redux';
+
 
 
 
@@ -28,10 +29,11 @@ const selectWords = (words) => {
 }
 
 export const MemoryGame = () => {
-  const location = useLocation()
-  const selectedTheme = `${location.state.Grade} - ${location.state.Unit} - ${location.state.Theme}`;
+  const selectedTheme = `${useSelector((state) => state.theme.selectedTheme.Grade)} 
+  - ${useSelector((state) => state.theme.selectedTheme.Unit)} 
+  - ${useSelector((state) => state.theme.selectedTheme.Theme)}`;
 
-  const [theme, setTheme] = useState(location.state.Theme);
+  const [theme, setTheme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const [words, setWords] = useState(Themes.find(element => element.name === theme).words);
   const [selectedWords, setSelectedWords] = useState(selectWords(words));
   const [cards, setCards] = useState([]);

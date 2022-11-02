@@ -3,14 +3,24 @@ import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
 import { Dropdowns } from '../../components/Dropdowns/Dropdowns';
 import { GamesGrid } from '../../components/GamesGrid/GamesGrid';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateSelectedTheme } from '../../slices/themeSlice';
 import '../../App.css';
 
+
 export const MainPage = () => {
-  const [grade, setGrade] = useState('Grade');
-  const [unit, setUnit] = useState('Unit');
-  const [theme, setTheme] = useState('Theme');
+  const [grade, setGrade] = useState(useSelector((state) => state.theme.selectedTheme.Grade));
+  const [unit, setUnit] = useState(useSelector((state) => state.theme.selectedTheme.Unit));
+  const [theme, setTheme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
+  const dispatch = useDispatch();
+
+
+  useEffect(() => {
+    dispatch( updateSelectedTheme ( { Grade: grade, Unit: unit, Theme: theme }))
+  }, [grade, unit, theme])
+  
 
 
   return (
