@@ -16,7 +16,6 @@ export const MainPage = () => {
   const [theme, setTheme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const dispatch = useDispatch();
 
-
   useEffect(() => {
     dispatch( updateSelectedTheme ( { Grade: grade, Unit: unit, Theme: theme }))
   }, [grade, unit, theme])
