@@ -4,7 +4,7 @@ import { Footer } from '../../components/Footer/Footer';
 import { Dropdowns } from '../../components/Dropdowns/Dropdowns';
 import { GamesGrid } from '../../components/GamesGrid/GamesGrid';
 import { useState } from 'react';
-
+import { motion } from 'framer-motion';
 import '../../App.css';
 
 export const MainPage = () => {
@@ -14,7 +14,12 @@ export const MainPage = () => {
 
 
   return (
-    <div id="mainContainer">
+    <motion.div 
+      id="mainContainer"
+      initial={{ width: 0 }}
+      animate={{ width: "100%" }}
+      exit={{ x: window.innerWidth, transition: {duration: 0.2} }}
+    >
       <Header />
       <div id="bodyContainer">
         <div id="mainBox" >
@@ -34,6 +39,6 @@ export const MainPage = () => {
         </div>
       </div>
       <Footer />
-    </div>
+    </motion.div>
   );
 };

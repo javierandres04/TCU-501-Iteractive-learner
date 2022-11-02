@@ -8,6 +8,8 @@ import './memoryGame.css';
 import { useState, useEffect } from 'react';
 import { MemoryCard } from '../../components/MemoryCard/MemoryCard';
 import { Themes } from '../../data/themes';
+import { motion } from 'framer-motion';
+
 
 
 const selectWords = (words) => {
@@ -38,7 +40,6 @@ export const MemoryGame = () => {
   const [choiseTwo, setChoiseTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
 
-  console.log(cards);
 
   let cardImgs = [
     { "src": "", "Matched": false },
@@ -120,7 +121,12 @@ export const MemoryGame = () => {
   }, [cards])
 
   return (
-    <div id="mainContainer">
+    <motion.div
+      id="mainContainer"
+      initial={{ width: 0 }}
+      animate={{ width: "100%" }}
+      exit={{ x: window.innerWidth, transition: {duration: 0.2} }}
+    >
       <Header />
       <div id="bodyContainer">
         <div id="mainBox" >
@@ -148,6 +154,6 @@ export const MemoryGame = () => {
         </div>
       </div>
       <Footer />
-    </div>
+    </motion.div>
   );
 };
