@@ -12,11 +12,11 @@
 }
 
 .logos{
-    height: 8vw;
+    height: 6vw;
 }
 
 #authors{
-    font-size : 1.5vw;
+    font-size : 2vh;
 }
 
 @media only screen and (max-width: 500px) {
