@@ -19,7 +19,7 @@ export const GamesGrid = ({ grade, unit, theme }) => {
     <div id='games-grid'>
       {Games.map((element) => (
         <div onClick={() => handleSelectedGame(element)} key={element} id='games-container'>
-          <label> {element} </label>
+          <label id='game-name'> {element} </label>
         </div>
       ))}
     </div>

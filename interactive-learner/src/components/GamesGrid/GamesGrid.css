@@ -8,6 +8,12 @@
   margin-bottom: 20px;
 }
 
+#game-name {
+  font-weight: 600;
+  color: var(--bizarre);
+  margin-top: 1vh;
+}
+
 #games-container {
   box-shadow: 0px 0px 8px var(--boulder);
   text-align: center;
