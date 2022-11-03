@@ -1,6 +1,6 @@
 #header {
     background-color: var(--keppel);
-    box-shadow: 0 2px 6px var(--boulder);
+    /* box-shadow: 0 2px 6px var(--boulder); */
     width: 100%;
 }
 
