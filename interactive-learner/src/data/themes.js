@@ -745,11 +745,11 @@ export const Themes = [
         imageSrc: '/images/Tie.png',
         soundSrc: '/sounds/Tie.mp3'
       },
-      {
-        word: 'Shirt',
-        imageSrc: '/images/Shirt.png',
-        soundSrc: '/sounds/Shirt.mp3'
-      }
+      // {
+      //   word: 'Shirt',
+      //   imageSrc: '/images/Shirt.png',
+      //   soundSrc: '/sounds/Shirt.mp3'
+      // }
     ]
   }, 
   {
