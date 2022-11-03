@@ -9,7 +9,7 @@ export const Dropdowns = ({ grade, setGrade, unit, setUnit, theme, setTheme }) =
       <h4 id='selectText'> Select a theme for the games</h4>
       <div id='dropdown-container'>
         
-        <Form.Select id='select-dropdown' onChange={(e) => { setGrade(e.target.value) }}>
+        <Form.Select id='select-dropdown' value={grade} onChange={(e) => { setGrade(e.target.value) }}>
           <option>
             Grade
           </option>
@@ -33,7 +33,7 @@ export const Dropdowns = ({ grade, setGrade, unit, setUnit, theme, setTheme }) =
           </>
           :
           <>
-            <Form.Select id='select-dropdown' onChange={(e) => { setUnit(e.target.value) }}>
+            <Form.Select id='select-dropdown' value={unit} onChange={(e) => { setUnit(e.target.value) }}>
               <option>
                 Unit
               </option>
@@ -49,7 +49,7 @@ export const Dropdowns = ({ grade, setGrade, unit, setUnit, theme, setTheme }) =
                     Theme
                   </option>
                 </Form.Select> :
-                <Form.Select id='select-dropdown' onChange={(e) => { setTheme(e.target.value) }}>
+                <Form.Select id='select-dropdown' value={theme} onChange={(e) => { setTheme(e.target.value) }}>
                   <option>
                     Theme
                   </option>
