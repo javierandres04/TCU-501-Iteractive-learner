@@ -1,18 +1,28 @@
-import React, { useEffect } from 'react';
-import { checkWin } from '../../helpers/helpers';
+import { useEffect } from 'react';
 import Swal from 'sweetalert2';
 
 
-const Popup = ({correctLetters, wrongLetters, selectedWord, setPlayable, playAgain}) => {
+const Popup = ({ correctLetters, wrongLetters, selectedWord, setPlayable }) => {
   let playable = true;
+  let status = 'win'
 
-  if( checkWin(correctLetters, wrongLetters, selectedWord) === 'win' ) {
+  // Check for win
+  selectedWord.split('').forEach(letter => {
+    if (!correctLetters.includes(letter)) {
+      status = '';
+    }
+  });
+
+  // Check for lose
+  if (wrongLetters.length === 10) status = 'lose';
+
+  if (status === 'win') {
     Swal.fire({
       title: 'Congratulations! You won! 😃',
       text: `...the word was: ${selectedWord}`,
     })
     playable = false;
-  } else if( checkWin(correctLetters, wrongLetters, selectedWord) === 'lose' ) {
+  } else if (status === 'lose') {
     Swal.fire({
       title: 'Unfortunately you lost. 😕',
       text: `...the word was: ${selectedWord}`,

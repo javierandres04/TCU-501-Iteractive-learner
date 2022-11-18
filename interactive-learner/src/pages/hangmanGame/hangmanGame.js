@@ -11,7 +11,6 @@ import WrongLetters from '../../components/HangmanComponents/WrongLetters';
 import Word from '../../components/HangmanComponents/Word';
 import Popup from '../../components/HangmanComponents/PopUp';
 import Notification from '../../components/HangmanComponents/Notification';
-import { showNotification as show, checkWin } from '../../helpers/helpers';
 
 const words = ['application', 'programming', 'interface', 'wizard'];
 let selectedWord = words[Math.floor(Math.random() * words.length)];
@@ -60,6 +59,13 @@ export const HangmanGame = () => {
     selectedWord = words[random];
   }
 
+  function show (setter) {
+    setter(true);
+    setTimeout(() => {
+      setter(false);
+    }, 2000);
+  }
+
   return (
     <motion.div
       id="mainContainer"
@@ -80,7 +86,7 @@ export const HangmanGame = () => {
               <WrongLetters wrongLetters={wrongLetters} />
               </div>
               <Word selectedWord={selectedWord} correctLetters={correctLetters} />
-              <Popup correctLetters={correctLetters} wrongLetters={wrongLetters} selectedWord={selectedWord} setPlayable={setPlayable} playAgain={playAgain} />
+              <Popup correctLetters={correctLetters} wrongLetters={wrongLetters} selectedWord={selectedWord} setPlayable={setPlayable}/>
               <Notification showNotification={showNotification} />
             </div>
           </div>
