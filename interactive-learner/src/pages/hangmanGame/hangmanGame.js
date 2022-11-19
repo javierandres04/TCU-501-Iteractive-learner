@@ -32,7 +32,7 @@ export const HangmanGame = () => {
   const [correctLetters, setCorrectLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
   const [showNotification, setShowNotification] = useState(false);
-  
+
   const [display, setDisplay] = useState('Display Keyboard');
 
   useEffect(() => {
@@ -41,7 +41,6 @@ export const HangmanGame = () => {
   }, []);
 
   useEffect(() => {
-    console.log(selectedWord);
     const handleKeydown = event => {
       const { key, keyCode } = event;
       if (playable && keyCode >= 65 && keyCode <= 90) {
@@ -90,7 +89,6 @@ export const HangmanGame = () => {
   const displayKeyboard = () => {
     const element = document.getElementById('keyboard')
     element.style.display = (element.style.display === 'none' ? 'block' : 'none');
-    console.log(element.style.display);
     setDisplay( (display === 'Display Keyboard' ? 'Hide Keyboard' : 'Display Keyboard') );
   }
 
