@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 
 import '../../App.css';
 import './hangmanGame.css';
+import { Themes } from '../../data/themes';
+import { useSelector } from 'react-redux';
 
 import Figure from '../../components/HangmanComponents/Figure';
 import WrongLetters from '../../components/HangmanComponents/WrongLetters';
@@ -12,16 +14,30 @@ import Word from '../../components/HangmanComponents/Word';
 import Popup from '../../components/HangmanComponents/PopUp';
 import Notification from '../../components/HangmanComponents/Notification';
 
-const words = ['application', 'programming', 'interface', 'wizard'];
-let selectedWord = words[Math.floor(Math.random() * words.length)];
-
+const selectWord = (words) => {
+  return words[Math.floor(Math.random() * words.length)].word.toLowerCase();
+}
 
 export const HangmanGame = () => {
 
-  const [playable, setPlayable] = useState(true);
+  const selectedTheme = `${useSelector((state) => state.theme.selectedTheme.Grade)}
+  - ${useSelector((state) => state.theme.selectedTheme.Unit)}
+  - ${useSelector((state) => state.theme.selectedTheme.Theme)}`;
+
+  const [theme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
+  const [words] = useState(Themes.find(element => element.name === theme).words);
+  const [selectedWord, setSelectedWord] = useState(selectWord(words));
+  
+  const [playable, setPlayable] = useState(false);
   const [correctLetters, setCorrectLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
   const [showNotification, setShowNotification] = useState(false);
+
+  console.log(selectedWord);
+
+  useEffect(() => {
+    setCorrectLetters(currentLetters => [...currentLetters, ' ']);
+  },[]);
 
   useEffect(() => {
     const handleKeydown = event => {
@@ -46,20 +62,23 @@ export const HangmanGame = () => {
     window.addEventListener('keydown', handleKeydown);
 
     return () => window.removeEventListener('keydown', handleKeydown);
-  }, [correctLetters, wrongLetters, playable]);
+  }, [correctLetters, wrongLetters, playable, selectedWord]);
 
-  function playAgain() {
-    setPlayable(true);
 
+  const playAgain = () => {
     // Empty Arrays
     setCorrectLetters([]);
+    setCorrectLetters(currentLetters => [...currentLetters, ' ']);
+
     setWrongLetters([]);
 
-    const random = Math.floor(Math.random() * words.length);
-    selectedWord = words[random];
+    setPlayable(true);
+
+    setSelectedWord(selectWord(words));
+
   }
 
-  function show (setter) {
+  const show = (setter) => {
     setter(true);
     setTimeout(() => {
       setter(false);
@@ -79,14 +98,16 @@ export const HangmanGame = () => {
           <div id="mainBox" >
             <div id="hangameContainer">
               <h1>Hangman</h1>
-              <p>Find the hidden word - Enter a letter</p>
+              <h5 id='selectedTheme'>
+                <div>{selectedTheme}</div>
+              </h5>
               <button onClick={playAgain}>New Game</button>
               <div id='centerContainer'>
-              <Figure wrongLetters={wrongLetters} />
-              <WrongLetters wrongLetters={wrongLetters} />
+                <Figure wrongLetters={wrongLetters} />
+                <WrongLetters wrongLetters={wrongLetters} />
               </div>
               <Word selectedWord={selectedWord} correctLetters={correctLetters} />
-              <Popup correctLetters={correctLetters} wrongLetters={wrongLetters} selectedWord={selectedWord} setPlayable={setPlayable}/>
+              <Popup correctLetters={correctLetters} wrongLetters={wrongLetters} selectedWord={selectedWord} setPlayable={setPlayable} />
               <Notification showNotification={showNotification} />
             </div>
           </div>
