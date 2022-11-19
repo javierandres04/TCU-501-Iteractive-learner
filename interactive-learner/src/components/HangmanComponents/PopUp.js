@@ -32,7 +32,7 @@ const Popup = ({ correctLetters, wrongLetters, selectedWord, setPlayable, playab
     }
 
     setPlayable(play);
-  },[correctLetters,wrongLetters]);
+  },[correctLetters,wrongLetters,selectedWord,setPlayable]);
 
 }
 
