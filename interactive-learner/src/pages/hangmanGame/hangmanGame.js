@@ -33,13 +33,12 @@ export const HangmanGame = () => {
   const [wrongLetters, setWrongLetters] = useState([]);
   const [showNotification, setShowNotification] = useState(false);
 
-  console.log(selectedWord);
-
   useEffect(() => {
     setCorrectLetters(currentLetters => [...currentLetters, ' ']);
   },[]);
 
   useEffect(() => {
+    console.log(selectedWord);
     const handleKeydown = event => {
       const { key, keyCode } = event;
       if (playable && keyCode >= 65 && keyCode <= 90) {

@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 const Popup = ({ correctLetters, wrongLetters, selectedWord, setPlayable }) => {
   let playable = true;
   let status = 'win'
-
+  
   // Check for win
   selectedWord.split('').forEach(letter => {
     if (!correctLetters.includes(letter)) {
