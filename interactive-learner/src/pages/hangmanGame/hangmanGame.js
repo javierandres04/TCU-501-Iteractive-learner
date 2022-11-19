@@ -28,7 +28,7 @@ export const HangmanGame = () => {
   const [words] = useState(Themes.find(element => element.name === theme).words);
   const [selectedWord, setSelectedWord] = useState(selectWord(words));
   
-  const [playable, setPlayable] = useState(false);
+  const [playable, setPlayable] = useState(true);
   const [correctLetters, setCorrectLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
   const [showNotification, setShowNotification] = useState(false);
@@ -106,7 +106,7 @@ export const HangmanGame = () => {
                 <WrongLetters wrongLetters={wrongLetters} />
               </div>
               <Word selectedWord={selectedWord} correctLetters={correctLetters} />
-              <Popup correctLetters={correctLetters} wrongLetters={wrongLetters} selectedWord={selectedWord} setPlayable={setPlayable} />
+              <Popup correctLetters={correctLetters} wrongLetters={wrongLetters} selectedWord={selectedWord} setPlayable={setPlayable} playable={playable}/>
               <Notification showNotification={showNotification} />
             </div>
           </div>
