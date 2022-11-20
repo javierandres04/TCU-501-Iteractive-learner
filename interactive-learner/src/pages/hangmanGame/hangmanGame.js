@@ -32,8 +32,8 @@ export const HangmanGame = () => {
   const [correctLetters, setCorrectLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
   const [showNotification, setShowNotification] = useState(false);
-
   const [display, setDisplay] = useState('Display Keyboard');
+  const [virtualLetter, setVirtualLetter] = useState('');
 
   useEffect(() => {
     setCorrectLetters(currentLetters => [...currentLetters, ' ']);
@@ -65,6 +65,23 @@ export const HangmanGame = () => {
     return () => window.removeEventListener('keydown', handleKeydown);
   }, [correctLetters, wrongLetters, playable, selectedWord, display]);
 
+  useEffect(() => {
+
+        if (selectedWord.includes(virtualLetter)) {
+          if (!correctLetters.includes(virtualLetter)) {
+            setCorrectLetters(currentLetters => [...currentLetters, virtualLetter]);
+          } else {
+            show(setShowNotification);
+          }
+        } else {
+          if (!wrongLetters.includes(virtualLetter)) {
+            setWrongLetters(currentLetters => [...currentLetters, virtualLetter]);
+          } else {
+            show(setShowNotification);
+          }
+        }
+
+  }, [virtualLetter]);
 
   const playAgain = () => {
     // Empty Arrays
@@ -91,6 +108,18 @@ export const HangmanGame = () => {
     element.style.display = (element.style.display === 'none' ? 'block' : 'none');
     setDisplay( (display === 'Display Keyboard' ? 'Hide Keyboard' : 'Display Keyboard') );
   }
+
+  const pressVirtualKey = (event) => {
+    const char = event.target.dataset.char
+    if (isLetter(char)){
+      setVirtualLetter(char.toLowerCase());
+    }
+  }
+
+  const isLetter = (caracter) => {
+    let ascii = caracter.toUpperCase().charCodeAt(0);
+    return ascii > 64 && ascii < 91;
+  };
 
   return (
     <motion.div
@@ -119,7 +148,7 @@ export const HangmanGame = () => {
 
               <button onClick={displayKeyboard}>{display}</button>
               
-              <div id="keyboard">
+              <div onClick={pressVirtualKey} id="keyboard">
                 <div className="keyboard__row">
                   <div className="key--letter" data-char="Q">Q</div>
                   <div className="key--letter" data-char="W">W</div>
