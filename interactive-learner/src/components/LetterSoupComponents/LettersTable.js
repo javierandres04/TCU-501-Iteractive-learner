@@ -12,14 +12,6 @@ export const LettersTable = ({ table, tamTable }) => {
         document.getElementById('grid-container').style.gridTemplateColumns = auto;
     });
 
-    useEffect(() => {
-        document.addEventListener('click',printLetter);
-    });
-
-    const printLetter = (event) => {
-        console.log(event.target.textContent);
-    }
-
     return (
         <div id='soupContainer'>
             <div id="grid-container">

@@ -11,25 +11,29 @@ import './letterSoupGame.css';
 
 import { useSelector } from 'react-redux';
 
-const tamTable = 9;
+const tamTable = 12;
+const cantWords = 6;
+const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-const selectWords = (words) => {
+const selectWords = (words, cantWords) => {
   let options = [];
   let selectedWords = [];
   for (let i = 0; i < words.length; i++) {
     options[i] = i;
   }
   options.sort(() => Math.random() - 0.5);
-  options = options.slice(0, 6);
+  if(cantWords > words.length){
+    cantWords = words.length;
+  }
+  options = options.slice(0, cantWords);
 
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < cantWords; i++) {
     selectedWords[i] = words[options[i]];
   }
   return selectedWords;
 }
 
 const fillTable = (table) => {
-  const alphabet = "abcdefghijklmnopqrstuvwxyz";
   let t = [];
   for (let i = 0; i < tamTable; i++) {
     let temp = [];
@@ -38,8 +42,27 @@ const fillTable = (table) => {
     }
     t.push(temp);
   }
+
   return t;
 }
+
+
+    /*
+    metodo para acomodar las palabras dentro del tablero
+    */
+const putWordsInTable = (table, selectedWords) => {
+  const tam = table.length;
+  const cantWords = selectedWords.length;
+
+  for(let i=0;i<cantWords;i++){
+    let word = selectedWords[i].word;
+    let startPos = console.log(Math.floor(Math.random() * tam));
+    let direction = (( console.log( Math.floor(Math.random()*2) ) ) === 0 ? false : true );
+    let inverse = ((console.log( Math.floor(Math.random()*2) )) === 0 ? false : true );
+  }
+  return table
+}
+
 
 export const LetterSoupGame = () => {
   const selectedTheme = `${useSelector((state) => state.theme.selectedTheme.Grade)} 
@@ -48,8 +71,20 @@ export const LetterSoupGame = () => {
 
   const [theme, setTheme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const [words, setWords] = useState(Themes.find(element => element.name === theme).words);
-  const [selectedWords, setSelectedWords] = useState(selectWords(words));
-  const [table, setTable] = useState(fillTable(selectedWords));
+  const [selectedWords, setSelectedWords] = useState(selectWords(words, cantWords));
+  const [table, setTable] = useState( putWordsInTable( fillTable(selectedWords), selectedWords) );
+
+
+  useEffect(() => {
+    document.addEventListener('click', printLetter);
+  });
+  
+  const printLetter = (event) => {
+    let text = event.target.textContent;
+    if (text.length === 1 && text.match(/[a-z]/)) {
+        console.log(text);
+    }
+  }
 
   return (
     <motion.div
