@@ -1,0 +1,18 @@
+#soupContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center
+}
+
+#grid-container {
+    display: grid;
+    width: 50%;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    width: 100%;
+    text-align: center;
+    color: black;
+}
