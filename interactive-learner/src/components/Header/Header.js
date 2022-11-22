@@ -12,6 +12,7 @@ export const Header = () => {
                     <img id='logoApp' src={logo} alt="logo" />
                     <Navbar.Brand id='title' href="/">Interactive English Learner</Navbar.Brand>
                 </Container>
+
             </Navbar>
         </>
     );
