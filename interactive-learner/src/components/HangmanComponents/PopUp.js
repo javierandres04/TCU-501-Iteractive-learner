@@ -15,7 +15,7 @@ const Popup = ({ correctLetters, wrongLetters, selectedWord, setPlayable, playab
     });
   
     // Check for lose
-    if (wrongLetters.length === 10) status = 'lose';
+    if (wrongLetters.length === 11) status = 'lose';
   
     if (status === 'win') {
       Swal.fire({

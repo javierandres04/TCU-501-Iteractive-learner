@@ -22,7 +22,7 @@ const selectWords = (words, cantWords) => {
     options[i] = i;
   }
   options.sort(() => Math.random() - 0.5);
-  if(cantWords > words.length){
+  if (cantWords > words.length) {
     cantWords = words.length;
   }
   options = options.slice(0, cantWords);
@@ -47,18 +47,269 @@ const fillTable = (table) => {
 }
 
 
-    /*
-    metodo para acomodar las palabras dentro del tablero
-    */
+/*
+metodo para acomodar las palabras dentro del tablero
+*/
 const putWordsInTable = (table, selectedWords) => {
   const tam = table.length;
   const cantWords = selectedWords.length;
+  let available = [];
+  for (let i = 0; i < tam; i++) {
+    let temp = [];
+    for (let j = 0; j < tam; j++) {
+      temp.push('*');
+    }
+    available.push(temp);
+  }
 
-  for(let i=0;i<cantWords;i++){
-    let word = selectedWords[i].word;
-    let startPos = console.log(Math.floor(Math.random() * tam));
-    let direction = (( console.log( Math.floor(Math.random()*2) ) ) === 0 ? false : true );
-    let inverse = ((console.log( Math.floor(Math.random()*2) )) === 0 ? false : true );
+  for (let i = 0; i < cantWords; i++) {
+    let correct = false;
+    let word = selectedWords[i].word.replace(/\s/g, '').toLowerCase();
+
+    while (correct === false) {
+      let fil = Math.floor(Math.random() * tam);
+      let col = Math.floor(Math.random() * tam);
+      let direction = (Math.floor(Math.random() * 8));
+
+      switch (direction) {
+        case 0:
+          // code block
+          if (fil - word.length >= 0) {
+
+            let posible = true;
+            let positions = [];
+
+            for (let i = 0; i < word.length; i++) {
+              if (available[col][fil] === "*") {
+                positions.push([col]);
+                positions[i].push(fil);
+
+              } else {
+                posible = false;
+                break;
+              }
+              fil--;
+            }
+
+            if (posible) {
+              for (let i = 0; i < word.length; i++) {
+                table[positions[i][0]][positions[i][1]] = word.substring(i, i + 1);
+                available[positions[i][0]][positions[i][1]] = word.substring(i, i + 1);
+              }
+              correct = true;
+            }
+          }
+          break;
+
+        case 1:
+          // code block
+          if ((fil - word.length >= 0) && (col + word.length < tam)) {
+
+            let posible = true;
+            let positions = [];
+
+            for (let i = 0; i < word.length; i++) {
+              if (available[col][fil] === "*") {
+                positions.push([col]);
+                positions[i].push(fil);
+
+              } else {
+                posible = false;
+                break;
+              }
+              fil--;
+              col++;
+            }
+
+            if (posible) {
+              for (let i = 0; i < word.length; i++) {
+                table[positions[i][0]][positions[i][1]] = word.substring(i, i + 1);
+                available[positions[i][0]][positions[i][1]] = word.substring(i, i + 1);
+              }
+              correct = true;
+            }
+          }
+          break;
+
+        case 2:
+          // code block
+          if (col + word.length < tam) {
+
+            let posible = true;
+            let positions = [];
+
+            for (let i = 0; i < word.length; i++) {
+              if (available[col][fil] === "*") {
+                positions.push([col]);
+                positions[i].push(fil);
+
+              } else {
+                posible = false;
+                break;
+              }
+              col++;
+            }
+
+            if (posible) {
+              for (let i = 0; i < word.length; i++) {
+                table[positions[i][0]][positions[i][1]] = word.substring(i, i + 1);
+                available[positions[i][0]][positions[i][1]] = word.substring(i, i + 1);
+              }
+              correct = true;
+            }
+          }
+          break;
+
+        case 3:
+          // code block
+          if ((fil + word.length < tam) && (col + word.length < tam)) {
+
+            let posible = true;
+            let positions = [];
+
+            for (let i = 0; i < word.length; i++) {
+              if (available[col][fil] === "*") {
+                positions.push([col]);
+                positions[i].push(fil);
+
+              } else {
+                posible = false;
+                break;
+              }
+              fil++;
+              col++;
+            }
+
+            if (posible) {
+              for (let i = 0; i < word.length; i++) {
+                table[positions[i][0]][positions[i][1]] = word.substring(i, i + 1);
+                available[positions[i][0]][positions[i][1]] = word.substring(i, i + 1);
+              }
+              correct = true;
+            }
+          }
+          break;
+
+        case 4:
+          // code block
+          if (fil + word.length < tam) {
+
+            let posible = true;
+            let positions = [];
+
+            for (let i = 0; i < word.length; i++) {
+              if (available[col][fil] === "*") {
+                positions.push([col]);
+                positions[i].push(fil);
+
+              } else {
+                posible = false;
+                break;
+              }
+              fil++;
+            }
+
+            if (posible) {
+              for (let i = 0; i < word.length; i++) {
+                table[positions[i][0]][positions[i][1]] = word.substring(i, i + 1);
+                available[positions[i][0]][positions[i][1]] = word.substring(i, i + 1);
+              }
+              correct = true;
+            }
+          }
+          break;
+
+        case 5:
+          // code block
+          if ((fil + word.length < tam) && (col - word.length >= 0)) {
+
+            let posible = true;
+            let positions = [];
+
+            for (let i = 0; i < word.length; i++) {
+              if (available[col][fil] === "*") {
+                positions.push([col]);
+                positions[i].push(fil);
+
+              } else {
+                posible = false;
+                break;
+              }
+              fil++;
+              col--;
+            }
+
+            if (posible) {
+              for (let i = 0; i < word.length; i++) {
+                table[positions[i][0]][positions[i][1]] = word.substring(i, i + 1);
+                available[positions[i][0]][positions[i][1]] = word.substring(i, i + 1);
+              }
+              correct = true;
+            }
+          }
+          break;
+
+        case 6:
+          // code block
+          if (col - word.length >= 0) {
+
+            let posible = true;
+            let positions = [];
+
+            for (let i = 0; i < word.length; i++) {
+              if (available[col][fil] === "*") {
+                positions.push([col]);
+                positions[i].push(fil);
+
+              } else {
+                posible = false;
+                break;
+              }
+              col--;
+            }
+
+            if (posible) {
+              for (let i = 0; i < word.length; i++) {
+                table[positions[i][0]][positions[i][1]] = word.substring(i, i + 1);
+                available[positions[i][0]][positions[i][1]] = word.substring(i, i + 1);
+              }
+              correct = true;
+            }
+          }
+          break;
+
+
+        case 7:
+          // code block
+          if ((fil - word.length >= 0) && (col - word.length >= 0)) {
+
+            let posible = true;
+            let positions = [];
+
+            for (let i = 0; i < word.length; i++) {
+              if (available[col][fil] === "*") {
+                positions.push([col]);
+                positions[i].push(fil);
+
+              } else {
+                posible = false;
+                break;
+              }
+              fil--;
+              col--;
+            }
+
+            if (posible) {
+              for (let i = 0; i < word.length; i++) {
+                table[positions[i][0]][positions[i][1]] = word.substring(i, i + 1);
+                available[positions[i][0]][positions[i][1]] = word.substring(i, i + 1);
+              }
+              correct = true;
+            }
+          }
+          break;
+      }
+    }
   }
   return table
 }
@@ -72,18 +323,69 @@ export const LetterSoupGame = () => {
   const [theme, setTheme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const [words, setWords] = useState(Themes.find(element => element.name === theme).words);
   const [selectedWords, setSelectedWords] = useState(selectWords(words, cantWords));
-  const [table, setTable] = useState( putWordsInTable( fillTable(selectedWords), selectedWords) );
-
+  const [table, setTable] = useState(putWordsInTable(fillTable(selectedWords), selectedWords));
+  const [initialLetter, setInitialLetter] = useState();
+  const [finalLetter, setFinalLetter] = useState();
 
   useEffect(() => {
-    document.addEventListener('click', printLetter);
-  });
-  
-  const printLetter = (event) => {
+    document.addEventListener('mousedown', detectWord);
+    document.addEventListener('mouseup', detectWord);
+  },[]);
+
+  useEffect(() => {
+    if( finalLetter !== undefined ){
+      findWord(); 
+    }
+  },[finalLetter]);
+
+  const detectWord = (event) => {
     let text = event.target.textContent;
     if (text.length === 1 && text.match(/[a-z]/)) {
-        console.log(text);
+      if(event.type == 'mousedown'){
+        console.log('mousedown');
+        setInitialLetter({letter: text, fil: parseInt(event.target.dataset.fil), col: parseInt(event.target.dataset.col)});
+      }else if(event.type == 'mouseup'){
+          console.log('initialLetter: ',initialLetter);
+          console.log("mouseup");
+          setFinalLetter({letter: text, fil: parseInt(event.target.dataset.fil), col: parseInt(event.target.dataset.col)});
+      }
     }
+  }
+
+  const findWord = () => {
+
+    let filResult = Math.abs(initialLetter.fil - finalLetter.fil);
+    let ColResult = Math.abs(initialLetter.col - finalLetter.col);
+    let wordLenght = (filResult>=ColResult ? filResult : ColResult);
+
+    let buildedWord = '';
+    let currentFil = initialLetter.fil;
+    let currentCol = initialLetter.col;
+
+    initialLetter.col--;
+    for(let i=0;i<=wordLenght;i++){
+      buildedWord += table[currentFil][currentCol];
+      console.log(currentFil,currentCol)
+      if(currentFil > finalLetter.fil){
+        currentFil--;
+      }else if(currentFil < finalLetter.fil){
+        currentFil++;
+      }
+      if(currentCol > finalLetter.col){
+        currentCol--;
+      } else if(currentCol < finalLetter.col){
+        currentCol++;
+      }
+    }
+
+    console.log(buildedWord);
+
+    selectedWords.forEach(element => {
+      if(buildedWord == element.word.toLowerCase()){
+        console.log("palabra encontrada");
+      }
+    });
+
   }
 
   return (
