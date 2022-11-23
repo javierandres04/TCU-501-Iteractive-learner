@@ -9,6 +9,8 @@ import { MemoryCard } from '../../components/MemoryCard/MemoryCard';
 import { Themes } from '../../data/themes';
 import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
+import { BackButton } from '../../components/BackButton/BackButton';
+import { HelpButton } from '../../components/HelpButton/HelpButton';
 
 
 
@@ -127,15 +129,20 @@ export const MemoryGame = () => {
       id="mainContainer"
       initial={{ width: 0 }}
       animate={{ width: "100%" }}
-      exit={{ x: window.innerWidth, transition: {duration: 0.2} }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
     >
       <Header />
       <div id="bodyContainer">
         <div id="mainBox" >
           <div id='memoryGameContainer'>
-            <h1>Memory Game</h1>
+            <div id='gameHeader'>
+              <BackButton/>
+              <h1>Memory Game</h1>
+              <HelpButton/>
+            </div>
+
             <h5 id='selectedTheme'>
-              <div>{selectedTheme}</div>
+              {selectedTheme}
             </h5>
             <button onClick={shuffleCards}>New Game</button>
 

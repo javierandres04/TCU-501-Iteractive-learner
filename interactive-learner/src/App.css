@@ -22,6 +22,12 @@
     margin-bottom: 2%;
 }
 
+#gameHeader {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
 @media(max-width: 500px) {
     #mainBox{
         width: 95%;
