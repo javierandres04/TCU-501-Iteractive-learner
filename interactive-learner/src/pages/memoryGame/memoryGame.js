@@ -43,15 +43,16 @@ export const MemoryGame = () => {
   const [choiseOne, setChoiseOne] = useState(null);
   const [choiseTwo, setChoiseTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
+  const [lastWordFound, setLastWordFound] = useState('');
 
 
   let cardImgs = [
-    { "src": "", "Matched": false },
-    { "src": "", "Matched": false },
-    { "src": "", "Matched": false },
-    { "src": "", "Matched": false },
-    { "src": "", "Matched": false },
-    { "src": "", "Matched": false }
+    { "word": "", "src": "", "Matched": false },
+    { "word": "", "src": "", "Matched": false },
+    { "word": "", "src": "", "Matched": false },
+    { "word": "", "src": "", "Matched": false },
+    { "word": "", "src": "", "Matched": false },
+    { "word": "", "src": "", "Matched": false },
   ];
 
   const shuffleCards = () => {
@@ -59,6 +60,8 @@ export const MemoryGame = () => {
     if (selectedWords) {
       for (let i = 0; i < cardImgs.length; i++) {
         cardImgs[i].src = selectedWords[i].imageSrc;
+        cardImgs[i].word = selectedWords[i].word;
+
       }
       const shuffledCards = [...cardImgs, ...cardImgs]
         .sort(() => Math.random() - 0.5)
@@ -68,6 +71,7 @@ export const MemoryGame = () => {
       setChoiseTwo(null);
       setCards(shuffledCards);
       setTurns(0);
+      setLastWordFound('');
     }
   }
 
@@ -79,6 +83,8 @@ export const MemoryGame = () => {
     if (choiseOne && choiseTwo) {
       setDisabled(true);
       if (choiseOne.src === choiseTwo.src) {
+        console.log(choiseOne)
+        setLastWordFound(choiseOne.word);
         setCards(prevCards => {
           return prevCards.map(card => {
             if (card.src === choiseOne.src) {
@@ -144,6 +150,9 @@ export const MemoryGame = () => {
             <h5 id='selectedTheme'>
               {selectedTheme}
             </h5>
+            <div>
+              <label> Last word found: {lastWordFound} </label>
+            </div>
             <div id='cards-grid'>
               {cards.map(card => (
                 <MemoryCard

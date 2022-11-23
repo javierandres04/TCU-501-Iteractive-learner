@@ -9,6 +9,6 @@ export const HelpButton = () => {
   }
   
   return (
-    <button onClick={handleHelpClick} id='help-button'> {<IoMdHelp/>} </button>
+    <button onClick={handleHelpClick} id='game-button'> {<IoMdHelp/>} </button>
   )
 }
