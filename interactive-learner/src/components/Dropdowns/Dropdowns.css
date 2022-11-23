@@ -41,25 +41,33 @@
   margin-top: 25px;
 }
 
-@media only screen and (max-width: 200px) {
-  #selectText {
-    font-size: 10vw;
-  }
 
-}
-
-@media only screen and (max-width: 382px) {
-  #selectText {
-    font-size: 10vw;
-  }
-
+@media (width < 100vh) {
   #select-dropdown {
     width: 100%;
   }
 
   #dropdown-container {
     flex-direction: column;
-    gap: 3vh;
+    gap: 1.5vh;
+  }
+}
+
+@media only screen and (max-width: 200px) {
+  #selectText {
+    font-size: 9vw;
   }
 
+}
+
+@media only screen and (max-width: 382px) {
+  #selectText {
+    font-size: 9vw;
+  }
+
+  #dropdown-container {
+    flex-direction: column;
+    gap: 3vh;
+    margin: 0;
+  }
 }
