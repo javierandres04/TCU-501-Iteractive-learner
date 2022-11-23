@@ -10,6 +10,9 @@ Proyecto realizado con REACT JS.
 3. El proyecto está desarrollado en react, por lo que cuenta con algunas dependencias, las cuales se deben instalar antes de ejecutarlo. Para instalar los paquetes escriba el comando `npm i` en su consola.
 4. Finalmente podemos ejecutar el proyecto mediante el comando `npm start` , esto abrirá una ventana de la aplicación en su navegador predeterminado.
 
+### **Link de la aplicación en producción**
+https://tcu-501-iteractive-learner-jd1o.vercel.app/
+
 ### **Librerías externas utilizadas**: 
 * React Bootstrap
 * sweetalert2
