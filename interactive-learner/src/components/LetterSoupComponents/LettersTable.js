@@ -16,12 +16,12 @@ export const LettersTable = ({ table, tamTable }) => {
         <div id='soupContainer'>
             <div id="grid-container">
                 {
-                    table.map((row, index) => {
+                    table.map((row, i) => {
                         return (
-                            <div key={index}>
-                                {row.map((letter, index) => {
+                            <div key={i}>
+                                {row.map((letter, j) => {
                                     return (
-                                        <div key={index} className="grid-item">{letter}</div>
+                                        <div key={j} className="grid-item" data-fil={i} data-col={j}>{letter}</div>
                                     )
                                 })}
                             </div>
