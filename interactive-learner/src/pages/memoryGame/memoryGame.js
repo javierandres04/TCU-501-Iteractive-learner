@@ -144,8 +144,6 @@ export const MemoryGame = () => {
             <h5 id='selectedTheme'>
               {selectedTheme}
             </h5>
-            <button onClick={shuffleCards}>New Game</button>
-
             <div id='cards-grid'>
               {cards.map(card => (
                 <MemoryCard
@@ -159,6 +157,7 @@ export const MemoryGame = () => {
               }
             </div>
             <p>Attempts: {turns}</p>
+            <button onClick={shuffleCards}>New Game</button>
           </div>
         </div>
       </div>

@@ -2,17 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
 import { motion } from 'framer-motion';
-
 import '../../App.css';
 import './hangmanGame.css';
 import { Themes } from '../../data/themes';
 import { useSelector } from 'react-redux';
-
 import Figure from '../../components/HangmanComponents/Figure';
 import WrongLetters from '../../components/HangmanComponents/WrongLetters';
 import Word from '../../components/HangmanComponents/Word';
 import Popup from '../../components/HangmanComponents/PopUp';
 import Notification from '../../components/HangmanComponents/Notification';
+import { BackButton } from '../../components/BackButton/BackButton';
+import { HelpButton } from '../../components/HelpButton/HelpButton';
 
 const selectWord = (words) => {
   return words[Math.floor(Math.random() * words.length)].word.toLowerCase();
@@ -67,19 +67,19 @@ export const HangmanGame = () => {
 
   useEffect(() => {
 
-        if (selectedWord.includes(virtualLetter)) {
-          if (!correctLetters.includes(virtualLetter)) {
-            setCorrectLetters(currentLetters => [...currentLetters, virtualLetter]);
-          } else {
-            show(setShowNotification);
-          }
-        } else {
-          if (!wrongLetters.includes(virtualLetter)) {
-            setWrongLetters(currentLetters => [...currentLetters, virtualLetter]);
-          } else {
-            show(setShowNotification);
-          }
-        }
+    if (selectedWord.includes(virtualLetter)) {
+      if (!correctLetters.includes(virtualLetter)) {
+        setCorrectLetters(currentLetters => [...currentLetters, virtualLetter]);
+      } else {
+        show(setShowNotification);
+      }
+    } else {
+      if (!wrongLetters.includes(virtualLetter)) {
+        setWrongLetters(currentLetters => [...currentLetters, virtualLetter]);
+      } else {
+        show(setShowNotification);
+      }
+    }
 
   }, [virtualLetter]);
 
@@ -106,12 +106,12 @@ export const HangmanGame = () => {
   const displayKeyboard = () => {
     const element = document.getElementById('keyboard')
     element.style.display = (element.style.display === 'none' ? 'block' : 'none');
-    setDisplay( (display === 'Display Keyboard' ? 'Hide Keyboard' : 'Display Keyboard') );
+    setDisplay((display === 'Display Keyboard' ? 'Hide Keyboard' : 'Display Keyboard'));
   }
 
   const pressVirtualKey = (event) => {
     const char = event.target.dataset.char
-    if (isLetter(char)){
+    if (isLetter(char)) {
       setVirtualLetter(char.toLowerCase());
     }
   }
@@ -133,7 +133,11 @@ export const HangmanGame = () => {
         <div id="bodyContainer">
           <div id="mainBox" >
             <div id="hangameContainer">
-              <h1>Hangman</h1>
+              <div id='gameHeader'>
+                <BackButton />
+                <h1>Hangman Game</h1>
+                <HelpButton />
+              </div>
               <h5 id='selectedTheme'>
                 <div>{selectedTheme}</div>
               </h5>
@@ -147,7 +151,7 @@ export const HangmanGame = () => {
               <Notification showNotification={showNotification} />
 
               <button onClick={displayKeyboard}>{display}</button>
-              
+
               <div onClick={pressVirtualKey} id="keyboard">
                 <div className="keyboard__row">
                   <div className="key--letter" data-char="Q">Q</div>
