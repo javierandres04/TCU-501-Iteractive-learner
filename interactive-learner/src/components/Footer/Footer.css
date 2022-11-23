@@ -4,7 +4,7 @@
 }
 
 #footerContainer{
-    height: 100%;
+    height: 10vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -12,11 +12,15 @@
 }
 
 .logos{
-    height: 6vw;
+    height: 5vw;
+}
+
+#footerLogosContainer {
+    display: flex;
 }
 
 #authors{
-    font-size : 2vh;
+    font-size : 1.8vh;
     font-weight: 500;
     color: var(--black)
 }
@@ -28,11 +32,11 @@
     }
 
     .logos{
-        height: 20vw;
+        height: 15vw;
     }
     
     #authors{
-        font-size : 5vw;
+        font-size : 4.5vw;
     }
 
 }

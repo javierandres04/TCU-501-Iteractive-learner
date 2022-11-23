@@ -10,10 +10,12 @@ export const Footer = () => {
         <>
             <Navbar id='footer' bg="clear" variant="clear">
                 <Container id="footerContainer">
-                    <img className='logos' src={logoUCR} alt="logo" />
-                    <img className='logos' src={logoTCU} alt="logo" />
+                    <div id="footerLogosContainer">
+                        <img className='logos' src={'./images/logoTCU501.png'} alt="logo" />
+                        <img className='logos' src={logoUCR} alt="logo" />
+                        <img className='logos' src={logoTCU} alt="logo" />
+                    </div>
                     <Navbar.Brand id='authors' >© Sebastián Alfaro, Javier Molina </Navbar.Brand>
-                    <img className='logos' src={'./images/logoTCU501.png'} alt="logo" />
                 </Container>
             </Navbar>
         </>

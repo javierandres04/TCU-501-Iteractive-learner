@@ -5,7 +5,7 @@
 }
 
 #myContainer {
-    height: 100%;
+    height: 10vh;
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -14,7 +14,7 @@
 }
 
 #logoApp {
-    height: 8vw;
+    height: 6vw;
 }
 
 #title {
@@ -23,13 +23,8 @@
 }
 
 @media only screen and (max-width: 500px) {
-    #myContainer {
-        display: flex;
-        flex-direction: column;
-    }
-
     #title {
-        font-size: 5vw;
+        font-size: 4vw;
     }
 
     #logoApp {
