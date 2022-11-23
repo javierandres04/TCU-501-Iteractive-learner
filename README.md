@@ -16,6 +16,12 @@ https://tcu-501-iteractive-learner-jd1o.vercel.app/
 ### **Librerías externas utilizadas**: 
 * React Bootstrap
 * sweetalert2
+* framer-motion
+* react
+* react-icons
+* react-redux
+* react-router-dom
+* redux-persist
 
 ### **Recursos externos utlizados**: 
 * Banco de imagenes TCU 501: https://sites.google.com/site/tcu658ucr/recursos/im%C3%A1genes-did%C3%A1cticas?authuser=0
