@@ -6,7 +6,6 @@ import Form from 'react-bootstrap/Form';
 export const Dropdowns = ({ grade, setGrade, unit, setUnit, theme, setTheme }) => {
   return (
     <div id='dropdown-bar'>
-      <h4 id='selectText'> Select a theme for the games</h4>
       <div id='dropdown-container'>
         
         <Form.Select id='select-dropdown' value={grade} onChange={(e) => { setGrade(e.target.value) }}>

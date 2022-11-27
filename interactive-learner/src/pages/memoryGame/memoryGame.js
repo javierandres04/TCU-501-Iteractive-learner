@@ -137,13 +137,13 @@ export const MemoryGame = () => {
       animate={{ width: "100%" }}
       exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
     >
-      <Header />
+      <Header title={'Memory Game'}/>
       <div id="bodyContainer">
         <div id="mainBox" >
           <div id='memoryGameContainer'>
             <div id='gameHeader'>
               <BackButton/>
-              <h1>Memory Game</h1>
+              {/* <h1>Memory Game</h1> */}
               <HelpButton/>
             </div>
 
