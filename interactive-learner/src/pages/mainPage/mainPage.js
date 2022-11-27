@@ -29,7 +29,7 @@ export const MainPage = () => {
       animate={{ width: "100%" }}
       exit={{ x: window.innerWidth, transition: {duration: 0.2} }}
     >
-      <Header />
+      <Header title={'Select a Theme'}/>
       <div id="bodyContainer">
         <div id="mainBox" >
           <Dropdowns

@@ -4,28 +4,27 @@
     width: 100%;
 }
 
-#myContainer {
+#headerContainer {
     height: 10vh;
     width: 100%;
     display: flex;
-    justify-content: flex-start;
-    margin-left: 5vw;
-    gap: 1.5vw;
+    justify-content: center;
 }
 
 #logoApp {
     height: 6vw;
-}
-
-#title {
-    font-size: 2vh;
+    position: absolute;
+    left: 1%;
     transition: all 0.2s ease-in-out;
 }
 
+#title {
+    font-size: 1.30rem;
+    color: white;
+    font-weight: 600;
+}
+
 @media only screen and (max-width: 500px) {
-    #title {
-        font-size: 4vw;
-    }
 
     #logoApp {
         height: 20vw;
@@ -33,6 +32,15 @@
 
 }
 
-#title:hover {
+@media only screen and (max-width: 340px) {
+
+    #title {
+        font-size: 5vw;
+    }
+
+}
+
+#logoApp:hover {
     transform: scale(1.1);
+    cursor: pointer;
 }

@@ -128,14 +128,14 @@ export const HangmanGame = () => {
       animate={{ width: "100%" }}
       exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
     >
-      <Header />
+      <Header title={'Hangman'}/>
       <>
         <div id="bodyContainer">
           <div id="mainBox" >
             <div id="hangameContainer">
               <div id='gameHeader'>
                 <BackButton />
-                <h1>Hangman Game</h1>
+                {/* <h1>Hangman Game</h1> */}
                 <HelpButton />
               </div>
               <h5 id='selectedTheme'>
