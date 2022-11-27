@@ -12,6 +12,11 @@
     justify-content: space-between;
     background-color: var(--pot-pourri);
     overflow: auto;
+    background-color: #f4e8e3;
+    opacity: 1;
+    background-image: radial-gradient(#44a49c 0.5px, transparent 0.5px), radial-gradient(#44a49c 0.5px, #f4e8e3 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
 }
 
 #mainBox {
@@ -21,10 +26,10 @@
 }
 
 #game-button {
-  font-size: 1.2rem;
-  text-align: center;
-	padding: 0;
-	width: 5vh;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0;
+    width: 5vh;
 }
 
 #gameHeader {
@@ -36,19 +41,19 @@
 }
 
 @media(max-width: 500px) {
-    #mainBox{
+    #mainBox {
         width: 95%;
     }
 }
 
 @media (min-width:500px) and (max-width:750px) {
-    #mainBox{
+    #mainBox {
         width: 90%;
     }
 }
 
 @media (min-width:750px) and (max-width:1000px) {
-    #mainBox{
+    #mainBox {
         width: 85%;
     }
 }
