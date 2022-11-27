@@ -85,6 +85,11 @@ export const MemoryGame = () => {
       if (choiseOne.src === choiseTwo.src) {
         console.log(choiseOne)
         setLastWordFound(choiseOne.word);
+        Swal.fire({
+          title: 'Good Work! 😃',
+          text: `...this word is: ${choiseOne.word}`,
+          timer: 1200
+        })
         setCards(prevCards => {
           return prevCards.map(card => {
             if (card.src === choiseOne.src) {
