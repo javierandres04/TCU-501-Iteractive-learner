@@ -5,7 +5,7 @@ const WrongLetters = ({ wrongLetters }) => {
   return (
     <div className="wrong-letters-container">
       <div>
-        <p>Wrong</p>
+        <p>Wrong Letters:</p>
         {wrongLetters
           .map((letter, i) => <span key={i}>{letter}</span>)
           .reduce((prev, curr) => prev === null ? [curr] : [prev, ', ', curr], null)}

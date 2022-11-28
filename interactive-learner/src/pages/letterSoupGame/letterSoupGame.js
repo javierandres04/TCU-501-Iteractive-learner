@@ -400,9 +400,6 @@ export const LetterSoupGame = () => {
         <div id="mainBox" >
           <div id='memoryGameContainer'>
             <h1>Letter Soup Game</h1>
-            <h5 id='selectedTheme'>
-              <div>{selectedTheme}</div>
-            </h5>
             <LettersTable tamTable={tamTable} table={table} />
           </div>
         </div>

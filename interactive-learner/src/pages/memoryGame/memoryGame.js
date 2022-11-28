@@ -9,8 +9,7 @@ import { MemoryCard } from '../../components/MemoryCard/MemoryCard';
 import { Themes } from '../../data/themes';
 import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
-import { BackButton } from '../../components/BackButton/BackButton';
-import { HelpButton } from '../../components/HelpButton/HelpButton';
+import { HeadGames } from '../../components/HeadGames/HeadGames';
 
 
 
@@ -31,9 +30,6 @@ const selectWords = (words) => {
 }
 
 export const MemoryGame = () => {
-  const selectedTheme = `${useSelector((state) => state.theme.selectedTheme.Grade)} 
-  - ${useSelector((state) => state.theme.selectedTheme.Unit)} 
-  - ${useSelector((state) => state.theme.selectedTheme.Theme)}`;
 
   const [theme, setTheme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const [words, setWords] = useState(Themes.find(element => element.name === theme).words);
@@ -146,15 +142,7 @@ export const MemoryGame = () => {
       <div id="bodyContainer">
         <div id="mainBox" >
           <div id='memoryGameContainer'>
-            <div id='gameHeader'>
-              <BackButton/>
-              {/* <h1>Memory Game</h1> */}
-              <HelpButton/>
-            </div>
-
-            <h5 id='selectedTheme'>
-              {selectedTheme}
-            </h5>
+            <HeadGames/>
             <div>
               <label> Last word found: {lastWordFound} </label>
             </div>

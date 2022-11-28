@@ -11,18 +11,13 @@ import WrongLetters from '../../components/HangmanComponents/WrongLetters';
 import Word from '../../components/HangmanComponents/Word';
 import Popup from '../../components/HangmanComponents/PopUp';
 import Notification from '../../components/HangmanComponents/Notification';
-import { BackButton } from '../../components/BackButton/BackButton';
-import { HelpButton } from '../../components/HelpButton/HelpButton';
+import { HeadGames } from '../../components/HeadGames/HeadGames';
 
 const selectWord = (words) => {
   return words[Math.floor(Math.random() * words.length)].word.toLowerCase();
 }
 
 export const HangmanGame = () => {
-
-  const selectedTheme = `${useSelector((state) => state.theme.selectedTheme.Grade)}
-  - ${useSelector((state) => state.theme.selectedTheme.Unit)}
-  - ${useSelector((state) => state.theme.selectedTheme.Theme)}`;
 
   const [theme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const [words] = useState(Themes.find(element => element.name === theme).words);
@@ -128,20 +123,12 @@ export const HangmanGame = () => {
       animate={{ width: "100%" }}
       exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
     >
-      <Header title={'Hangman'}/>
+      <Header title={'Hangman'} />
       <>
         <div id="bodyContainer">
           <div id="mainBox" >
             <div id="hangameContainer">
-              <div id='gameHeader'>
-                <BackButton />
-                {/* <h1>Hangman Game</h1> */}
-                <HelpButton />
-              </div>
-              <h5 id='selectedTheme'>
-                <div>{selectedTheme}</div>
-              </h5>
-              <button onClick={playAgain}>New Game</button>
+              <HeadGames />
               <div id='centerContainer'>
                 <Figure wrongLetters={wrongLetters} />
                 <WrongLetters wrongLetters={wrongLetters} />
@@ -150,7 +137,7 @@ export const HangmanGame = () => {
               <Popup correctLetters={correctLetters} wrongLetters={wrongLetters} selectedWord={selectedWord} setPlayable={setPlayable} playable={playable} />
               <Notification showNotification={showNotification} />
 
-              <button onClick={displayKeyboard}>{display}</button>
+              <button id='keyboardButton' onClick={displayKeyboard}>{display}</button>
 
               <div onClick={pressVirtualKey} id="keyboard">
                 <div className="keyboard__row">
@@ -187,6 +174,8 @@ export const HangmanGame = () => {
                   <div className="key--letter" data-char="M">M</div>
                 </div>
               </div>
+
+              <button onClick={playAgain}>New Game</button>
 
             </div>
           </div>

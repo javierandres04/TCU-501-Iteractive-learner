@@ -5,6 +5,18 @@ const Figure = ({ wrongLetters }) => {
 
   return (
     <svg height="250" width="200" className="figure-container">
+
+      <line className='clearLine' x1="20" y1="230" x2="100" y2="230" />
+      <line className='clearLine' x1="60" y1="20" x2="60" y2="230" />
+      <line className='clearLine' x1="60" y1="20" x2="140" y2="20" />
+      <line className='clearLine' x1="140" y1="20" x2="140" y2="50" />
+      <circle className='clearLine' cx="140" cy="70" r="20" />
+      <line className='clearLine' x1="140" y1="90" x2="140" y2="150" />
+      <line className='clearLine' x1="140" y1="120" x2="120" y2="100" />
+      <line className='clearLine' x1="140" y1="120" x2="160" y2="100" />
+      <line className='clearLine' x1="140" y1="150" x2="120" y2="180" />
+      <line className='clearLine' x1="140" y1="150" x2="160" y2="180" />
+
       {/* <!-- Rod --> */}
       {errors > 0 &&
         <line x1="20" y1="230" x2="100" y2="230" />
