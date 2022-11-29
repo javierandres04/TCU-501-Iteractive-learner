@@ -43,6 +43,25 @@
   text-align: right;
 }
 
+#pressAKey{
+  display: flex;
+  align-items: flex-end;
+}
+
+#pressAKeyContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.dots {
+  width: 15%;
+  aspect-ratio: 5;
+  background: radial-gradient(circle closest-side,#fff 100%,#0000) 0/calc(100%/3) 100% space;
+  clip-path: inset(0 100% 0 0);
+  animation: d1 2.5s steps(4) infinite;
+}
+@keyframes d1 {to{clip-path: inset(0 -34% 0 0)}}
+
 
 .word {
   display: flex;
