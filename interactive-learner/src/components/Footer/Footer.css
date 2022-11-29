@@ -27,8 +27,8 @@
 
 @media only screen and (max-width: 500px) {
     #footerContainer {
-      display: flex;
       flex-direction: column;
+      justify-content: center;
     }
 
     .logos{

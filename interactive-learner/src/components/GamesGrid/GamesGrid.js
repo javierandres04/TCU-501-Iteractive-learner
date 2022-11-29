@@ -1,7 +1,9 @@
 import React from 'react';
-import './GamesGrid.css'
-import { Games } from '../../data/games'
+import './GamesGrid.css';
+import { Games } from '../../data/games';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+
 
 export const GamesGrid = ({ grade, unit, theme }) => {
   const navigate = useNavigate();
@@ -11,8 +13,17 @@ export const GamesGrid = ({ grade, unit, theme }) => {
     if (grade && unit && theme) {
       if (grade !== 'Grade' && unit !== 'Unit' && theme !== 'Theme') {
         navigate('/' + element);
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops!',
+          text: `Please select a theme for the game`,
+          timer: 1200,
+          showConfirmButton: false,
+          heightAuto: false
+        })
       }
-    }
+    } 
   }
 
   return (

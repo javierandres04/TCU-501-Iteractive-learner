@@ -79,12 +79,13 @@ export const MemoryGame = () => {
     if (choiseOne && choiseTwo) {
       setDisabled(true);
       if (choiseOne.src === choiseTwo.src) {
-        console.log(choiseOne)
         setLastWordFound(choiseOne.word);
         Swal.fire({
           title: 'Good Work! 😃',
           text: `...this word is: ${choiseOne.word}`,
-          timer: 1200
+          timer: 1200,
+          showConfirmButton: false,
+          heightAuto: false
         })
         setCards(prevCards => {
           return prevCards.map(card => {
@@ -126,7 +127,8 @@ export const MemoryGame = () => {
     if (allCardsMatched() && turns > 0) {
       Swal.fire({
         title: 'Congratulations, you win!!!',
-        text: 'You made ' + turns + ' attempts.'
+        text: 'You made ' + turns + ' attempts.',
+        heightAuto: false
       })
     }
   }, [cards])

@@ -21,12 +21,14 @@ const Popup = ({ correctLetters, wrongLetters, selectedWord, setPlayable, playab
       Swal.fire({
         title: 'Congratulations! You won! 😃',
         text: `...the word was: ${selectedWord}`,
+        heightAuto: false
       })
       play = false;
     } else if (status === 'lose') {
       Swal.fire({
         title: 'Unfortunately you lost. 😕',
         text: `...the word was: ${selectedWord}`,
+        heightAuto: false
       })
       play = false;
     }
