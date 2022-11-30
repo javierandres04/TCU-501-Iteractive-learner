@@ -10,7 +10,6 @@ import { Themes } from '../../data/themes';
 import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import { HeadGames } from '../../components/HeadGames/HeadGames';
-import useSound from 'use-sound';
 
 const selectWords = (words) => {
   let options = [];
