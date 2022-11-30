@@ -27,6 +27,11 @@ const selectWords = (words) => {
   return selectedWords;
 }
 
+const playSound = (soundName) => {
+  let sound = new Audio(`./sounds/${soundName}.m4a`);
+  sound.play();
+}
+
 export const MemoryGame = () => {
   const [theme, setTheme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const [words, setWords] = useState(Themes.find(element => element.name === theme).words);
@@ -84,6 +89,7 @@ export const MemoryGame = () => {
           showConfirmButton: false,
           heightAuto: false
         })
+        playSound(choiseOne.word)
         setCards(prevCards => {
           return prevCards.map(card => {
             if (card.src === choiseOne.src) {
