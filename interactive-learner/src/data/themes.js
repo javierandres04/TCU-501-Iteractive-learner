@@ -75,11 +75,11 @@ export const Themes = [
         imageSrc: '/images/Swimming.png',
         soundSrc: '/sounds/Swimming.mp3'
       },
-      {
-        word: 'Bungee Jumping',
-        imageSrc: '/images/Bungee Jumping.png',
-        soundSrc: '/sounds/Bungee Jumping.mp3'
-      },
+      // {
+      //   word: 'Bungee Jumping',
+      //   imageSrc: '/images/Bungee Jumping.png',
+      //   soundSrc: '/sounds/Bungee Jumping.mp3'
+      // },
       {
         word: 'Cycling',
         imageSrc: '/images/Cycling.png',
@@ -140,33 +140,33 @@ export const Themes = [
         imageSrc: '/images/Playing_Volleyball.png',
         soundSrc: '/sounds/Playing_Volleyball.mp3'
       },
-      {
-        word: 'Playing Tennis',
-        imageSrc: '/images/Playing_Tennis.png',
-        soundSrc: '/sounds/Playing_Tennis.mp3'
-      },
-      {
-        word: 'Playing Hockey',
-        imageSrc: '/images/Playing_Hockey.png',
-        soundSrc: '/sounds/Playing_Hockey.mp3'
-      },
-      {
-        word: 'Playing Baseball',
-        imageSrc: '/images/Playing_Baseball.png',
-        soundSrc: '/sounds/Playing_Baseball.mp3'
-      },
-      {
-        word: 'Playing Basketball',
-        imageSrc: '/images/Playing_Basketball.png',
-        soundSrc: '/sounds/Playing_Basketball.mp3'
-      },
+      // {
+      //   word: 'Playing Tennis',
+      //   imageSrc: '/images/Playing_Tennis.png',
+      //   soundSrc: '/sounds/Playing_Tennis.mp3'
+      // },
+      // {
+      //   word: 'Playing Hockey',
+      //   imageSrc: '/images/Playing_Hockey.png',
+      //   soundSrc: '/sounds/Playing_Hockey.mp3'
+      // },
+      // {
+      //   word: 'Playing Baseball',
+      //   imageSrc: '/images/Playing_Baseball.png',
+      //   soundSrc: '/sounds/Playing_Baseball.mp3'
+      // },
+      // {
+      //   word: 'Playing Basketball',
+      //   imageSrc: '/images/Playing_Basketball.png',
+      //   soundSrc: '/sounds/Playing_Basketball.mp3'
+      // },
       {
         word: 'Horseback Riding',
         imageSrc: '/images/Horseback_Riding.png',
         soundSrc: '/sounds/Horseback_Riding.mp3'
       },
       {
-        word: 'Having a Picnic',
+        word: 'Picnic',
         imageSrc: '/images/Having_a_Picnic.png',
         soundSrc: '/sounds/Having_a_Picnic.mp3'
       },
@@ -225,11 +225,11 @@ export const Themes = [
         imageSrc: '/images/Singing.png',
         soundSrc: '/sounds/Singing.mp3'
       },
-      {
-        word: 'Painting',
-        imageSrc: '/images/Painting.png',
-        soundSrc: '/sounds/Painting.mp3'
-      },
+      // {
+      //   word: 'Painting',
+      //   imageSrc: '/images/Painting.png',
+      //   soundSrc: '/sounds/Painting.mp3'
+      // },
       {
         word: 'Cooking',
         imageSrc: '/images/Cooking.png',
@@ -241,7 +241,7 @@ export const Themes = [
         soundSrc: '/sounds/Snorkeling.mp3'
       },
       {
-        word: 'Playing Piano',
+        word: 'Playing the Piano',
         imageSrc: '/images/Playing_Piano.png',
         soundSrc: '/sounds/Playing_Piano.mp3'
       },
@@ -251,7 +251,7 @@ export const Themes = [
         soundSrc: '/sounds/Playing_Soccer.mp3'
       },
       {
-        word: 'Playing Guitar',
+        word: 'Playing The Guitar',
         imageSrc: '/images/Playing_Guitar.png',
         soundSrc: '/sounds/Playing_Guitar.mp3'
       },
@@ -266,7 +266,7 @@ export const Themes = [
         soundSrc: '/sounds/Doing_Judo.mp3'
       },
       {
-        word: 'Go To The Theater',
+        word: 'Going to the Theater',
         imageSrc: '/images/Go_To_The_Theater.png',
         soundSrc: '/sounds/Go_To_The_Theater.mp3'
       },

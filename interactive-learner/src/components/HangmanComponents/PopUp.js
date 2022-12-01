@@ -3,6 +3,11 @@ import Swal from 'sweetalert2';
 
 
 const Popup = ({ correctLetters, wrongLetters, selectedWord, setPlayable, playable }) => {
+  const playSound = (soundName) => {
+    let sound = new Audio(`./sounds/${soundName}.m4a`);
+    sound.play();
+  }
+  
   useEffect(() => {
     let play = true;
     let status = 'win'
@@ -21,15 +26,19 @@ const Popup = ({ correctLetters, wrongLetters, selectedWord, setPlayable, playab
       Swal.fire({
         title: 'Congratulations! You won! 😃',
         text: `...the word was: ${selectedWord}`,
-        heightAuto: false
+        heightAuto: false,
+        confirmButtonColor: '#44a49c'
       })
+      playSound(selectedWord);
       play = false;
     } else if (status === 'lose') {
       Swal.fire({
         title: 'Unfortunately you lost. 😕',
         text: `...the word was: ${selectedWord}`,
-        heightAuto: false
+        heightAuto: false,
+        confirmButtonColor: '#44a49c'
       })
+      playSound(selectedWord);
       play = false;
     }
 

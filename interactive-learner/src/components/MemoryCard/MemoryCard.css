@@ -27,6 +27,7 @@
   transform: rotateY(90deg);
   position: absolute;
   transition: all ease-in 0.2s;
+  background-color: white;
 }
 
 .flipped .front {
@@ -37,6 +38,7 @@
 .card .back {
   transition: all ease-in 0.2s;
   transition-delay: 0.2s;
+  background-color: #3d958e;
 }
 
 .flipped .back {

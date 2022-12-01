@@ -11,9 +11,6 @@ import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import { HeadGames } from '../../components/HeadGames/HeadGames';
 
-
-
-
 const selectWords = (words) => {
   let options = [];
   let selectedWords = [];
@@ -29,8 +26,12 @@ const selectWords = (words) => {
   return selectedWords;
 }
 
-export const MemoryGame = () => {
+const playSound = (soundName) => {
+  let sound = new Audio(`./sounds/${soundName}.m4a`);
+  sound.play();
+}
 
+export const MemoryGame = () => {
   const [theme, setTheme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const [words, setWords] = useState(Themes.find(element => element.name === theme).words);
   const [selectedWords, setSelectedWords] = useState(selectWords(words));
@@ -40,7 +41,7 @@ export const MemoryGame = () => {
   const [choiseTwo, setChoiseTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
   const [lastWordFound, setLastWordFound] = useState('');
-
+  
 
   let cardImgs = [
     { "word": "", "src": "", "Matched": false },
@@ -87,6 +88,7 @@ export const MemoryGame = () => {
           showConfirmButton: false,
           heightAuto: false
         })
+        playSound(choiseOne.word)
         setCards(prevCards => {
           return prevCards.map(card => {
             if (card.src === choiseOne.src) {
@@ -128,7 +130,8 @@ export const MemoryGame = () => {
       Swal.fire({
         title: 'Congratulations, you win!!!',
         text: 'You made ' + turns + ' attempts.',
-        heightAuto: false
+        heightAuto: false,
+        confirmButtonColor: '#44a49c'
       })
     }
   }, [cards])
