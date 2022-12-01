@@ -38,7 +38,7 @@
 .card .back {
   transition: all ease-in 0.2s;
   transition-delay: 0.2s;
-  background-color: var(--keppel);
+  background-color: #3d958e;
 }
 
 .flipped .back {
