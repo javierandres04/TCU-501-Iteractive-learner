@@ -148,8 +148,9 @@ export const MemoryGame = () => {
         <div id="mainBox" >
           <div id='memoryGameContainer'>
             <HeadGames/>
-            <div>
-              <label> Last word found: {lastWordFound} </label>
+            <div id='stats'>
+              <div> Last word found: {lastWordFound} </div>
+              <div id='attempts'>Attempts: {turns}</div>
             </div>
             <div id='cards-grid'>
               {cards.map(card => (
@@ -163,7 +164,6 @@ export const MemoryGame = () => {
               ))
               }
             </div>
-            <p>Attempts: {turns}</p>
             <button onClick={shuffleCards}>New Game</button>
           </div>
         </div>

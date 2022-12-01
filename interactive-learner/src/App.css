@@ -20,7 +20,7 @@
 }
 
 #mainBox {
-    width: 80%;
+    width: 70%;
     display: flex;
     flex-direction: column;
 }
@@ -38,20 +38,32 @@
     justify-content: space-between;
 }
 
-@media(max-width: 500px) {
+@media(max-width: 640px) {
     #mainBox {
         width: 95%;
     }
 }
 
-@media (min-width:500px) and (max-width:750px) {
+@media (min-width:640px) and (max-width:800px) {
     #mainBox {
         width: 90%;
     }
 }
 
-@media (min-width:750px) and (max-width:1000px) {
+@media (min-width:800px) and (max-width:900px) {
     #mainBox {
         width: 85%;
+    }
+}
+
+@media (min-width:900px) and (max-width:1000px) {
+    #mainBox {
+        width: 80%;
+    }
+}
+
+@media (min-width:1000px) and (max-width:1100px) {
+    #mainBox {
+        width: 75%;
     }
 }
