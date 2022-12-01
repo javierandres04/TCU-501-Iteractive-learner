@@ -130,7 +130,8 @@ export const MemoryGame = () => {
       Swal.fire({
         title: 'Congratulations, you win!!!',
         text: 'You made ' + turns + ' attempts.',
-        heightAuto: false
+        heightAuto: false,
+        confirmButtonColor: '#44a49c'
       })
     }
   }, [cards])
