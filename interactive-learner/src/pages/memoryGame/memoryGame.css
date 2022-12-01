@@ -39,7 +39,7 @@ button:hover {
 
 
 #cards-grid {
-  width: 70%;
+  width: 67.5%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   row-gap: 1.25%;
