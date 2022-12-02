@@ -63,3 +63,9 @@ button:hover {
   justify-content: center;
   flex-wrap: wrap;
 }
+
+@media (width < 100vh) {
+  #stats {
+    flex-direction: column;
+  }
+}

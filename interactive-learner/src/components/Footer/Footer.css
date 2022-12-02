@@ -12,7 +12,7 @@
 }
 
 .logos{
-    height: 5vw;
+    height: 4.5vw;
 }
 
 #footerLogosContainer {
@@ -20,9 +20,30 @@
 }
 
 #authors{
-    font-size : 1.8vh;
+    font-size : 1.5vh;
     font-weight: 500;
     color: white;
+}
+
+
+@media (width < 100vh) {
+    .logos{
+        height: 7vw;
+    }
+
+    #authors{
+        font-size : 2vw;
+    }
+}
+
+@media (height < 100vw) {
+    .logos{
+        height: 6vh;
+    }
+
+    #authors{
+        font-size : 1.5vh;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -32,13 +53,21 @@
     }
 
     .logos{
-        height: 15vw;
+        height: 11.5vw;
     }
     
     #authors{
-        font-size : 4.5vw;
+        font-size : 3vw;
     }
 
 }
 
-
+@media (max-height: 599px) {
+    .logos{
+        height: 8vw;
+    }
+    
+    #authors{
+        font-size : 2vw;
+    }
+}

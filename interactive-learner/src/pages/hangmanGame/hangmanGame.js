@@ -12,6 +12,7 @@ import Word from '../../components/HangmanComponents/Word';
 import Popup from '../../components/HangmanComponents/PopUp';
 import Notification from '../../components/HangmanComponents/Notification';
 import { HeadGames } from '../../components/HeadGames/HeadGames';
+import Swal from 'sweetalert2';
 
 const selectWord = (words) => {
   return words[Math.floor(Math.random() * words.length)].word.toLowerCase();
@@ -49,9 +50,17 @@ export const HangmanGame = () => {
         } else {
           if (!wrongLetters.includes(letter)) {
             setWrongLetters(currentLetters => [...currentLetters, letter]);
+            Swal.fire({
+              icon: 'error',
+              title: 'Try another letter!',
+              timer: 1500,
+              showConfirmButton: false,
+              heightAuto: false
+            })
           } else {
             show(setShowNotification);
           }
+          
         }
       }
     }

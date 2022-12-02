@@ -84,7 +84,7 @@ export const MemoryGame = () => {
         Swal.fire({
           title: 'Good Work! 😃',
           text: `...this word is: ${choiseOne.word}`,
-          timer: 1200,
+          timer: 2100,
           showConfirmButton: false,
           heightAuto: false
         })
