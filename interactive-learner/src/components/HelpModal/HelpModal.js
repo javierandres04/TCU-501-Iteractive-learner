@@ -28,11 +28,11 @@ export const HelpModal = ({ isHelpModalOpen, setIsHelpModalOpen, spanishInstruct
       >
         <motion.h2 variants={item} className={"title"}>Instructions: </motion.h2>
         {englishInstructions.map((instruction, index) => 
-          <motion.label className='instructionLabel' variants={item}>{index + 1}. {instruction}</motion.label>
+          <motion.label key={index} className='instructionLabel' variants={item}>{index + 1}. {instruction}</motion.label>
         )}
         <motion.h2 variants={item} className={'title'}> Instrucciones </motion.h2>
         {spanishInstructions.map((instruction, index) => 
-          <motion.label className='instructionLabel' variants={item}>{index + 1}. {instruction}</motion.label>
+          <motion.label key={index} className='instructionLabel' variants={item}>{index + 1}. {instruction}</motion.label>
         )}
 
       </motion.div>

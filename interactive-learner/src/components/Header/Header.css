@@ -24,6 +24,12 @@
     font-weight: 600;
 }
 
+.MainHelpButton {
+    position: absolute;
+    right: 5%;
+    z-index: 1;
+}
+
 @media only screen and (max-width: 500px) {
 
     #logoApp {
