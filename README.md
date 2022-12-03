@@ -22,6 +22,7 @@ https://tcu-501-iteractive-learner-jd1o.vercel.app/
 * react-redux
 * react-router-dom
 * redux-persist
+* react-modal
 
 ### **Recursos externos utlizados**: 
 * Banco de imagenes TCU 501: https://sites.google.com/site/tcu658ucr/recursos/im%C3%A1genes-did%C3%A1cticas?authuser=0
