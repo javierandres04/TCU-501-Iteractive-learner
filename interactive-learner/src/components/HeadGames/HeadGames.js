@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BiArrowBack } from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
-
-import { Themes } from '../../data/themes';
 import { useSelector } from 'react-redux';
 import {IoMdHelp} from 'react-icons/io';
 
@@ -19,7 +17,6 @@ export const HeadGames = ({ setIsHelpModalOpen }) => {
   }
 
   const handleHelpClick = () => {
-    console.log('opens');
     setIsHelpModalOpen(true);
   }
 

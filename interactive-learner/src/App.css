@@ -19,6 +19,14 @@
     background-position: 0 0, 10px 10px;
 }
 
+/* .MainHelpButton {
+    position:absolute;
+    right: 5%;
+    top: 4%;
+    z-index: 1;
+} */
+
+
 #mainBox {
     width: 70%;
     display: flex;
