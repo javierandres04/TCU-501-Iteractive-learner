@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import {IoMdHelp} from 'react-icons/io';
 
 
-export const HeadGames = () => {
+export const HeadGames = ({ setIsHelpModalOpen }) => {
   const selectedTheme = `${useSelector((state) => state.theme.selectedTheme.Grade)}
   - ${useSelector((state) => state.theme.selectedTheme.Unit)}
   - ${useSelector((state) => state.theme.selectedTheme.Theme)}`;
@@ -19,6 +19,8 @@ export const HeadGames = () => {
   }
 
   const handleHelpClick = () => {
+    console.log('opens');
+    setIsHelpModalOpen(true);
   }
 
   return (
