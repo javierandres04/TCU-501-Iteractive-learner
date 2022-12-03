@@ -1,0 +1,83 @@
+.helpModal {
+  background-color: var(--pot-pourri);
+  position: absolute;
+  top: 35px;
+  left: 30%;
+  right: 30%;
+  bottom: 35px;
+  border-radius: 1rem;
+  overflow-y: scroll;
+  opacity: 1;
+  background-image: radial-gradient(#44a49c 0.5px, transparent 0.5px), radial-gradient(#44a49c 0.5px, #f4e8e3 0.5px);
+  background-size: 21px 21px;
+  background-position: 0 0, 10px 10px;
+}
+
+@media (width > 100vh) {
+  .helpModal {
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .helpModal::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+  }
+}
+
+@media (width < 100vh) {
+  .helpModal {
+    left: 10%;
+    right: 10%;
+  }
+}
+
+
+.HelpContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 600;
+  color: rgb(28, 25, 25);
+  text-align: justify;
+}
+
+.instructionLabel {
+  padding: 10px;
+  width: 90%;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 9px;
+  border-style: hidden;
+  background-color: rgba(255, 255, 255, 0);
+  color: var(--White);
+  transition: all 0.2s ease-in-out;
+  font-size: x-large;
+}
+
+.closeButton:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.title {
+  line-height: 1.15;
+  font-size: 4vh;
+  font-weight: 600;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.416);
+}
