@@ -30,7 +30,7 @@ export const HelpModal = ({ isHelpModalOpen, setIsHelpModalOpen, spanishInstruct
         {englishInstructions.map((instruction, index) => 
           <motion.label key={index} className='instructionLabel' variants={item}>{index + 1}. {instruction}</motion.label>
         )}
-        <motion.h2 variants={item} className={'title'}> Instrucciones </motion.h2>
+        <motion.h2 variants={item} className={'title'}> Instrucciones: </motion.h2>
         {spanishInstructions.map((instruction, index) => 
           <motion.label key={index} className='instructionLabel' variants={item}>{index + 1}. {instruction}</motion.label>
         )}
