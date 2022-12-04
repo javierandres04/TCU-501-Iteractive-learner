@@ -11,7 +11,7 @@ import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import { HeadGames } from '../../components/HeadGames/HeadGames';
 import { HelpModal } from '../../components/HelpModal/HelpModal';
-
+import { ConfettiRain } from '../../components/ConfettiRain/ConfettiRain';
 
 const spanishInstructions = [
   'En pantalla se muestran 12 cartas volteadas.',
@@ -25,7 +25,7 @@ const englishInstructions = [
   `The game's objective is to find all six card pairs.`,
   'Click on a card to reveal its content.',
   'The card will stay visible until the next move is performed.',
-  `After revealing a second card, if they match, they will stay upwards, if they don't they will flip again.` 
+  `After revealing a second card, if they match, they will stay upwards, if they don't they will flip again.`
 ]
 
 const selectWords = (words) => {
@@ -55,6 +55,7 @@ export const MemoryGame = () => {
   const [disabled, setDisabled] = useState(false);
   const [lastWordFound, setLastWordFound] = useState('');
   const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
+  const [gameWin, setGameWin] = useState(false);
 
   let cardImgs = [
     { "word": "", "src": "", "Matched": false },
@@ -145,11 +146,14 @@ export const MemoryGame = () => {
 
   useEffect(() => {
     if (allCardsMatched() && turns > 0) {
+      setGameWin(true);
       Swal.fire({
         title: 'Congratulations, you win!!!',
         text: 'You made ' + turns + ' attempts.',
         heightAuto: false,
         confirmButtonColor: '#44a49c'
+      }).then(() => {
+        setGameWin(false);
       })
     }
   }, [cards])
@@ -167,6 +171,7 @@ export const MemoryGame = () => {
         englishInstructions={englishInstructions}
         spanishInstructions={spanishInstructions}
       />
+      {gameWin && <ConfettiRain />}
       <Header title={'Memory Game'} />
       <div id="bodyContainer">
         <div id="mainBox" >
