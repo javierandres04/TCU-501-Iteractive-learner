@@ -14,6 +14,25 @@ import Notification from '../../components/HangmanComponents/Notification';
 import { HeadGames } from '../../components/HeadGames/HeadGames';
 import Swal from 'sweetalert2';
 
+import { HelpModal } from '../../components/HelpModal/HelpModal';
+
+const spanishInstructions = [
+  'En pantalla se muestran el dibujo del ahorcado, la seccion de letras erróneas y la sección de la palabra a adivinar',
+  'El objetivo del juego es adivinar la palabra antes de que se complete el dibujo del ahorcado.',
+  'Para jugar se presiona una letra.',
+  'Si la letra es correcta, esta es revelada en la sección de la palabra',
+  'Si la letra es incorrecta esta se agrega a la sección de letras incorrectas y se remarca una parte del dibujo del ahorcado.',
+  'Existe un botón para desplegar un teclado con el que se puede jugar.'
+]
+const englishInstructions = [
+  'The drawing of the hangman, the section of wrong letters, and the section of the word to guess are shown on the screen',
+  `The game's objective is to guess the word before the hangman picture is complete.`,
+  'To play, press a letter.',
+  'If the letter is correct, it is revealed in the word section',
+  'If the letter is incorrect, it is added to the incorrect words section and a part of the hangman drawing is highlighted.',
+  'There is a button to bring up a keyboard that can be played with.'
+]
+
 const selectWord = (words) => {
   return words[Math.floor(Math.random() * words.length)].word.toLowerCase();
 }
@@ -30,6 +49,7 @@ export const HangmanGame = () => {
   const [showNotification, setShowNotification] = useState(false);
   const [display, setDisplay] = useState('Display Keyboard');
   const [virtualLetter, setVirtualLetter] = useState('');
+  const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
 
   useEffect(() => {
     setCorrectLetters(currentLetters => [...currentLetters, ' ']);
@@ -60,7 +80,7 @@ export const HangmanGame = () => {
           } else {
             show(setShowNotification);
           }
-          
+
         }
       }
     }
@@ -132,12 +152,18 @@ export const HangmanGame = () => {
       animate={{ width: "100%" }}
       exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
     >
+      <HelpModal
+        isHelpModalOpen={isHelpModalOpen}
+        setIsHelpModalOpen={setIsHelpModalOpen}
+        englishInstructions={englishInstructions}
+        spanishInstructions={spanishInstructions}
+      />
       <Header title={'Hangman'} />
       <>
         <div id="bodyContainer">
           <div id="mainBox" >
             <div id="hangameContainer">
-              <HeadGames />
+            <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
               <div id='centerContainer'>
                 <Figure wrongLetters={wrongLetters} />
                 <WrongLetters wrongLetters={wrongLetters} />

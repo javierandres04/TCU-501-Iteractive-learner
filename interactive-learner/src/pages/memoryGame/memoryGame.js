@@ -25,7 +25,7 @@ const englishInstructions = [
   `The game's objective is to find all six card pairs.`,
   'Click on a card to reveal its content.',
   'The card will stay visible until the next move is performed.',
-  `After revealing a second card, if they match, they will stay upwards, if they don't they will flip again.` 
+  `After revealing a second card, if they match, they will stay upwards, if they don't they will flip again.`
 ]
 
 const selectWords = (words) => {
