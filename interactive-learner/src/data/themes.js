@@ -181,7 +181,7 @@ export const Themes = [
         soundSrc: '/sounds/Playing_Board_Games.mp3'
       },
       {
-        word: 'Playing Video Games',
+        word: 'Playing Videogames',
         imageSrc: '/images/Playing_Video_Games.png',
         soundSrc: '/sounds/Playing_Video_Games.mp3'
       },
@@ -241,7 +241,7 @@ export const Themes = [
         soundSrc: '/sounds/Snorkeling.mp3'
       },
       {
-        word: 'Playing the Piano',
+        word: 'Playing The Piano',
         imageSrc: '/images/Playing_Piano.png',
         soundSrc: '/sounds/Playing_Piano.mp3'
       },
@@ -266,7 +266,7 @@ export const Themes = [
         soundSrc: '/sounds/Doing_Judo.mp3'
       },
       {
-        word: 'Going to the Theater',
+        word: 'Going To The Theater',
         imageSrc: '/images/Go_To_The_Theater.png',
         soundSrc: '/sounds/Go_To_The_Theater.mp3'
       },
