@@ -105,8 +105,8 @@ export const Themes = [
         imageSrc: '/images/Skiing.png',
       },
       {
-        word: 'Golfing',
-        imageSrc: '/images/Golfing.png',
+        word: 'Playing Golf',
+        imageSrc: '/images/Playing_Golf.png',
       },
       {
         word: 'Playing Volleyball',
