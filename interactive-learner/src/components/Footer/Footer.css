@@ -28,11 +28,11 @@
 
 @media (width < 100vh) {
     .logos{
-        height: 7vw;
+        height: 6vw;
     }
 
     #authors{
-        font-size : 2vw;
+        font-size : 1.5vw;
     }
 }
 
@@ -64,10 +64,10 @@
 
 @media (max-height: 599px) {
     .logos{
-        height: 8vw;
+        height: 5vw;
     }
     
     #authors{
-        font-size : 2vw;
+        font-size : 1.2vw;
     }
 }
