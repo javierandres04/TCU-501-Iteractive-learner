@@ -12,6 +12,7 @@ import Word from '../../components/HangmanComponents/Word';
 import Popup from '../../components/HangmanComponents/PopUp';
 import Notification from '../../components/HangmanComponents/Notification';
 import { HeadGames } from '../../components/HeadGames/HeadGames';
+import { ConfettiRain } from '../../components/ConfettiRain/ConfettiRain';
 import Swal from 'sweetalert2';
 
 import { HelpModal } from '../../components/HelpModal/HelpModal';
@@ -42,7 +43,7 @@ export const HangmanGame = () => {
   const [theme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const [words] = useState(Themes.find(element => element.name === theme).words);
   const [selectedWord, setSelectedWord] = useState(selectWord(words));
-
+  const [gameWin, setGameWin] = useState(false);
   const [playable, setPlayable] = useState(true);
   const [correctLetters, setCorrectLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
@@ -163,13 +164,14 @@ export const HangmanGame = () => {
         <div id="bodyContainer">
           <div id="mainBox" >
             <div id="hangameContainer">
-            <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
+              <HeadGames />
+              {gameWin && <ConfettiRain />}
               <div id='centerContainer'>
                 <Figure wrongLetters={wrongLetters} />
                 <WrongLetters wrongLetters={wrongLetters} />
               </div>
               <Word selectedWord={selectedWord} correctLetters={correctLetters} />
-              <Popup correctLetters={correctLetters} wrongLetters={wrongLetters} selectedWord={selectedWord} setPlayable={setPlayable} playable={playable} />
+              <Popup correctLetters={correctLetters} wrongLetters={wrongLetters} selectedWord={selectedWord} setPlayable={setPlayable} playable={playable} setGameWin={setGameWin} />
               <Notification showNotification={showNotification} />
 
               <button id='keyboardButton' onClick={displayKeyboard}>{display}</button>
