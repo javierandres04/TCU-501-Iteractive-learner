@@ -28,7 +28,7 @@ const englishInstructions = [
   'The drawing of the hangman, the section of wrong letters, and the section of the word to guess are shown on the screen',
   `The game's objective is to guess the word before the hangman drawing is complete.`,
   'To play, press a letter.',
-  'If the letter is correct, it is revealed in the word section',
+  'If the letter is correct, it is revealed in the word section.',
   'If the letter is incorrect, it is added to the incorrect words section and a part of the hangman drawing is highlighted.',
   'There is a button to bring up a keyboard that can be played with.'
 ]
