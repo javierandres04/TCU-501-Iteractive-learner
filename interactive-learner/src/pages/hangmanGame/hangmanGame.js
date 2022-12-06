@@ -17,10 +17,10 @@ import Swal from 'sweetalert2';
 import { HelpModal } from '../../components/HelpModal/HelpModal';
 
 const spanishInstructions = [
-  'En pantalla se muestran el dibujo del ahorcado, la seccion de letras erróneas y la sección de la palabra a adivinar',
+  'En pantalla se muestran el dibujo del ahorcado, la sección de letras erróneas y la sección de la palabra a adivinar',
   'El objetivo del juego es adivinar la palabra antes de que se complete el dibujo del ahorcado.',
   'Para jugar se presiona una letra.',
-  'Si la letra es correcta, esta es revelada en la sección de la palabra',
+  'Si la letra es correcta, esta es revelada en la sección de la palabra.',
   'Si la letra es incorrecta esta se agrega a la sección de letras incorrectas y se remarca una parte del dibujo del ahorcado.',
   'Existe un botón para desplegar un teclado con el que se puede jugar.'
 ]
