@@ -12,7 +12,7 @@
 
 #grid-container {
     display: grid;
-    width: 50%;
+    width: 80%;
 }
 
 .grid-item {
@@ -22,3 +22,9 @@
     text-align: center;
     color: black;
 }
+
+@media (width > 100vh) {
+    #grid-container {
+      width: 55%;
+    }
+  }
