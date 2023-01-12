@@ -52,8 +52,6 @@ export const WordSearchGame = () => {
   console.log(soup.getSolution());
   const detectWord = (event) => {
     let text = event.target.textContent;
-    console.log(event.target);
-    // console.log(text.length, event.type, text , text.match(/[a-zA-Z]/));
     if (text.length === 1 && text.match(/[a-zA-Z]/)) {
       if (event.type === 'mousedown') {
         setInitialLetter({ letter: text, fil: parseInt(event.target.dataset.fil), col: parseInt(event.target.dataset.col) });
@@ -69,17 +67,16 @@ export const WordSearchGame = () => {
   }, []);
 
   useEffect(() => {
-    console.log(initialLetter, finalLetter);
     if (finalLetter !== undefined) {
       findWord();
     }
   }, [finalLetter]);
 
   useEffect(() => {
-    if(foundWords.length === selectedWords.length) {
+    if (foundWords.length === selectedWords.length) {
       console.log('Juego terminado');
     }
-  },[foundWords])
+  }, [foundWords])
 
 
   const findWord = () => {
@@ -95,7 +92,6 @@ export const WordSearchGame = () => {
     initialLetter.col--;
     for (let i = 0; i <= wordLenght; i++) {
       buildedWord += board[currentFil][currentCol].content;
-      console.log(currentFil, currentCol)
       if (currentFil > finalLetter.fil) {
         currentFil--;
       } else if (currentFil < finalLetter.fil) {
@@ -108,13 +104,12 @@ export const WordSearchGame = () => {
       }
     }
 
-    console.log(buildedWord, selectedWords);
-
-    if (foundWords.find(word => word.toLowerCase() === buildedWord.toLowerCase()) === undefined) {
+    if (foundWords.find(word => word.toLowerCase() === buildedWord.toLowerCase()) === undefined ||
+      foundWords.find(word => word.toLowerCase() === buildedWord.split("").reverse().join("").toLowerCase()) === undefined) {
       selectedWords.forEach(element => {
-        if (buildedWord.toLowerCase() == element.toLowerCase()) {
-          setFoundWords([...foundWords, buildedWord.toLowerCase()]);
-          console.log(foundWords);
+        if (buildedWord.toLowerCase() == element.toLowerCase() ||
+          buildedWord.split("").reverse().join("").toLowerCase() === element.toLowerCase()) {
+          setFoundWords([...foundWords, element.toLowerCase()]);
         }
       });
     }
