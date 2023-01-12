@@ -12,6 +12,11 @@
 #wordsToFind {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+
+p, strike {
+  margin: 0;
 }
 
 #wordSearchGame {

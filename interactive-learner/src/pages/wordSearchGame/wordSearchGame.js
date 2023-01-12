@@ -44,12 +44,24 @@ export const WordSearchGame = () => {
   const [selectedWords, setSelectedWords] = useState(selectWords(words, numberOfWords));
   const [initialLetter, setInitialLetter] = useState();
   const [finalLetter, setFinalLetter] = useState();
-  console.log(selectedWords);
+  const [foundWords, setFoundWords] = useState([]);
   const [soup, setSoup] = useState(new Soup(selectedWords, tableSize));
   const [board, setBoard] = useState(soup.generate());
   const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
 
-
+  console.log(soup.getSolution());
+  const detectWord = (event) => {
+    let text = event.target.textContent;
+    console.log(event.target);
+    // console.log(text.length, event.type, text , text.match(/[a-zA-Z]/));
+    if (text.length === 1 && text.match(/[a-zA-Z]/)) {
+      if (event.type === 'mousedown') {
+        setInitialLetter({ letter: text, fil: parseInt(event.target.dataset.fil), col: parseInt(event.target.dataset.col) });
+      } else if (event.type === 'mouseup') {
+        setFinalLetter({ letter: text, fil: parseInt(event.target.dataset.fil), col: parseInt(event.target.dataset.col) });
+      }
+    }
+  }
 
   useEffect(() => {
     document.addEventListener('mousedown', detectWord);
@@ -57,25 +69,56 @@ export const WordSearchGame = () => {
   }, []);
 
   useEffect(() => {
+    console.log(initialLetter, finalLetter);
     if (finalLetter !== undefined) {
-      //findWord(); 
+      findWord();
     }
   }, [finalLetter]);
 
-  const detectWord = (event) => {
-    let text = event.target.textContent;
-    if (text.length === 1 && text.match(/[a-z]/)) {
-      if (event.type == 'mousedown') {
-        console.log('mousedown');
-        setInitialLetter({ letter: text, fil: parseInt(event.target.dataset.fil), col: parseInt(event.target.dataset.col) });
-      } else if (event.type == 'mouseup') {
-        console.log('initialLetter: ', initialLetter);
-        console.log("mouseup");
-        setFinalLetter({ letter: text, fil: parseInt(event.target.dataset.fil), col: parseInt(event.target.dataset.col) });
+  useEffect(() => {
+    if(foundWords.length === selectedWords.length) {
+      console.log('Juego terminado');
+    }
+  },[foundWords])
+
+
+  const findWord = () => {
+
+    let filResult = Math.abs(initialLetter.fil - finalLetter.fil);
+    let ColResult = Math.abs(initialLetter.col - finalLetter.col);
+    let wordLenght = (filResult >= ColResult ? filResult : ColResult);
+
+    let buildedWord = '';
+    let currentFil = initialLetter.fil;
+    let currentCol = initialLetter.col;
+
+    initialLetter.col--;
+    for (let i = 0; i <= wordLenght; i++) {
+      buildedWord += board[currentFil][currentCol].content;
+      console.log(currentFil, currentCol)
+      if (currentFil > finalLetter.fil) {
+        currentFil--;
+      } else if (currentFil < finalLetter.fil) {
+        currentFil++;
+      }
+      if (currentCol > finalLetter.col) {
+        currentCol--;
+      } else if (currentCol < finalLetter.col) {
+        currentCol++;
       }
     }
-  }
 
+    console.log(buildedWord, selectedWords);
+
+    if (foundWords.find(word => word.toLowerCase() === buildedWord.toLowerCase()) === undefined) {
+      selectedWords.forEach(element => {
+        if (buildedWord.toLowerCase() == element.toLowerCase()) {
+          setFoundWords([...foundWords, buildedWord.toLowerCase()]);
+          console.log(foundWords);
+        }
+      });
+    }
+  }
 
 
   return (
@@ -104,7 +147,8 @@ export const WordSearchGame = () => {
               <div id='wordsToFind'>
                 <h3> Words to Find</h3>
                 {selectedWords.map((word, id) =>
-                  <p id={id}> {word} </p>
+                  foundWords.find(element => element.toLowerCase() === word.toLowerCase()) ? <strike key={id}> {word} </strike> :
+                    <p key={id}> {word} </p>
                 )}
               </div>
             </div>
