@@ -115,7 +115,9 @@
 
 .keyboard__row {
   display: inline-block;
-  height: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 0.2em;
 }
 
@@ -233,4 +235,10 @@
 
 .keyboard > .keyboard__row {
   text-align: center;
+}
+
+@media (width > 100vh) {
+  #keyboard {
+    width: 50%;
+  }
 }

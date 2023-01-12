@@ -190,9 +190,6 @@ export const HangmanGame = () => {
                   <div className="key--letter" data-char="I">I</div>
                   <div className="key--letter" data-char="O">O</div>
                   <div className="key--letter" data-char="P">P</div>
-
-                </div>
-                <div className="keyboard__row">
                   <div className="key--letter" data-char="A">A</div>
                   <div className="key--letter" data-char="S">S</div>
                   <div className="key--letter" data-char="D">D</div>
@@ -202,8 +199,6 @@ export const HangmanGame = () => {
                   <div className="key--letter" data-char="J">J</div>
                   <div className="key--letter" data-char="K">K</div>
                   <div className="key--letter" data-char="L">L</div>
-                </div>
-                <div className="keyboard__row">
                   <div className="key--letter" data-char="Z">Z</div>
                   <div className="key--letter" data-char="X">X</div>
                   <div className="key--letter" data-char="C">C</div>
