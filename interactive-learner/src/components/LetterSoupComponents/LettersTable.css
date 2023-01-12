@@ -12,15 +12,22 @@
 
 #grid-container {
     display: grid;
-    width: 80%;
+    width: 95%;
 }
 
 .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: var(--pot-pourri);
+    border: 0.1px solid rgb(55, 54, 54);
     width: 100%;
     text-align: center;
     color: black;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.grid-item-selected {
+  background-color: var(--keppel);
+  color: white;
 }
 
 @media (width > 100vh) {

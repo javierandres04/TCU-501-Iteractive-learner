@@ -62,8 +62,8 @@ export const WordSearchGame = () => {
   }
 
   useEffect(() => {
-    document.addEventListener('mousedown', detectWord);
-    document.addEventListener('mouseup', detectWord);
+    document.getElementById('grid-container').addEventListener('mousedown', detectWord);
+    document.getElementById('grid-container').addEventListener('mouseup', detectWord);
   }, []);
 
   useEffect(() => {
