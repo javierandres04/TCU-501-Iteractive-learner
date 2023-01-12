@@ -164,7 +164,9 @@ export const HangmanGame = () => {
         <div id="bodyContainer">
           <div id="mainBox" >
             <div id="hangameContainer">
-              <HeadGames />
+              <HeadGames
+                setIsHelpModalOpen={setIsHelpModalOpen}
+              />
               {gameWin && <ConfettiRain />}
               <div id='centerContainer'>
                 <Figure wrongLetters={wrongLetters} />
