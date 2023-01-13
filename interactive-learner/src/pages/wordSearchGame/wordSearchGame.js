@@ -54,7 +54,7 @@ export const WordSearchGame = () => {
   const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
 
   // console.log(selectedWords);
-  console.log(soup.getSolution());
+  // console.log(soup.getSolution());
 
   const detectWord = (event) => {
     let text = event.target.textContent;
