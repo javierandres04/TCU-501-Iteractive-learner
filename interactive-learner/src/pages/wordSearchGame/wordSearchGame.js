@@ -150,14 +150,13 @@ export const WordSearchGame = () => {
         englishInstructions={englishInstructions}
         spanishInstructions={spanishInstructions}
       />
-      <Header />
+      <Header title={'WordSearch Game'} />
       <div id="bodyContainer">
         <div id="mainBox" >
           <div id='memoryGameContainer'>
             <HeadGames
               setIsHelpModalOpen={setIsHelpModalOpen}
             />
-            <h1>Word Search Game</h1>
             <div id='wordSearchGame'>
               <LettersTable tamTable={tableSize} table={board} />
               <div id='wordsToFind'>
