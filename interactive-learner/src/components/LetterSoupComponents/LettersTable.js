@@ -21,7 +21,7 @@ export const LettersTable = ({ table, tamTable }) => {
               <div key={i}>
                 {row.map((letter, j) => {
                   return (
-                    <div key={j} className="grid-item" data-fil={i} data-col={j}>{letter.content}</div>
+                    <div key={j} id={`${i}-${j}`} className="grid-item" data-fil={i} data-col={j}>{letter.content}</div>
                   )
                 })}
               </div>

@@ -1,28 +1,28 @@
 #soupContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    -webkit-user-select: none;
-    /* Safari */
-    -ms-user-select: none;
-    /* IE 10 and IE 11 */
-    user-select: none;
-    /* Standard syntax */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
 }
 
 #grid-container {
-    display: grid;
-    width: 95%;
+  display: grid;
+  width: 95%;
 }
 
 .grid-item {
-    background-color: var(--pot-pourri);
-    border: 0.1px solid rgb(55, 54, 54);
-    width: 100%;
-    text-align: center;
-    color: black;
-    font-weight: bold;
-    font-size: 1.3rem;
+  background-color: var(--pot-pourri);
+  border: 0.1px solid rgb(55, 54, 54);
+  width: 100%;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: 1.3rem;
 }
 
 .grid-item-selected {
@@ -30,8 +30,13 @@
   color: white;
 }
 
+.grid-item-wrong {
+  background-color: red;
+  color: white;
+}
+
 @media (width > 100vh) {
-    #grid-container {
-      width: 55%;
-    }
+  #grid-container {
+    width: 55%;
   }
+}

@@ -16,8 +16,8 @@ import { HelpModal } from '../../components/HelpModal/HelpModal';
 const englishInstructions = [''];
 const spanishInstructions = [''];
 
-const numberOfWords = 5;
-const tableSize = 10;
+const numberOfWords = 6;
+const tableSize = 15;
 
 const selectWords = (words, cantWords) => {
   let options = [];
@@ -37,6 +37,10 @@ const selectWords = (words, cantWords) => {
   return selectedWords;
 }
 
+const playSound = (soundName) => {
+  let sound = new Audio(`./sounds/${soundName}.m4a`);
+  sound.play();
+}
 
 export const WordSearchGame = () => {
   const [theme, setTheme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
@@ -49,7 +53,9 @@ export const WordSearchGame = () => {
   const [board, setBoard] = useState(soup.generate());
   const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
 
+  // console.log(selectedWords);
   console.log(soup.getSolution());
+
   const detectWord = (event) => {
     let text = event.target.textContent;
     if (text.length === 1 && text.match(/[a-zA-Z]/)) {
@@ -74,7 +80,11 @@ export const WordSearchGame = () => {
 
   useEffect(() => {
     if (foundWords.length === selectedWords.length) {
-      console.log('Juego terminado');
+      Swal.fire({
+        title: 'Congratulations, you win!!!',
+        heightAuto: false,
+        confirmButtonColor: '#44a49c'
+      })
     }
   }, [foundWords])
 
@@ -84,7 +94,7 @@ export const WordSearchGame = () => {
     let filResult = Math.abs(initialLetter.fil - finalLetter.fil);
     let ColResult = Math.abs(initialLetter.col - finalLetter.col);
     let wordLenght = (filResult >= ColResult ? filResult : ColResult);
-
+    let lettersCoordenates = [];
     let buildedWord = '';
     let currentFil = initialLetter.fil;
     let currentCol = initialLetter.col;
@@ -92,6 +102,7 @@ export const WordSearchGame = () => {
     initialLetter.col--;
     for (let i = 0; i <= wordLenght; i++) {
       buildedWord += board[currentFil][currentCol].content;
+      lettersCoordenates.push({ r: currentFil, c: currentCol });
       if (currentFil > finalLetter.fil) {
         currentFil--;
       } else if (currentFil < finalLetter.fil) {
@@ -107,14 +118,24 @@ export const WordSearchGame = () => {
     if (foundWords.find(word => word.toLowerCase() === buildedWord.toLowerCase()) === undefined ||
       foundWords.find(word => word.toLowerCase() === buildedWord.split("").reverse().join("").toLowerCase()) === undefined) {
       selectedWords.forEach(element => {
-        if (buildedWord.toLowerCase() == element.toLowerCase() ||
+        if (buildedWord.toLowerCase() === element.toLowerCase() ||
           buildedWord.split("").reverse().join("").toLowerCase() === element.toLowerCase()) {
           setFoundWords([...foundWords, element.toLowerCase()]);
+          lettersCoordenates.map(element => document.getElementById(`${element.r}-${element.c}`).classList.add('grid-item-selected'));
+          Swal.fire({
+            title: 'Good Work! 😃',
+            text: `...this word is: ${element}`,
+            timer: 2100,
+            position: 'center',
+            showConfirmButton: false,
+            heightAuto: false
+          })
+          playSound(element);
         }
       });
     }
   }
-
+  const refresh = () => window.location.reload(true)
 
   return (
     <motion.div
@@ -138,7 +159,7 @@ export const WordSearchGame = () => {
             />
             <h1>Word Search Game</h1>
             <div id='wordSearchGame'>
-              <LettersTable tamTable={10} table={board} />
+              <LettersTable tamTable={tableSize} table={board} />
               <div id='wordsToFind'>
                 <h3> Words to Find</h3>
                 {selectedWords.map((word, id) =>
@@ -147,7 +168,8 @@ export const WordSearchGame = () => {
                 )}
               </div>
             </div>
-
+            <br/>
+            <button onClick={refresh}>New Game</button>
           </div>
         </div>
       </div>
