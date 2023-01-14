@@ -52,6 +52,7 @@ export const WordSearchGame = () => {
   const [soup, setSoup] = useState(new Soup(selectedWords, tableSize));
   const [board, setBoard] = useState(soup.generate());
   const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
+  const [wordIsFound, setWordIsFound] = useState(false);
 
   // console.log(selectedWords);
   // console.log(soup.getSolution());
@@ -115,6 +116,7 @@ export const WordSearchGame = () => {
       }
     }
 
+    
     if (foundWords.find(word => word.toLowerCase() === buildedWord.toLowerCase()) === undefined ||
       foundWords.find(word => word.toLowerCase() === buildedWord.split("").reverse().join("").toLowerCase()) === undefined) {
       selectedWords.forEach(element => {
@@ -122,15 +124,16 @@ export const WordSearchGame = () => {
           buildedWord.split("").reverse().join("").toLowerCase() === element.toLowerCase()) {
           setFoundWords([...foundWords, element.toLowerCase()]);
           lettersCoordenates.map(element => document.getElementById(`${element.r}-${element.c}`).classList.add('grid-item-selected'));
-          Swal.fire({
-            title: 'Good Work! 😃',
-            text: `...this word is: ${element}`,
-            timer: 2100,
-            position: 'center',
-            showConfirmButton: false,
-            heightAuto: false
-          })
           playSound(element);
+          setWordIsFound(true);
+        }
+        if (wordIsFound === false) {
+          lettersCoordenates.map(element => document.getElementById(`${element.r}-${element.c}`).classList.add('grid-item-wrong'));
+          setTimeout(() => {
+            lettersCoordenates.map(element => document.getElementById(`${element.r}-${element.c}`).classList.remove('grid-item-wrong'));
+            setWordIsFound(false);
+          }, 1200);
+          
         }
       });
     }
