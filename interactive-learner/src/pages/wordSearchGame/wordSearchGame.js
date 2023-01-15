@@ -17,8 +17,9 @@ const englishInstructions = [''];
 const spanishInstructions = [''];
 
 const numberOfWords = 6;
-const tableSize = 15;
+const tableSize = 12; // Tentativamente en el tamaño va ser 12
 
+// Agregar filtro para evitar palabras mayores a 12 palabras
 const selectWords = (words, cantWords) => {
   let options = [];
   let selectedWords = [];
