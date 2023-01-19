@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux';
 import { LettersTable } from '../../components/LetterSoupComponents/LettersTable';
 import { HeadGames } from '../../components/HeadGames/HeadGames';
 import { HelpModal } from '../../components/HelpModal/HelpModal';
+import { Timer } from '../../components/Timer/Timer';
 
 
 const englishInstructions = [''];
@@ -54,6 +55,9 @@ export const WordSearchGame = () => {
   const [board, setBoard] = useState(soup.generate());
   const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
   const [wordIsFound, setWordIsFound] = useState(false);
+  const [seconds, setSeconds] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [gameIsOver, setGameIsOver] = useState(false);
 
   // console.log(selectedWords);
   // console.log(soup.getSolution());
@@ -83,10 +87,12 @@ export const WordSearchGame = () => {
   useEffect(() => {
     if (foundWords.length === selectedWords.length) {
       Swal.fire({
-        title: 'Congratulations, you win!!!',
+        title: 'Congratulations!!!',
+        text: `You found all the words in ${minutes} minutes and ${seconds} seconds`,
         heightAuto: false,
         confirmButtonColor: '#44a49c'
       })
+      setGameIsOver(true);
     }
   }, [foundWords])
 
@@ -172,6 +178,15 @@ export const WordSearchGame = () => {
                 )}
               </div>
             </div>
+            <br/>
+            <h5> Time </h5>
+            <Timer 
+              stopTimer={gameIsOver}
+              seconds={seconds}
+              setSeconds={setSeconds}
+              minutes={minutes}
+              setMinutes={setMinutes}
+            />
             <br/>
             <button onClick={refresh}>New Game</button>
           </div>
