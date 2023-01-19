@@ -23,9 +23,9 @@ export const HeadGames = ({ setIsHelpModalOpen }) => {
   return (
     <div id='gameHeader'>
       <button onClick={handleBackClick} id='game-button'> {<BiArrowBack />} </button>
-      <h5 id='selectedTheme'>
+      <h4 id='selectedTheme'>
         <div>{selectedTheme}</div>
-      </h5>
+      </h4>
       <button onClick={handleHelpClick} id='game-button'> {<IoMdHelp/>} </button>
     </div>
 
