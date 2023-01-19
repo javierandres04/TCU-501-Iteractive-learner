@@ -161,6 +161,7 @@ export const WordSearchGame = () => {
             <HeadGames
               setIsHelpModalOpen={setIsHelpModalOpen}
             />
+            <br/>
             <div id='wordSearchGame'>
               <LettersTable tamTable={tableSize} table={board} />
               <div id='wordsToFind'>
