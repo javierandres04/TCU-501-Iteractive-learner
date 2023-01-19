@@ -1,6 +1,6 @@
 export const Games = [
   "Hangman Game",
-  // "Letter Soup Game",
+  "Wordsearch Game",
   // "Press The Figure",
   "Memory Game",
 ]

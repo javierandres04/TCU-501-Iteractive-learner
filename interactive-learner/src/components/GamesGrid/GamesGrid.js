@@ -31,6 +31,7 @@ export const GamesGrid = ({ grade, unit, theme }) => {
       {Games.map((element) => (
         <div onClick={() => handleSelectedGame(element)} key={element} id='games-container'>
           <label id='game-name'> {element} </label>
+          {console.log(element)}
           <img id='game-logo' src={`./images/${element.replace(' ', '_')}_Logo.png`}></img>
         </div>
       ))}
