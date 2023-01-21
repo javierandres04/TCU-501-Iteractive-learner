@@ -65,10 +65,12 @@ export const WordSearchGame = () => {
   const detectWord = (event) => {
     let text = event.target.textContent;
     if (text.length === 1 && text.match(/[a-zA-Z]/)) {
-      if (event.type === 'mousedown') {
+      if (event.type === 'mousedown' || event.type == 'touchstart') {
         setInitialLetter({ letter: text, fil: parseInt(event.target.dataset.fil), col: parseInt(event.target.dataset.col) });
-      } else if (event.type === 'mouseup') {
+      } else if (event.type === 'mouseup' || event.type == 'touchend') {
         setFinalLetter({ letter: text, fil: parseInt(event.target.dataset.fil), col: parseInt(event.target.dataset.col) });
+      } else if (event.type == 'touchmove') {
+        event.preventDefault();
       }
     }
   }
@@ -76,6 +78,9 @@ export const WordSearchGame = () => {
   useEffect(() => {
     document.getElementById('grid-container').addEventListener('mousedown', detectWord);
     document.getElementById('grid-container').addEventListener('mouseup', detectWord);
+    document.getElementById('grid-container').addEventListener('touchstart', detectWord);
+    document.getElementById('grid-container').addEventListener('touchend', detectWord);
+    document.getElementById('grid-container').addEventListener('touchmove', detectWord);
   }, []);
 
   useEffect(() => {
