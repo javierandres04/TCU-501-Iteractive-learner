@@ -73,7 +73,7 @@ export const WordSearchGame = () => {
         const touch = [...event.changedTouches][0]
         element = document.elementFromPoint(touch.pageX, touch.pageY);
         setFinalLetter({ letter: element.textContent, fil: parseInt(element.dataset.fil), col: parseInt(element.dataset.col) });
-        
+
       }
     }
   }
@@ -137,15 +137,17 @@ export const WordSearchGame = () => {
       selectedWords.forEach(element => {
         if (buildedWord.toLowerCase() === element.toLowerCase() ||
           buildedWord.split("").reverse().join("").toLowerCase() === element.toLowerCase()) {
-          setFoundWords([...foundWords, element.toLowerCase()]);
-          lettersCoordenates.map(element => document.getElementById(`${element.r}-${element.c}`).classList.add('grid-item-selected'));
-          playSound(element);
+          if ((foundWords.find(word => word.toLowerCase() === element.toLowerCase())) === undefined) {
+            setFoundWords([...foundWords, element.toLowerCase()]);
+            lettersCoordenates.map(element => document.getElementById(`${element.r}-${element.c}`).classList.add('grid-item-found'));
+          }
           setWordIsFound(true);
+          playSound(element);
         }
         if (wordIsFound === false) {
-          lettersCoordenates.map(element => document.getElementById(`${element.r}-${element.c}`).classList.add('grid-item-wrong'));
+          lettersCoordenates.map(element => document.getElementById(`${element.r}-${element.c}`).classList.add('grid-item-selected'));
           setTimeout(() => {
-            lettersCoordenates.map(element => document.getElementById(`${element.r}-${element.c}`).classList.remove('grid-item-wrong'));
+            lettersCoordenates.map(element => document.getElementById(`${element.r}-${element.c}`).classList.remove('grid-item-selected'));
             setWordIsFound(false);
           }, 1200);
 
