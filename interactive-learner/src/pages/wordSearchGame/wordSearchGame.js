@@ -59,18 +59,21 @@ export const WordSearchGame = () => {
   const [minutes, setMinutes] = useState(0);
   const [gameIsOver, setGameIsOver] = useState(false);
 
-  // console.log(selectedWords);
-  // console.log(soup.getSolution());
-
   const detectWord = (event) => {
     let text = event.target.textContent;
     if (text.length === 1 && text.match(/[a-zA-Z]/)) {
       if (event.type === 'mousedown' || event.type == 'touchstart') {
         setInitialLetter({ letter: text, fil: parseInt(event.target.dataset.fil), col: parseInt(event.target.dataset.col) });
-      } else if (event.type === 'mouseup' || event.type == 'touchend') {
+      } else if (event.type === 'mouseup') {
         setFinalLetter({ letter: text, fil: parseInt(event.target.dataset.fil), col: parseInt(event.target.dataset.col) });
-      } else if (event.type == 'touchmove') {
+      } else if (event.type === 'touchmove') {
         event.preventDefault();
+      } else if (event.type === 'touchend') {
+        let element;
+        const touch = [...event.changedTouches][0]
+        element = document.elementFromPoint(touch.pageX, touch.pageY);
+        setFinalLetter({ letter: element.textContent, fil: parseInt(element.dataset.fil), col: parseInt(element.dataset.col) });
+        
       }
     }
   }
@@ -128,7 +131,7 @@ export const WordSearchGame = () => {
       }
     }
 
-    
+
     if (foundWords.find(word => word.toLowerCase() === buildedWord.toLowerCase()) === undefined ||
       foundWords.find(word => word.toLowerCase() === buildedWord.split("").reverse().join("").toLowerCase()) === undefined) {
       selectedWords.forEach(element => {
@@ -145,7 +148,7 @@ export const WordSearchGame = () => {
             lettersCoordenates.map(element => document.getElementById(`${element.r}-${element.c}`).classList.remove('grid-item-wrong'));
             setWordIsFound(false);
           }, 1200);
-          
+
         }
       });
     }
@@ -165,14 +168,14 @@ export const WordSearchGame = () => {
         englishInstructions={englishInstructions}
         spanishInstructions={spanishInstructions}
       />
-      <Header title={'WordSearch Game'} />
+      <Header title={'WordSearch'} />
       <div id="bodyContainer">
         <div id="mainBox" >
           <div id='memoryGameContainer'>
             <HeadGames
               setIsHelpModalOpen={setIsHelpModalOpen}
             />
-            <br/>
+            <br />
             <div id='wordSearchGame'>
               <LettersTable tamTable={tableSize} table={board} />
               <div id='wordsToFind'>
@@ -183,16 +186,16 @@ export const WordSearchGame = () => {
                 )}
               </div>
             </div>
-            <br/>
+            <br />
             <h5> Time </h5>
-            <Timer 
+            <Timer
               stopTimer={gameIsOver}
               seconds={seconds}
               setSeconds={setSeconds}
               minutes={minutes}
               setMinutes={setMinutes}
             />
-            <br/>
+            <br />
             <button onClick={refresh}>New Game</button>
           </div>
         </div>
