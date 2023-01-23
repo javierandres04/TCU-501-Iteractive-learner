@@ -25,12 +25,12 @@
   font-size: 1.3rem;
 }
 
-.grid-item-selected {
+.grid-item-found {
   background-color: var(--keppel);
   color: white;
 }
 
-.grid-item-wrong {
+.grid-item-selected {
   background-color: rgb(237, 145, 6);
   color: white;
 }
