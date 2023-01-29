@@ -14,8 +14,24 @@ import { HelpModal } from '../../components/HelpModal/HelpModal';
 import { Timer } from '../../components/Timer/Timer';
 
 
-const englishInstructions = [''];
-const spanishInstructions = [''];
+const englishInstructions = [
+  'There is a board on the screen filled with different letters.',
+  'The objective is to find the words in the list at the right side of the board.',
+  'To select a word, click and hold while scrolling through the entire word from beginning to end..',
+  'If a word from the list is correctly selected on the board, it will be highlighted and crossed out from the word list.',
+  'If the selected letters do not form a word in the list, the highlighted letters fade out and no word in the list is crossed out.',
+  'Below the board there is a clock that shows how much time has passed since the game started.',
+  'The game is completed by finding all the words on the list.'
+  ];
+const spanishInstructions = [
+  'En la pantalla se muestra un tablero lleno de diferentes letras.',
+  'El objetivo es encontrar las palabras que se muestran a la derecha del tablero.',
+  'Para seleccionar una palabra se debe hacer click y mantener presionado mientras que se recorre toda la palabra de principio a fin.',
+  'Si una palabra de la lista es seleccionada correctamente en el tablero, esta se resaltará y quedará tachada de la lista de palabras.',
+  'Si las letras seleccinadas no forman una palabra de la lista, se desvanecen las letras resaltadas y no se tacha ninguna palabra de la lista',
+  'Debajo del tablero esta un reloj que marca cuanto tiempo ha pasado desde que empezó la partida',
+  'El juego se completa al encontrar todas las palabras de la lista.'
+  ];
 
 const numberOfWords = 6;
 const tableSize = 12; // Tentativamente en el tamaño va ser 12
