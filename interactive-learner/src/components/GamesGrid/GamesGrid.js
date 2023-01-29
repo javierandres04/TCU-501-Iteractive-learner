@@ -18,7 +18,7 @@ export const GamesGrid = ({ grade, unit, theme }) => {
           icon: 'error',
           title: 'Oops!',
           text: `Please select a theme for the game`,
-          timer: 2100,
+          timer: 5000,
           showConfirmButton: false,
           heightAuto: false,
         })
