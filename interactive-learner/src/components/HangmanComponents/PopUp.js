@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Swal from 'sweetalert2';
 
 
-const Popup = ({ correctLetters, wrongLetters, selectedWord, setPlayable, playable, setGameWin }) => {
+const Popup = ({ correctLetters, wrongLetters, selectedWord, setPlayable, playable, setGameWin , minutes, seconds}) => {
   const playSound = (soundName) => {
     let sound = new Audio(`./sounds/${soundName}.m4a`);
     sound.play();
@@ -26,11 +26,9 @@ const Popup = ({ correctLetters, wrongLetters, selectedWord, setPlayable, playab
       setGameWin(true);
       Swal.fire({
         title: 'Congratulations! You won! 😃',
-        text: `...the word was: ${selectedWord}`,
+        text: `You found the word ''${selectedWord}'' in ${minutes} minutes and ${seconds} seconds`,
         heightAuto: false,
         confirmButtonColor: '#44a49c'
-      }).then(()=>{
-        setGameWin(false);
       })
       playSound(selectedWord);
       play = false;

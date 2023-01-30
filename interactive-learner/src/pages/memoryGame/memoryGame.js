@@ -1,9 +1,7 @@
+import Swal from 'sweetalert2';
 import React from 'react';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
-import Swal from 'sweetalert2';
-import '../../App.css';
-import './memoryGame.css';
 import { useState, useEffect } from 'react';
 import { MemoryCard } from '../../components/MemoryCard/MemoryCard';
 import { Themes } from '../../data/themes';
@@ -12,6 +10,9 @@ import { useSelector } from 'react-redux';
 import { HeadGames } from '../../components/HeadGames/HeadGames';
 import { HelpModal } from '../../components/HelpModal/HelpModal';
 import { ConfettiRain } from '../../components/ConfettiRain/ConfettiRain';
+import './memoryGame.css';
+import '../../App.css';
+
 
 const spanishInstructions = [
   'En pantalla se muestran 12 cartas volteadas.',
@@ -56,6 +57,8 @@ export const MemoryGame = () => {
   const [lastWordFound, setLastWordFound] = useState('');
   const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
   const [gameWin, setGameWin] = useState(false);
+  const [seconds, setSeconds] = useState(0);
+  const [minutes, setMinutes] = useState(0);
 
   let cardImgs = [
     { "word": "", "src": "", "Matched": false },
@@ -148,15 +151,15 @@ export const MemoryGame = () => {
     if (allCardsMatched() && turns > 0) {
       setGameWin(true);
       Swal.fire({
-        title: 'Congratulations, you win!!!',
+        title: 'Congratulations! You won! 😃',
         text: 'You made ' + turns + ' attempts.',
         heightAuto: false,
         confirmButtonColor: '#44a49c'
-      }).then(() => {
-        setGameWin(false);
       })
     }
   }, [cards])
+
+  const refresh = () => window.location.reload(true);
 
   return (
     <motion.div
@@ -193,7 +196,7 @@ export const MemoryGame = () => {
               ))
               }
             </div>
-            <button onClick={shuffleCards}>New Game</button>
+            <button onClick={refresh}>New Game</button>
           </div>
         </div>
       </div>

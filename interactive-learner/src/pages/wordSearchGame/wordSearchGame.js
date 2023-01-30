@@ -5,13 +5,14 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import { Themes } from '../../data/themes';
-import '../../App.css';
-import './wordSearchGame.css';
 import { useSelector } from 'react-redux';
 import { LettersTable } from '../../components/LetterSoupComponents/LettersTable';
 import { HeadGames } from '../../components/HeadGames/HeadGames';
 import { HelpModal } from '../../components/HelpModal/HelpModal';
 import { Timer } from '../../components/Timer/Timer';
+import { ConfettiRain } from '../../components/ConfettiRain/ConfettiRain';
+import '../../App.css';
+import './wordSearchGame.css';
 
 
 const englishInstructions = [
@@ -111,7 +112,7 @@ export const WordSearchGame = () => {
   useEffect(() => {
     if (foundWords.length === selectedWords.length) {
       Swal.fire({
-        title: 'Congratulations!!!',
+        title: 'Congratulations! 😃',
         text: `You found all the words in ${minutes} minutes and ${seconds} seconds`,
         heightAuto: false,
         confirmButtonColor: '#44a49c'
@@ -171,7 +172,7 @@ export const WordSearchGame = () => {
       });
     }
   }
-  const refresh = () => window.location.reload(true)
+  const refresh = () => window.location.reload(true);
 
   return (
     <motion.div
@@ -186,6 +187,7 @@ export const WordSearchGame = () => {
         englishInstructions={englishInstructions}
         spanishInstructions={spanishInstructions}
       />
+      {gameIsOver && <ConfettiRain />}
       <Header title={'WordSearch'} />
       <div id="bodyContainer">
         <div id="mainBox" >

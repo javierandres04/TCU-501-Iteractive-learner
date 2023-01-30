@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
 import { motion } from 'framer-motion';
-import '../../App.css';
-import './hangmanGame.css';
 import { Themes } from '../../data/themes';
 import { useSelector } from 'react-redux';
-import Figure from '../../components/HangmanComponents/Figure';
+import { HeadGames } from '../../components/HeadGames/HeadGames';
+import { ConfettiRain } from '../../components/ConfettiRain/ConfettiRain';
+import { Timer } from '../../components/Timer/Timer';
 import WrongLetters from '../../components/HangmanComponents/WrongLetters';
 import Word from '../../components/HangmanComponents/Word';
 import Popup from '../../components/HangmanComponents/PopUp';
 import Notification from '../../components/HangmanComponents/Notification';
-import { HeadGames } from '../../components/HeadGames/HeadGames';
-import { ConfettiRain } from '../../components/ConfettiRain/ConfettiRain';
+import Figure from '../../components/HangmanComponents/Figure';
 import Swal from 'sweetalert2';
+import './hangmanGame.css';
+import '../../App.css';
 
 import { HelpModal } from '../../components/HelpModal/HelpModal';
 
@@ -51,6 +52,8 @@ export const HangmanGame = () => {
   const [display, setDisplay] = useState('Display Keyboard');
   const [virtualLetter, setVirtualLetter] = useState('');
   const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
+  const [seconds, setSeconds] = useState(0);
+  const [minutes, setMinutes] = useState(0);
 
   useEffect(() => {
     setCorrectLetters(currentLetters => [...currentLetters, ' ']);
@@ -112,11 +115,9 @@ export const HangmanGame = () => {
     // Empty Arrays
     setCorrectLetters([]);
     setCorrectLetters(currentLetters => [...currentLetters, ' ']);
-
     setWrongLetters([]);
-
     setPlayable(true);
-
+    setGameWin(false);
     setSelectedWord(selectWord(words));
 
   }
@@ -167,13 +168,35 @@ export const HangmanGame = () => {
               <HeadGames
                 setIsHelpModalOpen={setIsHelpModalOpen}
               />
+              <br />
+              <h5> Time </h5>
+              <Timer
+                stopTimer={gameWin}
+                seconds={seconds}
+                setSeconds={setSeconds}
+                minutes={minutes}
+                setMinutes={setMinutes}
+              />
+              <br />
               {gameWin && <ConfettiRain />}
               <div id='centerContainer'>
                 <Figure wrongLetters={wrongLetters} />
                 <WrongLetters wrongLetters={wrongLetters} />
               </div>
-              <Word selectedWord={selectedWord} correctLetters={correctLetters} />
-              <Popup correctLetters={correctLetters} wrongLetters={wrongLetters} selectedWord={selectedWord} setPlayable={setPlayable} playable={playable} setGameWin={setGameWin} />
+              <Word
+                selectedWord={selectedWord}
+                correctLetters={correctLetters}
+              />
+              <Popup
+                correctLetters={correctLetters}
+                wrongLetters={wrongLetters}
+                selectedWord={selectedWord}
+                setPlayable={setPlayable}
+                playable={playable}
+                setGameWin={setGameWin}
+                minutes={minutes}
+                seconds={seconds}
+              />
               <Notification showNotification={showNotification} />
 
               <button id='keyboardButton' onClick={displayKeyboard}>{display}</button>
@@ -208,7 +231,6 @@ export const HangmanGame = () => {
                   <div className="key--letter" data-char="M">M</div>
                 </div>
               </div>
-
               <button onClick={playAgain}>New Game</button>
 
             </div>
