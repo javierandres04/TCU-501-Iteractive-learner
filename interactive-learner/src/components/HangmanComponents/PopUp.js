@@ -13,7 +13,7 @@ const Popup = ({ correctLetters, wrongLetters, selectedWord, setPlayable, playab
     let status = 'win'
     
     // Check for win
-    selectedWord.split('').forEach(letter => {
+    selectedWord.toLowerCase().split('').forEach(letter => {
       if (!correctLetters.includes(letter)) {
         status = '';
       }

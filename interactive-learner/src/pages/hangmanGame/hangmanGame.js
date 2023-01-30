@@ -36,7 +36,7 @@ const englishInstructions = [
 ]
 
 const selectWord = (words) => {
-  return words[Math.floor(Math.random() * words.length)].word.toLowerCase();
+  return words[Math.floor(Math.random() * words.length)].word;
 }
 
 export const HangmanGame = () => {
@@ -65,7 +65,7 @@ export const HangmanGame = () => {
       const { key, keyCode } = event;
       if (playable && keyCode >= 65 && keyCode <= 90) {
         const letter = key.toLowerCase();
-        if (selectedWord.includes(letter)) {
+        if (selectedWord.toLowerCase().includes(letter)) {
           if (!correctLetters.includes(letter)) {
             setCorrectLetters(currentLetters => [...currentLetters, letter]);
           } else {
@@ -95,7 +95,7 @@ export const HangmanGame = () => {
 
   useEffect(() => {
 
-    if (selectedWord.includes(virtualLetter)) {
+    if (selectedWord.toLowerCase().includes(virtualLetter)) {
       if (!correctLetters.includes(virtualLetter)) {
         setCorrectLetters(currentLetters => [...currentLetters, virtualLetter]);
       } else {
@@ -176,7 +176,7 @@ export const HangmanGame = () => {
                 <WrongLetters wrongLetters={wrongLetters} />
               </div>
               <Word
-                selectedWord={selectedWord}
+                selectedWord={selectedWord.toLowerCase()}
                 correctLetters={correctLetters}
               />
               <Popup
