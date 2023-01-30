@@ -111,18 +111,6 @@ export const HangmanGame = () => {
 
   }, [virtualLetter]);
 
-  const playAgain = () => {
-    // Empty Arrays
-    setCorrectLetters([]);
-    setCorrectLetters(currentLetters => [...currentLetters, ' ']);
-    setWrongLetters([]);
-    setPlayable(true);
-    setGameWin(false);
-    setSelectedWord(selectWord(words));
-    setMinutes(0);
-    setSeconds(0);
-  }
-
   const show = (setter) => {
     setter(true);
     setTimeout(() => {
@@ -147,6 +135,9 @@ export const HangmanGame = () => {
     let ascii = caracter.toUpperCase().charCodeAt(0);
     return ascii > 64 && ascii < 91;
   };
+
+  const refresh = () => window.location.reload(true);
+
 
   return (
     <motion.div
@@ -232,7 +223,7 @@ export const HangmanGame = () => {
                   <div className="key--letter" data-char="M">M</div>
                 </div>
               </div>
-              <button onClick={playAgain}>New Game</button>
+              <button onClick={refresh}>New Game</button>
 
             </div>
           </div>
