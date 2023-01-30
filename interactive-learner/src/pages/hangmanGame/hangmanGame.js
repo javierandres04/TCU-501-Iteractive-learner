@@ -119,7 +119,8 @@ export const HangmanGame = () => {
     setPlayable(true);
     setGameWin(false);
     setSelectedWord(selectWord(words));
-
+    setMinutes(0);
+    setSeconds(0);
   }
 
   const show = (setter) => {
