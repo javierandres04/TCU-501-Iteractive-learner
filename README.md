@@ -13,16 +13,24 @@ Proyecto realizado con REACT JS.
 ### **Link de la aplicación en producción**
 https://tcu-501-iteractive-learner-jd1o.vercel.app/
 
-### **Librerías externas utilizadas**: 
-* React Bootstrap
-* sweetalert2
-* framer-motion
-* react
-* react-icons
-* react-redux
-* react-router-dom
-* redux-persist
-* react-modal
+### **Librerías utilizadas**: 
+* bootstrap: 5.2.1
+* framer-motion: 7.6.4
+* letters-soup: 1.0.5
+* react: 18.2.0
+* react-bootstrap: 2.5.0
+* react-confetti: 6.1.0
+* react-dom: 18.2.0
+* react-icons: 4.6.0
+* react-modal: 3.16.1
+* react-redux: 8.0.4
+* react-router-dom: 6.3.0
+* react-scripts: 5.0.1
+* react-use: 17.4.0
+* redux: 4.2.0
+* redux-persist: 6.0.0
+* sweetalert2: 11.5.1
+* web-vitals: 2.1.4
 
 ### **Recursos externos utlizados**: 
 * Banco de imagenes TCU 501: https://sites.google.com/site/tcu658ucr/recursos/im%C3%A1genes-did%C3%A1cticas?authuser=0
