@@ -13,6 +13,8 @@ import { ConfettiRain } from '../../components/ConfettiRain/ConfettiRain';
 import './dragAndDrop.css';
 import '../../App.css';
 
+import { DragDropContainer, DropTarget } from "react-drag-drop-container";
+
 // TODO: instructions
 const spanishInstructions = [
   ''
@@ -51,6 +53,7 @@ export const DragAndDrop = () => {
   const [gameWin, setGameWin] = useState(false);
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
+
 
   const playSound = (soundName) => {
     let sound = new Audio(`./sounds/${soundName}.m4a`);
@@ -105,6 +108,10 @@ export const DragAndDrop = () => {
     return cards.every(cardIsMatched);
   }
 
+  const dropped = (e) => {
+    setTurns(turns+1);
+};
+
   useEffect(() => {
     if (allCardsMatched() && turns > 0) {
       setGameWin(true);
@@ -138,6 +145,14 @@ export const DragAndDrop = () => {
         <div id="mainBox" >
           <div id='memoryGameContainer'>
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
+            
+            <DragDropContainer targetKey="foo" >
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/481px-Cat03.jpg"></img>
+            </DragDropContainer>
+
+            <DropTarget targetKey="foo" onHit={dropped} >
+              <img src="https://raulperez.tieneblog.net/wp-content/uploads/2015/09/tux.jpg"></img>
+            </DropTarget>
             <div id='stats'>
               <div id='attempts'>Attempts: {turns}</div>
             </div>
