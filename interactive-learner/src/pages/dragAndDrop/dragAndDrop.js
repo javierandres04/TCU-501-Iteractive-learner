@@ -23,15 +23,12 @@ const englishInstructions = [
   ''
 ]
 
-const gato = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/481px-Cat03.jpg"
-const perro = "https://upload.wikimedia.org/wikipedia/commons/1/18/Dog_Breeds.jpg"
-const pinguino = "https://raulperez.tieneblog.net/wp-content/uploads/2015/09/tux.jpg"
-const names = ["Angry", "Ant", "Baker", "Bear","Camera", "Campfire"]
-const random_positions = [1,4,5,0,2,3]
+const names = ["Angry", "Ant", "Baker", "Bear"]
+const random_positions = [1,4,5,0]
 const route = "../../../images/"
 const format = ".png"
 const default_img = "https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png"
-var drop = [default_img,default_img,default_img,default_img,default_img,default_img]
+var drop = [default_img,default_img,default_img,default_img]
 
 // TODO: adjust the number of words selected by this function
 const selectWords = (words) => {
@@ -135,39 +132,28 @@ export const DragAndDrop = () => {
   const refresh = () => window.location.reload(true);
 
   const dropped = (e) => {
-    setTurns(turns+1);
     e.containerElem.style.visibility = 'hidden';
     drop[0] = route+e.dragData+format;
   }
 
   const dropped2 = (e) => {
-    setTurns(turns+1);
     e.containerElem.style.visibility = 'hidden';
     drop[1] = route+e.dragData+format;
   }
 
   const dropped3 = (e) => {
-    setTurns(turns+1);
     e.containerElem.style.visibility = 'hidden';
     drop[2] = route+e.dragData+format;
   }
 
   const dropped4 = (e) => {
-    setTurns(turns+1);
     e.containerElem.style.visibility = 'hidden';
     drop[3] = route+e.dragData+format;
   }
 
-  const dropped5 = (e) => {
+  
+  const addAttemp = (e) => {
     setTurns(turns+1);
-    e.containerElem.style.visibility = 'hidden';
-    drop[4] = route+e.dragData+format;
-  }
-
-  const dropped6 = (e) => {
-    setTurns(turns+1);
-    e.containerElem.style.visibility = 'hidden';
-    drop[5] = route+e.dragData+format;
   }
 
   return (
@@ -189,50 +175,50 @@ export const DragAndDrop = () => {
         <div id="mainBox" >
           <div id='memoryGameContainer'>
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
-            <div id = "images__row">
-              <DragDropContainer targetKey={names[0]} dragData={names[0]}>
+            <div id = "cards-grid">
+              <DragDropContainer targetKey={names[0]} dragData={names[0]} onDragEnd={addAttemp}>
                 <img src={route+names[0]+format} alt="error" width="150px"></img>
               </DragDropContainer>
-              <DragDropContainer targetKey={names[1]} dragData={names[1]}>
+              <DragDropContainer targetKey={names[1]} dragData={names[1]}  onDragEnd={addAttemp}>
                 <img src={route+names[1]+format} alt="error" width="150px"></img>
               </DragDropContainer>
-              <DragDropContainer targetKey={names[2]} dragData={names[2]}>
+              <DragDropContainer targetKey={names[2]} dragData={names[2]}  onDragEnd={addAttemp}>
                 <img src={route+names[2]+format} alt="error" width="150px"></img>
               </DragDropContainer>
-              <DragDropContainer targetKey={names[3]} dragData={names[3]}>
+              <DragDropContainer targetKey={names[3]} dragData={names[3]}  onDragEnd={addAttemp}>
                 <img src={route+names[3]+format} alt="error" width="150px"></img>
               </DragDropContainer>
-              <DragDropContainer targetKey={names[4]} dragData={names[4]}>
-                <img src={route+names[4]+format} alt="error" width="150px"></img>
-              </DragDropContainer>
-              <DragDropContainer targetKey={names[5]} dragData={names[5]}>
-                <img src={route+names[5]+format} alt="error" width="150px"></img>
-              </DragDropContainer>
             </div>
-            <div id = "images__row">
+            <div id = "cards-grid">
               <DropTarget targetKey={names[0]} onHit={dropped}>
-                <img src={drop[0]} alt = "error" width="150px"></img>
+                <div id = "memoryGameContainer">
+                  <img src={drop[0]} alt = "error" width="150px"></img>
+                  <b>{names[0]}</b>
+                </div>
               </DropTarget>
               <DropTarget targetKey={names[1]} onHit={dropped2}>
-                <img src={drop[1]} alt = "error" width="150px"></img>
+                <div id = "memoryGameContainer">
+                  <img src={drop[1]} alt = "error" width="150px"></img>
+                  <b>{names[1]}</b>
+                </div>
               </DropTarget>
               <DropTarget targetKey={names[2]} onHit={dropped3}>
-                <img src={drop[2]} alt = "error" width="150px"></img>
+                <div id = "memoryGameContainer">
+                  <img src={drop[2]} alt = "error" width="150px"></img>
+                  <b>{names[2]}</b>
+                </div>
               </DropTarget>
               <DropTarget targetKey={names[3]} onHit={dropped4}>
-                <img src={drop[3]} alt = "error" width="150px"></img>
-              </DropTarget>
-              <DropTarget targetKey={names[4]} onHit={dropped5}>
-                <img src={drop[4]} alt = "error" width="150px"></img>
-              </DropTarget>
-              <DropTarget targetKey={names[5]} onHit={dropped6}>
-                <img src={drop[5]} alt = "error" width="150px"></img>
+                <div id = "memoryGameContainer">
+                  <img src={drop[3]} alt = "error" width="150px"></img>
+                  <b>{names[3]}</b>
+                </div>
               </DropTarget>
             </div>
             <div id='stats'>
               <div id='attempts'>Attempts: {turns}</div>
             </div>
-            <button onClick={refresh}>New Game</button>
+            <button onClick={refresh}>New Game</button>turns
           </div>
         </div>
       </div>
