@@ -23,6 +23,9 @@ const englishInstructions = [
   ''
 ]
 
+const prueba = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/481px-Cat03.jpg"
+const prueba2 = "https://raulperez.tieneblog.net/wp-content/uploads/2015/09/tux.jpg"
+
 // TODO: adjust the number of words selected by this function
 const selectWords = (words) => {
   let options = [];
@@ -41,6 +44,7 @@ const selectWords = (words) => {
 
 
 export const DragAndDrop = () => {
+  const [drop, setDrop] = useState("https://toppng.com/uploads/preview/square-115527604300vrdl6wlrv.png");
   const [theme, setTheme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const [words, setWords] = useState(Themes.find(element => element.name === theme).words);
   const [selectedWords, setSelectedWords] = useState(selectWords(words));
@@ -63,6 +67,12 @@ export const DragAndDrop = () => {
   const handleChoise = (card) => {
     choiseOne ? setChoiseTwo(card) : setChoiseOne(card);
   }
+
+  /*useEffect(() => {
+    if (drop != null) {
+
+    }
+  }, drop);*/
 
   useEffect(() => {
     if (choiseOne && choiseTwo) {
@@ -110,7 +120,8 @@ export const DragAndDrop = () => {
 
   const dropped = (e) => {
     setTurns(turns+1);
-};
+    setDrop(e.dragData);
+  };
 
   useEffect(() => {
     if (allCardsMatched() && turns > 0) {
@@ -146,12 +157,16 @@ export const DragAndDrop = () => {
           <div id='memoryGameContainer'>
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
             
-            <DragDropContainer targetKey="foo" >
+            <DragDropContainer targetKey="foo" dragData={prueba}>
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/481px-Cat03.jpg"></img>
+            </DragDropContainer>
+            <DragDropContainer targetKey="foo" dragData={prueba2}>
+              <img src="https://raulperez.tieneblog.net/wp-content/uploads/2015/09/tux.jpg"></img>
             </DragDropContainer>
 
             <DropTarget targetKey="foo" onHit={dropped} >
-              <img src="https://raulperez.tieneblog.net/wp-content/uploads/2015/09/tux.jpg"></img>
+              <img src={drop}></img>
+              
             </DropTarget>
             <div id='stats'>
               <div id='attempts'>Attempts: {turns}</div>
