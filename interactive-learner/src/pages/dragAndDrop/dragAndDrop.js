@@ -27,6 +27,11 @@ const gato = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jp
 const perro = "https://upload.wikimedia.org/wikipedia/commons/1/18/Dog_Breeds.jpg"
 const pinguino = "https://raulperez.tieneblog.net/wp-content/uploads/2015/09/tux.jpg"
 const names = ["Angry", "Ant", "Baker", "Bear","Camera", "Campfire"]
+const random_positions = [1,4,5,0,2,3]
+const route = "../../../images/"
+const format = ".png"
+const default_img = "https://toppng.com/uploads/preview/square-115527604300vrdl6wlrv.png"
+var drop = [default_img,default_img,default_img,default_img,default_img,default_img]
 
 // TODO: adjust the number of words selected by this function
 const selectWords = (words) => {
@@ -46,7 +51,6 @@ const selectWords = (words) => {
 
 
 export const DragAndDrop = () => {
-  const [drop, setDrop] = useState("https://toppng.com/uploads/preview/square-115527604300vrdl6wlrv.png");
   const [theme, setTheme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const [words, setWords] = useState(Themes.find(element => element.name === theme).words);
   const [selectedWords, setSelectedWords] = useState(selectWords(words));
@@ -133,7 +137,19 @@ export const DragAndDrop = () => {
   const dropped = (e) => {
     setTurns(turns+1);
     e.containerElem.style.visibility = 'hidden';
-    setDrop(e.dragData);
+    drop[0] = route+e.dragData+format;
+  }
+
+  const dropped2 = (e) => {
+    setTurns(turns+1);
+    e.containerElem.style.visibility = 'hidden';
+    drop[1] = route+e.dragData+format;
+  }
+
+  const dropped3 = (e) => {
+    setTurns(turns+1);
+    e.containerElem.style.visibility = 'hidden';
+    drop[2] = route+e.dragData+format;
   }
 
   const wrongChoice = (e) => {
@@ -162,28 +178,28 @@ export const DragAndDrop = () => {
           <div id='memoryGameContainer'>
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
             <div id = "images__row">
-              <DragDropContainer targetKey="gato" dragData={gato}>
-                <img src={gato} width="150px"></img>
+              <DragDropContainer targetKey={names[0]} dragData={names[0]}>
+                <img src={route+names[0]+format} alt="error" width="150px"></img>
               </DragDropContainer>
-              <DragDropContainer targetKey="perro" dragData={perro}>
-                <img src={perro} width="150px"></img>
+              <DragDropContainer targetKey={names[1]} dragData={names[1]}>
+                <img src={route+names[1]+format} alt="error" width="150px"></img>
               </DragDropContainer>
-              <DragDropContainer targetKey="pinguino" dragData={pinguino}>
-                <img src={pinguino} width="150px"></img>
+              <DragDropContainer targetKey={names[2]} dragData={names[2]}>
+                <img src={route+names[2]+format} alt="error" width="150px"></img>
               </DragDropContainer>
             </div>
             <div id = "images__row">
-              <DropTarget targetKey="gato" onHit={dropped}>
+              <DropTarget targetKey={names[0]} onHit={dropped}>
                 {/*<img src={gato} width="150px"></img>*/}
-                <img src={drop}  width="150px"></img>
+                <img src={drop[0]} alt = "error" width="150px"></img>
               </DropTarget>
-              <DropTarget targetKey="perro" onHit={dropped} >
-                {/*<img src={perro} width="150px"></img>*/}
-                <img src={drop}  width="150px"></img>
+              <DropTarget targetKey={names[1]} onHit={dropped2}>
+                {/*<img src={gato} width="150px"></img>*/}
+                <img src={drop[1]} alt = "error" width="150px"></img>
               </DropTarget>
-              <DropTarget targetKey="pinguino" onHit={dropped}>
-                {/*<img src={pinguino} width="150px"></img>*/}
-                <img src={drop}  width="150px"></img>
+              <DropTarget targetKey={names[2]} onHit={dropped3}>
+                {/*<img src={gato} width="150px"></img>*/}
+                <img src={drop[2]} alt = "error" width="150px"></img>
               </DropTarget>
             </div>
             <div id='stats'>
