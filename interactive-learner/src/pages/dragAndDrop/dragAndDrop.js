@@ -30,7 +30,7 @@ const names = ["Angry", "Ant", "Baker", "Bear","Camera", "Campfire"]
 const random_positions = [1,4,5,0,2,3]
 const route = "../../../images/"
 const format = ".png"
-const default_img = "https://toppng.com/uploads/preview/square-115527604300vrdl6wlrv.png"
+const default_img = "https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png"
 var drop = [default_img,default_img,default_img,default_img,default_img,default_img]
 
 // TODO: adjust the number of words selected by this function
@@ -152,10 +152,22 @@ export const DragAndDrop = () => {
     drop[2] = route+e.dragData+format;
   }
 
-  const wrongChoice = (e) => {
-    setTurns(turns-1);
-    e.containerElem.style.visibility = 'visible';
-    
+  const dropped4 = (e) => {
+    setTurns(turns+1);
+    e.containerElem.style.visibility = 'hidden';
+    drop[3] = route+e.dragData+format;
+  }
+
+  const dropped5 = (e) => {
+    setTurns(turns+1);
+    e.containerElem.style.visibility = 'hidden';
+    drop[4] = route+e.dragData+format;
+  }
+
+  const dropped6 = (e) => {
+    setTurns(turns+1);
+    e.containerElem.style.visibility = 'hidden';
+    drop[5] = route+e.dragData+format;
   }
 
   return (
@@ -187,19 +199,34 @@ export const DragAndDrop = () => {
               <DragDropContainer targetKey={names[2]} dragData={names[2]}>
                 <img src={route+names[2]+format} alt="error" width="150px"></img>
               </DragDropContainer>
+              <DragDropContainer targetKey={names[3]} dragData={names[3]}>
+                <img src={route+names[3]+format} alt="error" width="150px"></img>
+              </DragDropContainer>
+              <DragDropContainer targetKey={names[4]} dragData={names[4]}>
+                <img src={route+names[4]+format} alt="error" width="150px"></img>
+              </DragDropContainer>
+              <DragDropContainer targetKey={names[5]} dragData={names[5]}>
+                <img src={route+names[5]+format} alt="error" width="150px"></img>
+              </DragDropContainer>
             </div>
             <div id = "images__row">
               <DropTarget targetKey={names[0]} onHit={dropped}>
-                {/*<img src={gato} width="150px"></img>*/}
                 <img src={drop[0]} alt = "error" width="150px"></img>
               </DropTarget>
               <DropTarget targetKey={names[1]} onHit={dropped2}>
-                {/*<img src={gato} width="150px"></img>*/}
                 <img src={drop[1]} alt = "error" width="150px"></img>
               </DropTarget>
               <DropTarget targetKey={names[2]} onHit={dropped3}>
-                {/*<img src={gato} width="150px"></img>*/}
                 <img src={drop[2]} alt = "error" width="150px"></img>
+              </DropTarget>
+              <DropTarget targetKey={names[3]} onHit={dropped4}>
+                <img src={drop[3]} alt = "error" width="150px"></img>
+              </DropTarget>
+              <DropTarget targetKey={names[4]} onHit={dropped5}>
+                <img src={drop[4]} alt = "error" width="150px"></img>
+              </DropTarget>
+              <DropTarget targetKey={names[5]} onHit={dropped6}>
+                <img src={drop[5]} alt = "error" width="150px"></img>
               </DropTarget>
             </div>
             <div id='stats'>
