@@ -46,6 +46,7 @@ export const DragAndDrop = () => {
   const [selectedWords, setSelectedWords] = useState(selectWords(words));
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
+  const [transferData, setTransferData] = useState("Cuco");
   const [choiseOne, setChoiseOne] = useState(null);
   const [choiseTwo, setChoiseTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
@@ -108,9 +109,6 @@ export const DragAndDrop = () => {
     return cards.every(cardIsMatched);
   }
 
-  const dropped = (e) => {
-    setTurns(turns+1);
-};
 
   useEffect(() => {
     if (allCardsMatched() && turns > 0) {
@@ -125,6 +123,17 @@ export const DragAndDrop = () => {
   }, [cards])
 
   const refresh = () => window.location.reload(true);
+
+  const dropped = (e) => {
+    setTurns(turns+1);
+    e.containerElem.style.visibility = 'hidden';
+  }
+
+  const wrongChoice = (e) => {
+    setTurns(turns-1);
+    e.containerElem.style.visibility = 'visible';
+    
+  }
 
   return (
     <motion.div
@@ -145,14 +154,28 @@ export const DragAndDrop = () => {
         <div id="mainBox" >
           <div id='memoryGameContainer'>
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
-            
-            <DragDropContainer targetKey="foo" >
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/481px-Cat03.jpg"></img>
-            </DragDropContainer>
-
-            <DropTarget targetKey="foo" onHit={dropped} >
-              <img src="https://raulperez.tieneblog.net/wp-content/uploads/2015/09/tux.jpg"></img>
-            </DropTarget>
+            <div id = "images__row">
+              <DragDropContainer targetKey="gato">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/481px-Cat03.jpg"width="150px"></img>
+              </DragDropContainer>
+              <DragDropContainer targetKey="perro" dropData={transferData}>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Dog_Breeds.jpg" width="150px"></img>
+              </DragDropContainer>
+              <DragDropContainer targetKey="pinguino" dropData={transferData}>
+                <img src="https://raulperez.tieneblog.net/wp-content/uploads/2015/09/tux.jpg" width="150px"></img>
+              </DragDropContainer>
+            </div>
+            <div id = "images__row">
+              <DropTarget targetKey="pinguino" onHit={dropped}>
+                <img src="https://raulperez.tieneblog.net/wp-content/uploads/2015/09/tux.jpg" width="150px"></img>
+              </DropTarget>
+              <DropTarget targetKey="gato" onHit={dropped}>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/481px-Cat03.jpg" width="150px"></img>
+              </DropTarget>
+              <DropTarget targetKey="perro" onHit={dropped} >
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Dog_Breeds.jpg" width="150px"></img>
+              </DropTarget>
+            </div>
             <div id='stats'>
               <div id='attempts'>Attempts: {turns}</div>
             </div>
