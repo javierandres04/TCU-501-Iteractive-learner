@@ -23,6 +23,11 @@ const englishInstructions = [
   ''
 ]
 
+const gato = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/481px-Cat03.jpg"
+const perro = "https://upload.wikimedia.org/wikipedia/commons/1/18/Dog_Breeds.jpg"
+const pinguino = "https://raulperez.tieneblog.net/wp-content/uploads/2015/09/tux.jpg"
+const names = ["Angry", "Ant", "Baker", "Bear","Camera", "Campfire"]
+
 // TODO: adjust the number of words selected by this function
 const selectWords = (words) => {
   let options = [];
@@ -41,6 +46,7 @@ const selectWords = (words) => {
 
 
 export const DragAndDrop = () => {
+  const [drop, setDrop] = useState("https://toppng.com/uploads/preview/square-115527604300vrdl6wlrv.png");
   const [theme, setTheme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const [words, setWords] = useState(Themes.find(element => element.name === theme).words);
   const [selectedWords, setSelectedWords] = useState(selectWords(words));
@@ -127,6 +133,7 @@ export const DragAndDrop = () => {
   const dropped = (e) => {
     setTurns(turns+1);
     e.containerElem.style.visibility = 'hidden';
+    setDrop(e.dragData);
   }
 
   const wrongChoice = (e) => {
@@ -155,25 +162,28 @@ export const DragAndDrop = () => {
           <div id='memoryGameContainer'>
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
             <div id = "images__row">
-              <DragDropContainer targetKey="gato">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/481px-Cat03.jpg"width="150px"></img>
+              <DragDropContainer targetKey="gato" dragData={gato}>
+                <img src={gato} width="150px"></img>
               </DragDropContainer>
-              <DragDropContainer targetKey="perro" dropData={transferData}>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Dog_Breeds.jpg" width="150px"></img>
+              <DragDropContainer targetKey="perro" dragData={perro}>
+                <img src={perro} width="150px"></img>
               </DragDropContainer>
-              <DragDropContainer targetKey="pinguino" dropData={transferData}>
-                <img src="https://raulperez.tieneblog.net/wp-content/uploads/2015/09/tux.jpg" width="150px"></img>
+              <DragDropContainer targetKey="pinguino" dragData={pinguino}>
+                <img src={pinguino} width="150px"></img>
               </DragDropContainer>
             </div>
             <div id = "images__row">
-              <DropTarget targetKey="pinguino" onHit={dropped}>
-                <img src="https://raulperez.tieneblog.net/wp-content/uploads/2015/09/tux.jpg" width="150px"></img>
-              </DropTarget>
               <DropTarget targetKey="gato" onHit={dropped}>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/481px-Cat03.jpg" width="150px"></img>
+                {/*<img src={gato} width="150px"></img>*/}
+                <img src={drop}  width="150px"></img>
               </DropTarget>
               <DropTarget targetKey="perro" onHit={dropped} >
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Dog_Breeds.jpg" width="150px"></img>
+                {/*<img src={perro} width="150px"></img>*/}
+                <img src={drop}  width="150px"></img>
+              </DropTarget>
+              <DropTarget targetKey="pinguino" onHit={dropped}>
+                {/*<img src={pinguino} width="150px"></img>*/}
+                <img src={drop}  width="150px"></img>
               </DropTarget>
             </div>
             <div id='stats'>
