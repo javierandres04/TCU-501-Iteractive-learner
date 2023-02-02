@@ -3,7 +3,6 @@ import React from 'react';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
 import { useState, useEffect } from 'react';
-import { MemoryCard } from '../../components/MemoryCard/MemoryCard';
 import { Themes } from '../../data/themes';
 import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
@@ -14,6 +13,7 @@ import './dragAndDrop.css';
 import '../../App.css';
 
 import { DragDropContainer, DropTarget } from "react-drag-drop-container";
+import { DragImages } from '../../components/DragImages/DragImages';
 
 // TODO: instructions
 const spanishInstructions = [
@@ -176,18 +176,8 @@ export const DragAndDrop = () => {
           <div id='memoryGameContainer'>
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
             <div id = "cards-grid">
-              <DragDropContainer targetKey={names[0]} dragData={names[0]} onDragEnd={addAttemp}>
-                <img src={route+names[0]+format} alt="error" width="150px"></img>
-              </DragDropContainer>
-              <DragDropContainer targetKey={names[1]} dragData={names[1]}  onDragEnd={addAttemp}>
-                <img src={route+names[1]+format} alt="error" width="150px"></img>
-              </DragDropContainer>
-              <DragDropContainer targetKey={names[2]} dragData={names[2]}  onDragEnd={addAttemp}>
-                <img src={route+names[2]+format} alt="error" width="150px"></img>
-              </DragDropContainer>
-              <DragDropContainer targetKey={names[3]} dragData={names[3]}  onDragEnd={addAttemp}>
-                <img src={route+names[3]+format} alt="error" width="150px"></img>
-              </DragDropContainer>
+              <DragImages words={names} addAttemp={addAttemp}>
+              </DragImages>
             </div>
             <div id = "cards-grid">
               <DropTarget targetKey={names[0]} onHit={dropped}>
