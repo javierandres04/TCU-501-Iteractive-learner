@@ -68,12 +68,6 @@ export const DragAndDrop = () => {
     choiseOne ? setChoiseTwo(card) : setChoiseOne(card);
   }
 
-  /*useEffect(() => {
-    if (drop != null) {
-
-    }
-  }, drop);*/
-
   useEffect(() => {
     if (choiseOne && choiseTwo) {
       setDisabled(true);
@@ -121,6 +115,8 @@ export const DragAndDrop = () => {
   const dropped = (e) => {
     setTurns(turns+1);
     setDrop(e.dragData);
+    
+    e.containerElem.getElementsByTagName("img").item(0).src="https://toppng.com/uploads/preview/square-115527604300vrdl6wlrv.png";
   };
 
   useEffect(() => {
@@ -159,9 +155,11 @@ export const DragAndDrop = () => {
             
             <DragDropContainer targetKey="foo" dragData={prueba}>
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/481px-Cat03.jpg"></img>
+              <li>Hola </li>
             </DragDropContainer>
             <DragDropContainer targetKey="foo" dragData={prueba2}>
               <img src="https://raulperez.tieneblog.net/wp-content/uploads/2015/09/tux.jpg"></img>
+              <li>Hola </li>
             </DragDropContainer>
 
             <DropTarget targetKey="foo" onHit={dropped} >
