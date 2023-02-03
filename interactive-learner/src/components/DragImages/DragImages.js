@@ -7,9 +7,9 @@ const format = ".png"
 
 export const DragImages = ({ words, addAttemp }) => {
   let wordList = [];
-  words.forEach((word)=>{
+  words.forEach((word, index)=>{
     wordList.push( 
-      <DragDropContainer targetKey={word} dragData={word} onDragEnd={addAttemp}>
+      <DragDropContainer targetKey={word} dragData={[word,index]} onDragEnd={addAttemp}>
         <img src={route+word+format} alt="error" width="150px"></img>
       </DragDropContainer> 
     )

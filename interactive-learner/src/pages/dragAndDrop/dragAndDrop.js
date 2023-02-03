@@ -11,9 +11,8 @@ import { HelpModal } from '../../components/HelpModal/HelpModal';
 import { ConfettiRain } from '../../components/ConfettiRain/ConfettiRain';
 import './dragAndDrop.css';
 import '../../App.css';
-
-import { DragDropContainer, DropTarget } from "react-drag-drop-container";
 import { DragImages } from '../../components/DragImages/DragImages';
+import { DropImages } from '../../components/DropImages/DropImages';
 
 // TODO: instructions
 const spanishInstructions = [
@@ -23,12 +22,7 @@ const englishInstructions = [
   ''
 ]
 
-const names = ["Angry", "Ant", "Baker", "Bear"]
-const random_positions = [1,4,5,0]
-const route = "../../../images/"
-const format = ".png"
-const default_img = "https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png"
-var drop = [default_img,default_img,default_img,default_img]
+const names = ["Angry", "Ant", "Baker", "Bear", "Coat", "Coffee", "Corn", "Crocodile"]
 
 // TODO: adjust the number of words selected by this function
 const selectWords = (words) => {
@@ -131,27 +125,7 @@ export const DragAndDrop = () => {
 
   const refresh = () => window.location.reload(true);
 
-  const dropped = (e) => {
-    e.containerElem.style.visibility = 'hidden';
-    drop[0] = route+e.dragData+format;
-  }
 
-  const dropped2 = (e) => {
-    e.containerElem.style.visibility = 'hidden';
-    drop[1] = route+e.dragData+format;
-  }
-
-  const dropped3 = (e) => {
-    e.containerElem.style.visibility = 'hidden';
-    drop[2] = route+e.dragData+format;
-  }
-
-  const dropped4 = (e) => {
-    e.containerElem.style.visibility = 'hidden';
-    drop[3] = route+e.dragData+format;
-  }
-
-  
   const addAttemp = (e) => {
     setTurns(turns+1);
   }
@@ -175,40 +149,14 @@ export const DragAndDrop = () => {
         <div id="mainBox" >
           <div id='memoryGameContainer'>
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
-            <div id = "cards-grid">
-              <DragImages words={names} addAttemp={addAttemp}>
-              </DragImages>
-            </div>
-            <div id = "cards-grid">
-              <DropTarget targetKey={names[0]} onHit={dropped}>
-                <div id = "memoryGameContainer">
-                  <img src={drop[0]} alt = "error" width="150px"></img>
-                  <b>{names[0]}</b>
-                </div>
-              </DropTarget>
-              <DropTarget targetKey={names[1]} onHit={dropped2}>
-                <div id = "memoryGameContainer">
-                  <img src={drop[1]} alt = "error" width="150px"></img>
-                  <b>{names[1]}</b>
-                </div>
-              </DropTarget>
-              <DropTarget targetKey={names[2]} onHit={dropped3}>
-                <div id = "memoryGameContainer">
-                  <img src={drop[2]} alt = "error" width="150px"></img>
-                  <b>{names[2]}</b>
-                </div>
-              </DropTarget>
-              <DropTarget targetKey={names[3]} onHit={dropped4}>
-                <div id = "memoryGameContainer">
-                  <img src={drop[3]} alt = "error" width="150px"></img>
-                  <b>{names[3]}</b>
-                </div>
-              </DropTarget>
-            </div>
+            <DragImages words={names} addAttemp={addAttemp}>
+            </DragImages>
+            <DropImages words={names}>
+            </DropImages>
             <div id='stats'>
               <div id='attempts'>Attempts: {turns}</div>
             </div>
-            <button onClick={refresh}>New Game</button>turns
+            <button onClick={refresh}>New Game</button>
           </div>
         </div>
       </div>
