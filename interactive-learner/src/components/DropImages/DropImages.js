@@ -19,10 +19,10 @@ export const DropImages = ({ words }) => {
   let wordList = [];
   words.forEach((word, index)=>{
     wordList.push( 
-      <DropTarget targetKey={word} onHit={changePlacerholder}>
+      <DropTarget targetKey={word.word} onHit={changePlacerholder}>
         <div id = "memoryGameContainer">
           <img src={placeholder[index]} alt = "error" width="150px"></img>
-          <b>{word}</b>
+          <b>{word.word}</b>
         </div>
       </DropTarget>
     )

@@ -32,11 +32,13 @@ const selectWords = (words) => {
     options[i] = i;
   }
   options.sort(() => Math.random() - 0.5);
-  options = options.slice(0, 6);
+  options = options.slice(0, 8);
 
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 8; i++) {
     selectedWords[i] = words[options[i]];
   }
+  console.log("selectedWords");
+  console.log(selectedWords);
   return selectedWords;
 }
 
@@ -159,9 +161,9 @@ export const DragAndDrop = () => {
         <div id="mainBox" >
           <div id='memoryGameContainer'>
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
-            <DragImages words={names} addAttemp={addAttemp}>
+            <DragImages words={selectedWords} addAttemp={addAttemp}>
             </DragImages>
-            <DropImages words={names}>
+            <DropImages words={selectedWords}>
             </DropImages>
             <div id='stats'>
               <div id='attempts'>Attempts: {turns}</div>
