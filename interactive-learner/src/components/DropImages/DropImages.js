@@ -13,6 +13,8 @@ const changePlacerholder = (e) => {
   placeholder[e.dragData[1]] = route+e.dragData[0]+format;
 }
 
+
+
 export const DropImages = ({ words }) => {
   let wordList = [];
   words.forEach((word, index)=>{
