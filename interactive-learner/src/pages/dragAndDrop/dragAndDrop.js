@@ -22,8 +22,6 @@ const englishInstructions = [
   ''
 ]
 
-const names = ["Angry", "Ant", "Baker", "Bear", "Coat", "Coffee", "Corn", "Crocodile"]
-
 // TODO: adjust the number of words selected by this function
 const selectWords = (words) => {
   let options = [];
@@ -43,19 +41,25 @@ const selectWords = (words) => {
 }
 
 // ref:https://dev.to/codebubb/how-to-shuffle-an-array-in-javascript-2ikj
-const shuffleArray = array => {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    const temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
+const shuffleArray = (array) => {
+  let newArray = [];
+  for (let k = 0;  array.length > k; k++){
+    newArray[k] = array[k];
   }
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = newArray[i];
+    newArray[i] = newArray[j];
+    newArray[j] = temp;
+  }
+  return newArray;
 }
 
 export const DragAndDrop = () => {
   const [theme, setTheme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const [words, setWords] = useState(Themes.find(element => element.name === theme).words);
   const [selectedWords, setSelectedWords] = useState(selectWords(words));
+  const [shuffledWords, setShuffledWords] = useState(shuffleArray(selectedWords));
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
   const [transferData, setTransferData] = useState("Cuco");
@@ -66,7 +70,6 @@ export const DragAndDrop = () => {
   const [gameWin, setGameWin] = useState(false);
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
-  //shuffleArray(names);
 
 
   const playSound = (soundName) => {
@@ -163,7 +166,7 @@ export const DragAndDrop = () => {
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
             <DragImages words={selectedWords} addAttemp={addAttemp}>
             </DragImages>
-            <DropImages words={selectedWords}>
+            <DropImages words={shuffledWords}>
             </DropImages>
             <div id='stats'>
               <div id='attempts'>Attempts: {turns}</div>
