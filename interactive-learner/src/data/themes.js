@@ -134,7 +134,7 @@ export const Themes = [
       },
       {
         word: 'Picnic',
-        imageSrc: '/Picnic.png',
+        imageSrc: '/images/Picnic.png',
       },
       {
         word: 'Camping',
@@ -194,7 +194,7 @@ export const Themes = [
       },
       {
         word: 'Playing The Piano',
-        imageSrc: '/images/Playing_Piano.png',
+        imageSrc: '/images/Playing_The_Piano.png',
       },
       {
         word: 'Playing Soccer',
@@ -680,10 +680,10 @@ export const Themes = [
         word: 'River',
         imageSrc: '/images/River.png',
       },
-      {
-        word: 'Danger',
-        imageSrc: '/images/Danger.png',
-      },
+      // {
+      //   word: 'Danger',
+      //   imageSrc: '/images/Danger.png',
+      // },
       {
         word: 'Park Ranger',
         imageSrc: '/images/Park_Ranger.png',
@@ -810,10 +810,10 @@ export const Themes = [
         word: 'Butterfly',
         imageSrc: '/images/Butterfly.png',
       },
-      {
-        word: 'Beetle',
-        imageSrc: '/images/Beetle.png',
-      },
+      // {
+      //   word: 'Beetle',
+      //   imageSrc: '/images/Beetle.png',
+      // },
       {
         word: 'Tapir',
         imageSrc: '/images/Tapir.png',
