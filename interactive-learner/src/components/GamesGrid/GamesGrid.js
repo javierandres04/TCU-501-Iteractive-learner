@@ -17,7 +17,7 @@ export const GamesGrid = ({ grade, unit, theme }) => {
         Swal.fire({
           icon: 'error',
           title: 'Oops!',
-          text: `Please select a theme for the game`,
+          text: `Please, select a theme for the game.`,
           timer: 5000,
           showConfirmButton: false,
           heightAuto: false,

@@ -19,7 +19,7 @@ import '../../App.css';
 import { HelpModal } from '../../components/HelpModal/HelpModal';
 
 const spanishInstructions = [
-  'En pantalla se muestran el dibujo del ahorcado, la sección de letras erróneas y la sección de la palabra a adivinar',
+  'En la pantalla se muestran el dibujo del ahorcado, la sección de letras erróneas y la sección de la palabra a adivinar.',
   'El objetivo del juego es adivinar la palabra antes de que se complete el dibujo del ahorcado.',
   'Para jugar se presiona una letra.',
   'Si la letra es correcta, esta es revelada en la sección de la palabra.',
@@ -27,7 +27,7 @@ const spanishInstructions = [
   'Existe un botón para desplegar un teclado con el que se puede jugar.'
 ]
 const englishInstructions = [
-  'The drawing of the hangman, the section of wrong letters, and the section of the word to guess are shown on the screen',
+  'The drawing of the hangman, the section of wrong letters, and the section of the word to guess are shown on the screen.',
   `The game's objective is to guess the word before the hangman drawing is complete.`,
   'To play, press a letter.',
   'If the letter is correct, it is revealed in the word section.',
