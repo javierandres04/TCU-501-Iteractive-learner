@@ -27,10 +27,10 @@ const englishInstructions = [
 const spanishInstructions = [
   'En la pantalla se muestra un tablero lleno de diferentes letras.',
   'El objetivo es encontrar las palabras que se muestran a la derecha del tablero.',
-  'Para seleccionar una palabra se debe hacer click y mantener presionado mientras que se recorre toda la palabra de principio a fin.',
+  'Para seleccionar una palabra se debe hacer clic y mantener presionado mientras que se recorre toda la palabra de principio a fin.',
   'Si una palabra de la lista es seleccionada correctamente en el tablero, esta se resaltará y quedará tachada de la lista de palabras.',
-  'Si las letras seleccinadas no forman una palabra de la lista, se desvanecen las letras resaltadas y no se tacha ninguna palabra de la lista.',
-  'Debajo del tablero esta un reloj que marca cuanto tiempo ha pasado desde que empezó la partida.',
+  'Si las letras seleccionadas no forman una palabra de la lista, se desvanecen las letras resaltadas y no se tacha ninguna palabra de la lista.',
+  'Debajo del tablero está un reloj que marca cuanto tiempo ha pasado desde que empezó la partida.',
   'El juego se completa al encontrar todas las palabras de la lista.'
   ];
 
