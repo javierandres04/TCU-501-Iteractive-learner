@@ -924,10 +924,10 @@ export const Themes = [
         word: 'Quetzal',
         imageSrc: '/images/Quetzal.png',
       },
-      {
-        word: 'Lion',
-        imageSrc: '/images/Lion.png',
-      }
+      // {
+      //   word: 'Lion',
+      //   imageSrc: '/images/Lion.png',
+      // }
     ]
   }, 
   {
