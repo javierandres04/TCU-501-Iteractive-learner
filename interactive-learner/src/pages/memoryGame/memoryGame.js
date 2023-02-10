@@ -150,12 +150,14 @@ export const MemoryGame = () => {
   useEffect(() => {
     if (allCardsMatched() && turns > 0) {
       setGameWin(true);
-      Swal.fire({
-        title: 'Congratulations! You won! 😃',
-        text: 'You made ' + turns + ' attempts.',
-        heightAuto: false,
-        confirmButtonColor: '#44a49c'
-      })
+      setTimeout(()=> {
+        Swal.fire({
+          title: 'Congratulations! You won! 😃',
+          text: 'You made ' + turns + ' attempts.',
+          heightAuto: false,
+          confirmButtonColor: '#44a49c'
+        })
+      }, 2200)
     }
   }, [cards])
 
