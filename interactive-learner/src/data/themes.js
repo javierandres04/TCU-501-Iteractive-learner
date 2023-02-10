@@ -24,10 +24,10 @@ export const Themes = [
         word: 'Tamal',
         imageSrc: '/images/Tamal.png',
       },{
-        word: 'Rice With Chicken',
+        word: 'Rice with Chicken',
         imageSrc: '/images/Rice_With_Chicken.png',
       },{
-        word: 'Soup',
+        word: 'Soups',
         imageSrc: '/images/Soup.png',
       },
     ]
@@ -737,7 +737,7 @@ export const Themes = [
         imageSrc: '/images/Guidebook.png',
       },
       {
-        word: 'First Aid Kit',
+        word: 'First aid Kit',
         imageSrc: '/images/First_Aid_Kit.png',
       }
     ]
@@ -1082,10 +1082,10 @@ export const Themes = [
         word: 'Masquerades',
         imageSrc: '/images/Masquerades.png',
       },{
-        word: 'Lady Of The Angels Day',
+        word: 'Lady Of the Angels Day',
         imageSrc: '/images/Lady_Of_The_Angels_Day.png',
       },{
-        word: 'The Virgin Of The Sea Day',
+        word: 'The Virgin of the Sea Day',
         imageSrc: '/images/The_Virgin_Of_The_Sea_Day.png',
       },{
         word: 'Independence Day',
@@ -1100,7 +1100,7 @@ export const Themes = [
         word: 'Lanterns Parade',
         imageSrc: '/images/Lanterns_Parade.png',
       },{
-        word: 'New Year Eve',
+        word: 'New Years Eve',
         imageSrc: '/images/New_Year_Eve.png',
       },{
         word: 'Oxcart Parade',
@@ -1118,7 +1118,7 @@ export const Themes = [
         word: 'Holy Week',
         imageSrc: '/images/Holy_Week.png',
       },{
-        word: 'Parade Of Floats',
+        word: 'Parade of Floats',
         imageSrc: '/images/Parade_Of_Floats.png',
       },
     
