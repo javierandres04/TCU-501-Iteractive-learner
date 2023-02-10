@@ -8,10 +8,12 @@ export const Themes = [
       },{
         word: 'Casado',
         imageSrc: '/images/Casado.png',
-      },{
-        word: 'Bon',
-        imageSrc: '/images/Bon_Bread.png',
-      },{
+      },
+      // {
+      //   word: 'Bon',
+      //   imageSrc: '/images/Bon_Bread.png',
+      // }
+      ,{
         word: 'Pati',
         imageSrc: '/images/Pati.png',
       },{
@@ -25,7 +27,7 @@ export const Themes = [
         imageSrc: '/images/Tamal.png',
       },{
         word: 'Rice with Chicken',
-        imageSrc: '/images/Rice_With_Chicken.png',
+        imageSrc: '/images/Rice_With _Chicken.png',
       },{
         word: 'Soups',
         imageSrc: '/images/Soup.png',
@@ -810,10 +812,10 @@ export const Themes = [
         word: 'Butterfly',
         imageSrc: '/images/Butterfly.png',
       },
-      // {
-      //   word: 'Beetle',
-      //   imageSrc: '/images/Beetle.png',
-      // },
+      {
+        word: 'Beetle',
+        imageSrc: '/images/Beetle.png',
+      },
       {
         word: 'Tapir',
         imageSrc: '/images/Tapir.png',
@@ -1171,10 +1173,10 @@ export const Themes = [
         word: 'Teacher',
         imageSrc: '/images/Teacher.png',
       },
-      {
-        word: 'Chef',
-        imageSrc: '/images/Chef.png',
-      },
+      // { 
+      //   word: 'Chef',
+      //   imageSrc: '/images/Chef.png',
+      // },
       {
         word: 'Artist',
         imageSrc: '/images/Artist.png',
@@ -1203,10 +1205,10 @@ export const Themes = [
         word: 'Construction Worker',
         imageSrc: '/images/Construction_Worker.png',
       },
-      {
-        word: 'Veterinary',
-        imageSrc: '/images/Veterinary.png',
-      },
+      // {
+      //   word: 'Veterinary',
+      //   imageSrc: '/images/Veterinary.png',
+      // },
       {
         word: 'Janitor',
         imageSrc: '/images/Janitor.png',
