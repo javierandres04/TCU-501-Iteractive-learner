@@ -12,13 +12,13 @@ import { HelpModal } from '../../components/HelpModal/HelpModal';
 
 const spanishInstructions = [
   'Arriba se muestran tres desplegables con los cuales se puede elegir el grado, la unidad y el tema que se quieren usar para jugar.', 
-  'Una vez seleccionados, se puede utilizar alguno de los juegos disponibles haciendo click en su imagen correspondiente.',
+  'Una vez seleccionados, se puede utilizar alguno de los juegos disponibles haciendo clic en su imagen.',
   'De momento se encuentran disponibles las unidades 1 y 2 de cuarto y quinto año.' 
 ];
 const englishInstructions = [
   'There are three drop-downs with which you can choose the grade, unit and theme that you want to practice.',
   'Once selected, you can play any of the available games by clicking on its corresponding image.',
-  'At the moment, units one and two of fourth and fifth grade are available'
+  'At the moment, units one and two of fourth and fifth grade are available.'
 ];
 
 export const MainPage = () => {

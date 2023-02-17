@@ -27,17 +27,16 @@ const englishInstructions = [
 const spanishInstructions = [
   'En la pantalla se muestra un tablero lleno de diferentes letras.',
   'El objetivo es encontrar las palabras que se muestran a la derecha del tablero.',
-  'Para seleccionar una palabra se debe hacer click y mantener presionado mientras que se recorre toda la palabra de principio a fin.',
+  'Para seleccionar una palabra se debe hacer clic y mantener presionado mientras que se recorre toda la palabra de principio a fin.',
   'Si una palabra de la lista es seleccionada correctamente en el tablero, esta se resaltará y quedará tachada de la lista de palabras.',
-  'Si las letras seleccinadas no forman una palabra de la lista, se desvanecen las letras resaltadas y no se tacha ninguna palabra de la lista',
-  'Debajo del tablero esta un reloj que marca cuanto tiempo ha pasado desde que empezó la partida',
+  'Si las letras seleccionadas no forman una palabra de la lista, se desvanecen las letras resaltadas y no se tacha ninguna palabra de la lista.',
+  'Debajo del tablero está un reloj que marca cuanto tiempo ha pasado desde que empezó la partida.',
   'El juego se completa al encontrar todas las palabras de la lista.'
   ];
 
 const numberOfWords = 6;
-const tableSize = 12; // Tentativamente en el tamaño va ser 12
+const tableSize = 12;
 
-// Agregar filtro para evitar palabras mayores a 12 palabras
 const selectWords = (words, cantWords) => {
   let options = [];
   let selectedWords = [];
@@ -45,16 +44,17 @@ const selectWords = (words, cantWords) => {
     options[i] = i;
   }
   options.sort(() => Math.random() - 0.5);
-  if (cantWords > words.length) {
-    cantWords = words.length;
-  }
-  options = options.slice(0, cantWords);
-
-  for (let i = 0; i < cantWords; i++) {
-    selectedWords[i] = words[options[i]].word;
-  }
+  let wordCounter = 0;
+  options.map(wordIndex => {
+    if(words[wordIndex].word.length <= tableSize && wordCounter < numberOfWords) {
+      selectedWords[wordCounter] = words[wordIndex].word;
+      wordCounter += 1
+    }
+  });
   return selectedWords;
 }
+
+
 
 const playSound = (soundName) => {
   let sound = new Audio(`./sounds/${soundName}.m4a`);
@@ -65,10 +65,11 @@ export const WordSearchGame = () => {
   const [theme, setTheme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const [words, setWords] = useState(Themes.find(element => element.name === theme).words);
   const [selectedWords, setSelectedWords] = useState(selectWords(words, numberOfWords));
+  const [boardWords, setBoardWords] = useState(selectedWords.map(word => word.split(' ').join('')));
   const [initialLetter, setInitialLetter] = useState();
   const [finalLetter, setFinalLetter] = useState();
   const [foundWords, setFoundWords] = useState([]);
-  const [soup, setSoup] = useState(new Soup(selectedWords, tableSize));
+  const [soup, setSoup] = useState(new Soup(boardWords, tableSize));
   const [board, setBoard] = useState(soup.generate());
   const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
   const [wordIsFound, setWordIsFound] = useState(false);
@@ -76,6 +77,7 @@ export const WordSearchGame = () => {
   const [minutes, setMinutes] = useState(0);
   const [gameIsOver, setGameIsOver] = useState(false);
 
+  console.log(boardWords);
   const detectWord = (event) => {
     let text = event.target.textContent;
     if (text.length === 1 && text.match(/[a-zA-Z]/)) {
@@ -113,7 +115,7 @@ export const WordSearchGame = () => {
     if (foundWords.length === selectedWords.length) {
       Swal.fire({
         title: 'Congratulations! 😃',
-        text: `You found all the words in ${minutes} minutes and ${seconds} seconds`,
+        text: `You found all the words in ${minutes} minutes and ${seconds} seconds.`,
         heightAuto: false,
         confirmButtonColor: '#44a49c'
       })
@@ -152,10 +154,10 @@ export const WordSearchGame = () => {
     if (foundWords.find(word => word.toLowerCase() === buildedWord.toLowerCase()) === undefined ||
       foundWords.find(word => word.toLowerCase() === buildedWord.split("").reverse().join("").toLowerCase()) === undefined) {
       selectedWords.forEach(element => {
-        if (buildedWord.toLowerCase() === element.toLowerCase() ||
-          buildedWord.split("").reverse().join("").toLowerCase() === element.toLowerCase()) {
-          if ((foundWords.find(word => word.toLowerCase() === element.toLowerCase())) === undefined) {
-            setFoundWords([...foundWords, element.toLowerCase()]);
+        if (buildedWord.toLowerCase() === element.toLowerCase().split(' ').join('') ||
+          buildedWord.split("").reverse().join("").toLowerCase() === element.toLowerCase().split(' ').join('')) {
+          if ((foundWords.find(word => word.toLowerCase() === element.toLowerCase().split(' ').join(''))) === undefined) {
+            setFoundWords([...foundWords, element.toLowerCase().split(' ').join('')]);
             lettersCoordenates.map(element => document.getElementById(`${element.r}-${element.c}`).classList.add('grid-item-found'));
           }
           setWordIsFound(true);
@@ -201,7 +203,7 @@ export const WordSearchGame = () => {
               <div id='wordsToFind'>
                 <h3> Words to Find</h3>
                 {selectedWords.map((word, id) =>
-                  foundWords.find(element => element.toLowerCase() === word.toLowerCase()) ? <strike key={id}> {word} </strike> :
+                  foundWords.find(element => element.toLowerCase() === word.toLowerCase().split(' ').join('')) ? <strike key={id}> {word} </strike> :
                     <p key={id}> {word} </p>
                 )}
               </div>

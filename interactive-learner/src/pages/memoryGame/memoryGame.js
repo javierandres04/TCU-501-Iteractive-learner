@@ -17,16 +17,16 @@ import '../../App.css';
 const spanishInstructions = [
   'En pantalla se muestran 12 cartas volteadas.',
   'El objetivo del juego es encontrar los 6 pares de cartas iguales.',
-  'Para revelar el contenido de una carta basta con hacer click sobre ella.',
+  'Para revelar el contenido de una carta basta con hacer clic sobre ella.',
   'Esta se quedará visible hasta que se ejecute la siguiente jugada.',
   'Al revelar una segunda carta, si esta coincide con la primera, ambas se quedarán visibles, de lo contrario serán volteadas nuevamente.'
 ]
 const englishInstructions = [
-  'On the screen there are twelve flipped cards.',
+  'On the screen, there are twelve flipped cards.',
   `The game's objective is to find all six card pairs.`,
   'Click on a card to reveal its content.',
   'The card will stay visible until the next move is performed.',
-  `After revealing a second card, if they match, they will stay upwards, if they don't they will flip again.`
+  `After revealing a second card, if they match, they will stay upwards. If they don't, they will flip again.`
 ]
 
 const selectWords = (words) => {
@@ -105,7 +105,7 @@ export const MemoryGame = () => {
         setLastWordFound(choiseOne.word);
         Swal.fire({
           title: 'Good Work! 😃',
-          text: `...this word is: ${choiseOne.word}`,
+          text: `...this word is ''${choiseOne.word}.''`,
           timer: 2100,
           showConfirmButton: false,
           heightAuto: false
@@ -150,12 +150,14 @@ export const MemoryGame = () => {
   useEffect(() => {
     if (allCardsMatched() && turns > 0) {
       setGameWin(true);
-      Swal.fire({
-        title: 'Congratulations! You won! 😃',
-        text: 'You made ' + turns + ' attempts.',
-        heightAuto: false,
-        confirmButtonColor: '#44a49c'
-      })
+      setTimeout(()=> {
+        Swal.fire({
+          title: 'Congratulations! You won! 😃',
+          text: 'You made ' + turns + ' attempts.',
+          heightAuto: false,
+          confirmButtonColor: '#44a49c'
+        })
+      }, 2200)
     }
   }, [cards])
 
