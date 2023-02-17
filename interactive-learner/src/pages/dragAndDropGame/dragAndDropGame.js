@@ -22,6 +22,15 @@ const englishInstructions = [
   ''
 ]
 
+/** Using sound effect "UI Click" from freesound.org
+   * https://freesound.org/people/EminYILDIRIM/sounds/536108/
+   * created by user: EminYILDIRIM
+  */
+const playSelectSound = () => {
+  let sound = new Audio(`./sounds/SoundEffects/ui-click.wav`);
+  sound.play();
+}
+
 // TODO: adjust the number of words selected by this function
 const selectWords = (words) => {
   let options = [];
@@ -73,42 +82,18 @@ export const DragAndDropGame = () => {
   const [minutes, setMinutes] = useState(0);
 
 
-  const playSound = (soundName) => {
-    let sound = new Audio(`./sounds/${soundName}.m4a`);
-    sound.play();
-  }
+
 
   const handleChoise = (card) => {
     choiseOne ? setChoiseTwo(card) : setChoiseOne(card);
   }
 
   useEffect(() => {
-    if (choiseOne && choiseTwo) {
-      setDisabled(true);
-      if (choiseOne.src === choiseTwo.src) {
-        Swal.fire({
-          title: 'Good Work! 😃',
-          text: `...this word is: ${choiseOne.word}`,
-          timer: 2100,
-          showConfirmButton: false,
-          heightAuto: false
-        })
-        playSound(choiseOne.word)
-        setCards(prevCards => {
-          return prevCards.map(card => {
-            if (card.src === choiseOne.src) {
-              return { ...card, Matched: true }
-            } else {
-              return card;
-            }
-          })
-        })
-        resetTurn();
-      } else {
-        setTimeout(() => resetTurn(), 1000);
-      }
+    if (matches > 0) {
+      //playSound("Angry");
+      playSelectSound();
     }
-  }, [choiseOne, choiseTwo])
+  }, [matches])
 
   const resetTurn = () => {
     setChoiseOne(null);
@@ -130,7 +115,7 @@ export const DragAndDropGame = () => {
   })
 
   const refresh = () => window.location.reload(true);
-
+  
   const addAttemp = (e) => {
     setTurns(turns+1);
   }
@@ -159,7 +144,7 @@ export const DragAndDropGame = () => {
         <div id="mainBox" >
           <div id='memoryGameContainer'>
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
-            <DragImages words={selectedWords} addAttemp={addAttemp} addMatch = {addMatch}>
+            <DragImages words={selectedWords} playSelectSound = {playSelectSound} addAttemp={addAttemp} addMatch = {addMatch}>
             </DragImages>
             <DropImages words={shuffledWords}>
             </DropImages>
