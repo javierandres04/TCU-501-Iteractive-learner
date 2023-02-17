@@ -4,11 +4,11 @@ import { DragDropContainer } from "react-drag-drop-container";
 
 const route = "../../.."
 
-export const DragImages = ({ words, addAttemp }) => {
+export const DragImages = ({ words, addAttemp, addMatch }) => {
   let wordList = [];
   words.forEach((word, index)=>{
     wordList.push( 
-      <DragDropContainer targetKey={word.word} dragData={[word.word,index]} onDragEnd={addAttemp}>
+      <DragDropContainer targetKey={word.word} dragData={[word.word,index]} onDragEnd={addAttemp} onDrop={addMatch}>
         <img src={route+word.imageSrc} alt={word.word} width="150px"></img>
       </DragDropContainer> 
     )

@@ -62,6 +62,7 @@ export const DragAndDropGame = () => {
   const [shuffledWords, setShuffledWords] = useState(shuffleArray(selectedWords));
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
+  const [matches, setMatches] = useState(0);
   const [transferData, setTransferData] = useState("Cuco");
   const [choiseOne, setChoiseOne] = useState(null);
   const [choiseTwo, setChoiseTwo] = useState(null);
@@ -116,18 +117,8 @@ export const DragAndDropGame = () => {
     setDisabled(false);
   }
 
-
-  const cardIsMatched = (card) => {
-    return card.Matched === true;
-  }
-
-  const allCardsMatched = () => {
-    return cards.every(cardIsMatched);
-  }
-
-
   useEffect(() => {
-    if (allCardsMatched() && turns > 0) {
+    if (matches == 8) {
       setGameWin(true);
       Swal.fire({
         title: 'Congratulations! You won! 😃',
@@ -136,13 +127,17 @@ export const DragAndDropGame = () => {
         confirmButtonColor: '#44a49c'
       })
     }
-  }, [cards])
+  })
 
   const refresh = () => window.location.reload(true);
 
-
   const addAttemp = (e) => {
     setTurns(turns+1);
+  }
+
+  const addMatch = (e) => {
+    setMatches(matches+1);
+    console.log("Number of matches: "+matches)
   }
 
   return (
@@ -164,7 +159,7 @@ export const DragAndDropGame = () => {
         <div id="mainBox" >
           <div id='memoryGameContainer'>
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
-            <DragImages words={selectedWords} addAttemp={addAttemp}>
+            <DragImages words={selectedWords} addAttemp={addAttemp} addMatch = {addMatch}>
             </DragImages>
             <DropImages words={shuffledWords}>
             </DropImages>

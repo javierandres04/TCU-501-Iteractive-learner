@@ -19,7 +19,7 @@ var names_order = []
 const changePlacerholder = (e) => {
   e.containerElem.style.visibility = 'hidden';
   names_order.forEach((word, index)=>{
-    if(e.dragData[0] == word.word) {  
+    if(e.dragData[0] === word.word) {  
       placeholder[index] = route+e.dragData[0]+format;
     }
   })
