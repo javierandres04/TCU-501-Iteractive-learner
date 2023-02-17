@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import { HeadGames } from '../../components/HeadGames/HeadGames';
 import { HelpModal } from '../../components/HelpModal/HelpModal';
 import { ConfettiRain } from '../../components/ConfettiRain/ConfettiRain';
-import './dragAndDrop.css';
+import './dragAndDropGame.css';
 import '../../App.css';
 import { DragImages } from '../../components/DragImages/DragImages';
 import { DropImages } from '../../components/DropImages/DropImages';
@@ -55,7 +55,7 @@ const shuffleArray = (array) => {
   return newArray;
 }
 
-export const DragAndDrop = () => {
+export const DragAndDropGame = () => {
   const [theme, setTheme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const [words, setWords] = useState(Themes.find(element => element.name === theme).words);
   const [selectedWords, setSelectedWords] = useState(selectWords(words));
