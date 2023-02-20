@@ -6,7 +6,7 @@ const route = "../../../images/"
 const format = ".png"
 const df = "https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png"
 
-var placeholder = [df,df,df,df,df,df,df,df]
+var placeholder = []
 var names_order = []
 
 /**
@@ -25,9 +25,12 @@ const changePlacerholder = (e) => {
   })
 }
 
-export const DropImages = ({ words }) => {
+export const DropImages = ({ words, turns }) => {
   let wordList = [];
   names_order = words;
+  if (turns === 0){
+    placeholder = [df,df,df,df,df,df,df,df];
+  }
   words.forEach((word, index)=>{
     wordList.push( 
       <DropTarget targetKey={word.word} onHit={changePlacerholder}>

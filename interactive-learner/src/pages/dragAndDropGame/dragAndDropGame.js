@@ -83,10 +83,10 @@ const shuffleArray = (array) => {
 }
 
 export const DragAndDropGame = () => {
-  const [theme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
-  const [words] = useState(Themes.find(element => element.name === theme).words);
-  const [selectedWords] = useState(selectWords(words));
-  const [shuffledWords] = useState(shuffleArray(selectedWords));
+  const theme = useState(useSelector((state) => state.theme.selectedTheme.Theme));
+  const words = useState(Themes.find(element => element.name === theme[0]).words);
+  const selectedWords = useState(selectWords(words[0]));
+  const shuffledWords = useState(shuffleArray(selectedWords[0]));
   const [turns, setTurns] = useState(0);
   const [matches, setMatches] = useState(0);
   const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
@@ -142,9 +142,9 @@ export const DragAndDropGame = () => {
         <div id="mainBox" >
           <div id='memoryGameContainer'>
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
-            <DragImages words={selectedWords} playSelectSound = {playSelectSound} addAttemp={addAttemp} addMatch = {addMatch}>
+            <DragImages words={selectedWords[0]} playSelectSound = {playSelectSound} addAttemp={addAttemp} addMatch = {addMatch}>
             </DragImages>
-            <DropImages words={shuffledWords}>
+            <DropImages words={shuffledWords[0]} turns={turns}>
             </DropImages>
             <div id='stats'>
               <div id='attempts'>Attempts: {turns}</div>
