@@ -9,6 +9,11 @@ const df = "https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/pl
 var placeholder = []
 var names_order = []
 
+const playSound = (soundName) => {
+  let sound = new Audio(`./sounds/${soundName}.m4a`);
+  sound.play();
+}
+
 /**
  * Receives the information from the image dropped in the position
  * that matched the key.
@@ -21,6 +26,7 @@ const changePlacerholder = (e) => {
   names_order.forEach((word, index)=>{
     if(e.dragData[0] === word.word) {  
       placeholder[index] = route+e.dragData[0].replace(' ', '_')+format;
+      playSound(e.dragData[0].replace(' ', '_'))
     }
   })
 }
