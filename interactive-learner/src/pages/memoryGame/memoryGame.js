@@ -147,9 +147,19 @@ export const MemoryGame = () => {
     return cards.every(cardIsMatched);
   }
 
+  /** Using sound effect "Success Fanfare Trumpets" from freesound.org
+   * https://freesound.org/people/FunWithSound/sounds/456966/
+   * created by user: FunWithSound
+  */
+  const playVictorySound = () => {
+    let sound = new Audio(`./sounds/SoundEffects/Success-Fanfare-Trumpets.mp3`);
+    sound.play();
+  }
+
   useEffect(() => {
     if (allCardsMatched() && turns > 0) {
       setGameWin(true);
+      playVictorySound()
       setTimeout(()=> {
         Swal.fire({
           title: 'Congratulations! You won! 😃',

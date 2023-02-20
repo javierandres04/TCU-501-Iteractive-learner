@@ -113,8 +113,18 @@ export const WordSearchGame = () => {
     }
   }, [finalLetter]);
 
+  /** Using sound effect "Success Fanfare Trumpets" from freesound.org
+   * https://freesound.org/people/FunWithSound/sounds/456966/
+   * created by user: FunWithSound
+  */
+  const playVictorySound = () => {
+    let sound = new Audio(`./sounds/SoundEffects/Success-Fanfare-Trumpets.mp3`);
+    sound.play();
+  }
+
   useEffect(() => {
     if (foundWords.length === selectedWords.length) {
+      playVictorySound()
       Swal.fire({
         title: 'Congratulations! 😃',
         text: `You found all the words in ${minutes} minutes and ${seconds} seconds.`,
