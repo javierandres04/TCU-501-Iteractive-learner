@@ -14,12 +14,21 @@ import '../../App.css';
 import { DragImages } from '../../components/DragImages/DragImages';
 import { DropImages } from '../../components/DropImages/DropImages';
 
-// TODO: instructions
 const spanishInstructions = [
-  ''
+  'En la parte de arriba se muestran 8 imágenes  diferentes.',
+  'En la parte de abajo se muestran 8 palabras que se asocian con las imágenes de arriba.',
+  'Las imágenes se pueden arrastrar hacia el icono de imagen que está arriba de las palabras.',
+  'Cuando se arrastra una imagen a la posición donde está la palabra que la describe la imagen no regresa a su posición original.',
+  'Si se arrastra una imagen a una posición que no es la correcta, la imagen volverá a su posición original.',
+  'El objetivo es asociar las 8 imágenes con las 8 las palabras que las describen.'
 ]
 const englishInstructions = [
-  ''
+  'At the top there are 8 different images',
+  'At the bottom there are 8 words that are associated with the images above.',
+  'Images can be dragged into the image icon above the words.',
+  'When an image is dragged to the position where the word that describes it is, the image does not return to its original position.',
+  'If an image is dragged to a position that is not correct, the image will return to its original position.',
+  'The objective is to associate the 8 images with the 8 words that describe them.'
 ]
 
 /** Using sound effect "UI Click" from freesound.org
@@ -28,6 +37,16 @@ const englishInstructions = [
   */
 const playSelectSound = () => {
   let sound = new Audio(`./sounds/SoundEffects/ui-click.wav`);
+  sound.play();
+}
+
+/**
+ * Using sound effect "dbl click" from freesound.org
+ * https://freesound.org/people/7778/sounds/202312/
+ * created by user: 7778
+ */
+const playMatchSound = () => {
+  let sound = new Audio(`./sounds/SoundEffects/dbl-click.mp3`);
   sound.play();
 }
 
@@ -90,8 +109,7 @@ export const DragAndDropGame = () => {
 
   useEffect(() => {
     if (matches > 0) {
-      //playSound("Angry");
-      playSelectSound();
+      playMatchSound();
     }
   }, [matches])
 
