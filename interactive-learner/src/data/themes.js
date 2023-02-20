@@ -62,10 +62,6 @@ export const Themes = [
         word: 'Swimming',
         imageSrc: '/images/Swimming.png',
       },
-      // {
-      //   word: 'Bungee Jumping',
-      //   imageSrc: '/images/Bungee Jumping.png',
-      // },
       {
         word: 'Cycling',
         imageSrc: '/images/Cycling.png',
@@ -602,10 +598,6 @@ export const Themes = [
         word: 'Tie',
         imageSrc: '/images/Tie.png',
       },
-      // {
-      //   word: 'Shirt',
-      //   imageSrc: '/images/Shirt.png',
-      // }
     ]
   }, 
   {
@@ -682,10 +674,6 @@ export const Themes = [
         word: 'River',
         imageSrc: '/images/River.png',
       },
-      // {
-      //   word: 'Danger',
-      //   imageSrc: '/images/Danger.png',
-      // },
       {
         word: 'Park Ranger',
         imageSrc: '/images/Park_Ranger.png',

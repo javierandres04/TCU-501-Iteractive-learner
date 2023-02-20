@@ -35,7 +35,7 @@ const Popup = ({ correctLetters, wrongLetters, selectedWord, setPlayable, playab
       playVictorySound()
       Swal.fire({
         title: 'Congratulations! You won! 😃',
-        text: `You found the word ''${selectedWord}'' in ${minutes} minutes and ${seconds} seconds.`,
+        text: `You found the word ''${selectedWord}'' in ${minutes} minutes and ${seconds} ...seconds.`,
         heightAuto: false,
         confirmButtonColor: '#44a49c'
       })
@@ -44,7 +44,7 @@ const Popup = ({ correctLetters, wrongLetters, selectedWord, setPlayable, playab
     } else if (status === 'lose') {
       Swal.fire({
         title: 'Unfortunately you lost. 😕',
-        text: `...the word was ''${selectedWord}.''`,
+        text: `he word was ''${selectedWord}.''`,
         heightAuto: false,
         confirmButtonColor: '#44a49c'
       })
