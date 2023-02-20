@@ -31,6 +31,15 @@ const englishInstructions = [
   'The objective is to associate the 8 images with the 8 words that describe them.'
 ]
 
+/** Using sound effect "Success Fanfare Trumpets" from freesound.org
+   * https://freesound.org/people/FunWithSound/sounds/456966/
+   * created by user: FunWithSound
+  */
+const playVictorySound = () => {
+  let sound = new Audio(`./sounds/SoundEffects/Success-Fanfare-Trumpets.mp3`);
+  sound.play();
+}
+
 /** Using sound effect "UI Click" from freesound.org
    * https://freesound.org/people/EminYILDIRIM/sounds/536108/
    * created by user: EminYILDIRIM
@@ -103,6 +112,7 @@ export const DragAndDropGame = () => {
   useEffect(() => {
     if (matches === 8) {
       setGameWin(true);
+      playVictorySound()
       Swal.fire({
         title: 'Congratulations! You won! 😃',
         text: 'You made ' + turns + ' attempts.',

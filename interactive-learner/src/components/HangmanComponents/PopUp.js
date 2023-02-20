@@ -1,6 +1,14 @@
 import { useEffect } from 'react';
 import Swal from 'sweetalert2';
 
+/** Using sound effect "Success Fanfare Trumpets" from freesound.org
+   * https://freesound.org/people/FunWithSound/sounds/456966/
+   * created by user: FunWithSound
+  */
+const playVictorySound = () => {
+  let sound = new Audio(`./sounds/SoundEffects/Success-Fanfare-Trumpets.mp3`);
+  sound.play();
+}
 
 const Popup = ({ correctLetters, wrongLetters, selectedWord, setPlayable, playable, setGameWin , minutes, seconds}) => {
   const playSound = (soundName) => {
@@ -24,6 +32,7 @@ const Popup = ({ correctLetters, wrongLetters, selectedWord, setPlayable, playab
   
     if (status === 'win') {
       setGameWin(true);
+      playVictorySound()
       Swal.fire({
         title: 'Congratulations! You won! 😃',
         text: `You found the word ''${selectedWord}'' in ${minutes} minutes and ${seconds} seconds.`,
