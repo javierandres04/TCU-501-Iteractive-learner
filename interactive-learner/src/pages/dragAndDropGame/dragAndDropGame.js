@@ -50,7 +50,6 @@ const playMatchSound = () => {
   sound.play();
 }
 
-// TODO: adjust the number of words selected by this function
 const selectWords = (words) => {
   let options = [];
   let selectedWords = [];
@@ -84,28 +83,16 @@ const shuffleArray = (array) => {
 }
 
 export const DragAndDropGame = () => {
-  const [theme, setTheme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
-  const [words, setWords] = useState(Themes.find(element => element.name === theme).words);
-  const [selectedWords, setSelectedWords] = useState(selectWords(words));
-  const [shuffledWords, setShuffledWords] = useState(shuffleArray(selectedWords));
-  const [cards, setCards] = useState([]);
+  const [theme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
+  const [words] = useState(Themes.find(element => element.name === theme).words);
+  const [selectedWords] = useState(selectWords(words));
+  const [shuffledWords] = useState(shuffleArray(selectedWords));
   const [turns, setTurns] = useState(0);
   const [matches, setMatches] = useState(0);
-  const [transferData, setTransferData] = useState("Cuco");
-  const [choiseOne, setChoiseOne] = useState(null);
-  const [choiseTwo, setChoiseTwo] = useState(null);
-  const [disabled, setDisabled] = useState(false);
   const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
   const [gameWin, setGameWin] = useState(false);
-  const [seconds, setSeconds] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-
-
-
-
-  const handleChoise = (card) => {
-    choiseOne ? setChoiseTwo(card) : setChoiseOne(card);
-  }
+  // const [seconds, setSeconds] = useState(0);
+  // const [minutes, setMinutes] = useState(0);
 
   useEffect(() => {
     if (matches > 0) {
@@ -113,15 +100,8 @@ export const DragAndDropGame = () => {
     }
   }, [matches])
 
-  const resetTurn = () => {
-    setChoiseOne(null);
-    setChoiseTwo(null);
-    setTurns(prevTurns => prevTurns + 1);
-    setDisabled(false);
-  }
-
   useEffect(() => {
-    if (matches == 8) {
+    if (matches === 8) {
       setGameWin(true);
       Swal.fire({
         title: 'Congratulations! You won! 😃',
@@ -130,7 +110,7 @@ export const DragAndDropGame = () => {
         confirmButtonColor: '#44a49c'
       })
     }
-  })
+  }, [matches, turns])
 
   const refresh = () => window.location.reload(true);
   
