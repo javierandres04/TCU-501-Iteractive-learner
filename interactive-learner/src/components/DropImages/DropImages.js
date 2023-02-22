@@ -4,7 +4,7 @@ import { DropTarget } from "react-drag-drop-container";
 
 const route = "../../../images/"
 const format = ".png"
-const df = "https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png"
+const df = "../../../images/default.png"
 
 var placeholder = []
 var names_order = []
