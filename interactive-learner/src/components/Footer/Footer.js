@@ -15,7 +15,7 @@ export const Footer = () => {
                         <img className='logos' src={logoUCR} alt="logo" />
                         <img className='logos' src={logoTCU} alt="logo" />
                     </div>
-                    <Navbar.Brand id='authors' >© Sebastián Alfaro, Javier Molina </Navbar.Brand>
+                    <Navbar.Brand id='authors' >© Sebastián Alfaro, Javier Molina, Kevin Arguedas, Fabián González </Navbar.Brand>
                 </Container>
             </Navbar>
         </>
