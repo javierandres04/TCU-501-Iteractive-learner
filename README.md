@@ -35,7 +35,7 @@ https://tcu-501-iteractive-learner-jd1o.vercel.app/
 ### **Recursos externos utlizados**: 
 * Banco de imagenes TCU 501: https://sites.google.com/site/tcu658ucr/recursos/im%C3%A1genes-did%C3%A1cticas?authuser=0
 
-
+* Efectos de sonido: https://freesound.org
 
 
 
