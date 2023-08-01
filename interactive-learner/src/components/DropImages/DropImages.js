@@ -40,17 +40,19 @@ export const DropImages = ({ words, turns }) => {
   words.forEach((word, index)=>{
     wordList.push( 
       <DropTarget targetKey={word.word} onHit={changePlacerholder}>
-        <div id = "memoryGameContainer">
-          <img src={placeholder[index]} alt = "error" width="150px"></img>
-          <b>{word.word}</b>
+        <div>
+          <img id="card" src={placeholder[index]} alt = "error"></img>
+          <b id="card-text"> {word.word} </b>
         </div>
       </DropTarget>
     )
   })
     return (
       <ul>
-        <div id = "cards-grid">
-          {wordList}
+        <div id = "cards-container">
+          <div id = "cards-grid">
+            {wordList}
+          </div>
         </div>
       </ul>
     );  
