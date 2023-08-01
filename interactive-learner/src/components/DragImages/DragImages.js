@@ -9,7 +9,7 @@ export const DragImages = ({ words, playSelectSound, addAttemp, addMatch }) => {
   words.forEach((word, index)=>{
     wordList.push( 
       <DragDropContainer targetKey={word.word} dragData={[word.word,index]} onDragStart={playSelectSound} onDragEnd={addAttemp} onDrop={addMatch}>
-        <img id = "card" src={route+word.imageSrc} alt={word.word} width="150px"></img>
+        <img id = "card" src={route+word.imageSrc} alt={word.word}></img>
       </DragDropContainer> 
     )
   })
