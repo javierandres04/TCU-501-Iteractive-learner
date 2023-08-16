@@ -4,6 +4,7 @@ import { MemoryGame } from '../../pages/memoryGame/memoryGame';
 import { HangmanGame } from '../../pages/hangmanGame/hangmanGame';
 import { WordSearchGame } from '../../pages/wordSearchGame/wordSearchGame';
 import { DragAndDropGame } from '../../pages/dragAndDropGame/dragAndDropGame';
+import { ChooseBetweenGame } from '../../pages/chooseBetweenGame/chooseBetweenGame';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion'
 
@@ -17,6 +18,7 @@ export const AnimatedRoutes = () => {
         <Route path='HangmanGame' element={<HangmanGame></HangmanGame>} />
         <Route path='WordSearchGame' element={<WordSearchGame></WordSearchGame>} />
         <Route path='DragAndDropGame' element={<DragAndDropGame></DragAndDropGame>} />
+        <Route path='ChooseBetweenGame' element={<ChooseBetweenGame></ChooseBetweenGame>} />
       </Routes>
     </AnimatePresence>
   )
