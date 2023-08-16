@@ -32,7 +32,7 @@ export const GamesGrid = ({ grade, unit, theme }) => {
         <div onClick={() => handleSelectedGame(element)} key={element} id='games-container'>
           <label id='game-name'> {element} </label>
           {console.log(element)}
-          <img id='game-logo' src={`./images/${element.replace(' ', '_')}_Logo.png`}></img>
+          <img id='game-logo' src={`./images/${element.replace(' ', '_')}_Logo.png`} alt="error"></img>
         </div>
       ))}
     </div>

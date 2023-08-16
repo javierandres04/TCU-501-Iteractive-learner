@@ -11,9 +11,7 @@ import { HelpModal } from '../../components/HelpModal/HelpModal';
 import { ConfettiRain } from '../../components/ConfettiRain/ConfettiRain';
 import './chooseBetweenGame.css';
 import '../../App.css';
-import { DragImages } from '../../components/DragImages/DragImages';
-import { DropImages } from '../../components/DropImages/DropImages';
-
+import { TripleChoice } from '../../components/TripleChoice/TripleChoice';
 const spanishInstructions = [
   'TODO'
 ]
@@ -66,26 +64,10 @@ const selectWords = (words) => {
   return selectedWords;
 }
 
-// ref:https://dev.to/codebubb/how-to-shuffle-an-array-in-javascript-2ikj
-const shuffleArray = (array) => {
-  let newArray = [];
-  for (let k = 0;  array.length > k; k++){
-    newArray[k] = array[k];
-  }
-  for (let i = newArray.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    const temp = newArray[i];
-    newArray[i] = newArray[j];
-    newArray[j] = temp;
-  }
-  return newArray;
-}
-
 export const ChooseBetweenGame = () => {
   const theme = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const words = useState(Themes.find(element => element.name === theme[0]).words);
   const selectedWords = useState(selectWords(words[0]));
-  const shuffledWords = useState(shuffleArray(selectedWords[0]));
   const [turns, setTurns] = useState(0);
   const [matches, setMatches] = useState(0);
   const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
@@ -142,10 +124,8 @@ export const ChooseBetweenGame = () => {
         <div id="mainBox" >
           <div id='memoryGameContainer'>
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
-            <DragImages words={selectedWords[0]} playSelectSound = {playSelectSound} addAttemp={addAttemp} addMatch = {addMatch}>
-            </DragImages>
-            <DropImages words={shuffledWords[0]} turns={turns}>
-            </DropImages>
+            <TripleChoice words={selectedWords[0]} rightChoice={2} playSelectSound = {playSelectSound} addAttemp={addAttemp} addMatch = {addMatch}>
+            </TripleChoice>
             <div id='stats'>
               <div id='attempts'>Attempts: {turns}</div>
             </div>

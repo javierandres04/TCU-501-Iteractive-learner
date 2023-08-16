@@ -13,7 +13,7 @@ export const Themes = [
       //   word: 'Bon',
       //   imageSrc: '/images/Bon_Bread.png',
       // }
-      ,{
+      {
         word: 'Pati',
         imageSrc: '/images/Pati.png',
       },{
