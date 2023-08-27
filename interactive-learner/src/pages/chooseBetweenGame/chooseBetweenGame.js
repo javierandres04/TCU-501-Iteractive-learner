@@ -72,9 +72,8 @@ export const ChooseBetweenGame = () => {
   const [matches, setMatches] = useState(0);
   const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
   const [gameWin, setGameWin] = useState(false);
-  // const [seconds, setSeconds] = useState(0);
-  // const [minutes, setMinutes] = useState(0);
-
+  const [currentWord, setCurrentWord] = useState("error");
+  
   useEffect(() => {
     if (matches > 0) {
       playMatchSound();
@@ -122,11 +121,15 @@ export const ChooseBetweenGame = () => {
       <Header title={'Choose Between'} />
       <div id="bodyContainer">
         <div id="mainBox" >
-          <div id='memoryGameContainer'>
+          <div id='chooseBetweenContainer'>
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
-            <TripleChoice words={selectedWords[0]} rightChoice={2} playSelectSound = {playSelectSound} addAttemp={addAttemp} addMatch = {addMatch}>
-            </TripleChoice>
+            <div id='currentWord'>Current Word: {currentWord}</div>
+            <div id='tripleChoice'>
+              <TripleChoice words={selectedWords[0]} rightChoice={2} playSelectSound = {playSelectSound} addAttemp={addAttemp} addMatch = {addMatch}>
+              </TripleChoice>
+            </div>
             <div id='stats'>
+              <div id='attempts'>Matches: {matches}</div>
               <div id='attempts'>Attempts: {turns}</div>
             </div>
             <button onClick={refresh}>New Game</button>
