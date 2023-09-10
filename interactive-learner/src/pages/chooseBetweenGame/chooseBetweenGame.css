@@ -71,6 +71,12 @@ button:hover {
   justify-content: center;
 }
 
+#startButton{
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+
 @media (width < 100vh) {
   #stats {
     flex-direction: column;
@@ -115,3 +121,4 @@ button:hover {
   font-weight: bold;
   font-size: 0.4in;
 }
+
