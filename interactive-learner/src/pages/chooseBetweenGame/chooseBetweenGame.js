@@ -158,8 +158,6 @@ export const ChooseBetweenGame = () => {
     }
   }, [matches, turns])
 
-  const refresh = () => window.location.reload(true);
-  
   const addAttemp = (e) => {
     setTurns(turns+1);
   }
@@ -188,36 +186,36 @@ export const ChooseBetweenGame = () => {
         <div id="mainBox" >
           <div id='chooseBetweenContainer'>
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
-                <div id='tripleChoice'>
-                  { showChoices ?
-                      <TripleChoice 
-                        words = {words}
-                        selectedWords={selectedWords}
-                        matches = {matches}
-                        addMatch = {addMatch}
-                        addAttemp={addAttemp}
-                        playSelectSound = {playSelectSound}
-                        playMatchSound = {playMatchSound}
-                        setShowChoices={setShowChoices}>
-                      </TripleChoice>
-                    :
+              <div id='tripleChoice'>
+                { showChoices ?
+                    <TripleChoice 
+                      words = {words}
+                      selectedWords={selectedWords}
+                      matches = {matches}
+                      addMatch = {addMatch}
+                      addAttemp={addAttemp}
+                      playSelectSound = {playSelectSound}
+                      playMatchSound = {playMatchSound}
+                      setShowChoices={setShowChoices}>
+                    </TripleChoice>
+                  :
+                  <div>
                     <div>
-                      <div>
-                        <div id = "currentWord"> "Press New Game to Play" </div>
-                        <div id = "cards-container">
-                          <div id = "cards-grid">
-                            <img id = "card" src={"../../../images/question_mark.png"} alt = "error">
-                            </img>
-                            <img id = "card" src={"../../../images/question_mark.png"} alt = "error">
-                            </img>
-                            <img id = "card" src={"../../../images/question_mark.png"} alt = "error">
-                            </img>
-                          </div>
+                      <div id = "currentWord"> Press New Game to Play </div>
+                      <div id = "cards-container">
+                        <div id = "cards-grid">
+                          <img id = "card" src={"../../../images/question_mark.png"} alt = "error">
+                          </img>
+                          <img id = "card" src={"../../../images/question_mark.png"} alt = "error">
+                          </img>
+                          <img id = "card" src={"../../../images/question_mark.png"} alt = "error">
+                          </img>
                         </div>
                       </div>
                     </div>
-                  }
-                </div>
+                  </div>
+                }
+              </div>
             <div id='stats'>
               <div id='attempts'>Attempts: {turns}</div>
               <div id='attempts'>Matches: {matches}</div>

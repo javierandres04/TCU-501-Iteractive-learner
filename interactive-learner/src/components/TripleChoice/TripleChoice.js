@@ -23,25 +23,23 @@ const handleClickedImage = (index, rightChoice, addMatch, playSelectSound, playM
  */
 export const TripleChoice = ({ selectedWords, matches, addMatch, addAttemp, playSelectSound, playMatchSound, setShowChoices}) => {
     return (
-      <ul>
-        <div>
-          <div id='currentWord'>
-            Current Word: {selectedWords[(selectedWords[3+matches*4])+matches*4].word}
-          </div>
-          <div id = "cards-container">
-            <div id = "cards-grid">
-              <img id = "card" src={route+selectedWords[0+matches*4].imageSrc} alt={selectedWords[0+matches*4].word} 
-                onClick={() => (handleClickedImage(0, selectedWords[3+matches*4], addMatch, playSelectSound, playMatchSound, matches, setShowChoices), addAttemp())} style={{ cursor: 'pointer' }}>
-              </img>
-              <img id = "card" src={route+selectedWords[1+matches*4].imageSrc} alt={selectedWords[1+matches*4].word}
-                onClick={() => (handleClickedImage(1, selectedWords[3+matches*4], addMatch, playSelectSound, playMatchSound, matches, setShowChoices), addAttemp())} style={{ cursor: 'pointer' }}>
-              </img>
-              <img id = "card" src={route+selectedWords[2+matches*4].imageSrc} alt={selectedWords[2+matches*4].word}
-                onClick={() => (handleClickedImage(2, selectedWords[3+matches*4], addMatch, playSelectSound, playMatchSound, matches, setShowChoices), addAttemp())} style={{ cursor: 'pointer' }}>
-              </img>
-            </div>
+      <div id = "container">
+        <div id='currentWord'>
+          {selectedWords[(selectedWords[3+matches*4])+matches*4].word}
+        </div>
+        <div id = "cards-container">
+          <div id = "cards-grid">
+            <img id = "card" src={route+selectedWords[0+matches*4].imageSrc} alt={selectedWords[0+matches*4].word} 
+              onClick={() => (handleClickedImage(0, selectedWords[3+matches*4], addMatch, playSelectSound, playMatchSound, matches, setShowChoices), addAttemp())} style={{ cursor: 'pointer' }}>
+            </img>
+            <img id = "card" src={route+selectedWords[1+matches*4].imageSrc} alt={selectedWords[1+matches*4].word}
+              onClick={() => (handleClickedImage(1, selectedWords[3+matches*4], addMatch, playSelectSound, playMatchSound, matches, setShowChoices), addAttemp())} style={{ cursor: 'pointer' }}>
+            </img>
+            <img id = "card" src={route+selectedWords[2+matches*4].imageSrc} alt={selectedWords[2+matches*4].word}
+              onClick={() => (handleClickedImage(2, selectedWords[3+matches*4], addMatch, playSelectSound, playMatchSound, matches, setShowChoices), addAttemp())} style={{ cursor: 'pointer' }}>
+            </img>
           </div>
         </div>
-      </ul>
+      </div>
     );  
 };
