@@ -8,12 +8,12 @@ export const Themes = [
       },{
         word: 'Casado',
         imageSrc: '/images/Casado.png',
-      },
+      }
       // {
       //   word: 'Bon',
       //   imageSrc: '/images/Bon_Bread.png',
       // }
-      {
+      ,{
         word: 'Pati',
         imageSrc: '/images/Pati.png',
       },{
@@ -200,7 +200,7 @@ export const Themes = [
       },
       {
         word: 'Playing The Guitar',
-        imageSrc: '/images/Playing_The_Guitar.png',
+        imageSrc: '/images/Playing_Guitar.png',
       },
       {
         word: 'Doing Karate',
@@ -903,10 +903,6 @@ export const Themes = [
       {
         word: 'Stingray',
         imageSrc: '/images/Stingray.png',
-      },
-      {
-        word: 'Firefly',
-        imageSrc: '/images/Firefly.png',
       },
       {
         word: 'Quetzal',
