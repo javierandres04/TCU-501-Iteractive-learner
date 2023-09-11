@@ -38,7 +38,7 @@ button:hover {
   margin-bottom: 3%;
 }
 
-#cards-grid {
+#cards-grid-tc {
   width: 67.5%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

@@ -16,9 +16,13 @@
   align-self: center;
 }
 
-#cards-grid {
+#cards-grid-tc {
+  width: 67.5%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 1.25%;
+  column-gap: 1.25%;
+  margin-bottom: 4%;
 }
 
 #card {

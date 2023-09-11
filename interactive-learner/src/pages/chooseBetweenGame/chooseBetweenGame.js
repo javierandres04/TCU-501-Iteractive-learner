@@ -203,7 +203,7 @@ export const ChooseBetweenGame = () => {
                     <div>
                       <div id = "currentWord"> Press New Game to Play </div>
                       <div id = "cards-container">
-                        <div id = "cards-grid">
+                        <div id = "cards-grid-tc">
                           <img id = "card" src={"../../../images/question_mark.png"} alt = "error">
                           </img>
                           <img id = "card" src={"../../../images/question_mark.png"} alt = "error">
