@@ -45,6 +45,11 @@
   transition: all 0.2s ease-in-out;
 }
 
+#games-container-alternative:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
 #games-container:hover {
   cursor: pointer;
   transform: scale(1.1);
