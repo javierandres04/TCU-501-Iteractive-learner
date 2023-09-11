@@ -11,8 +11,11 @@ export const Timer = ({ stopTimer, seconds, setSeconds, minutes, setMinutes}) =>
             setSeconds(seconds + 1);
           }
         }, 1000)
+      } else {
+        setMinutes(0);
+        setSeconds(0);
       }
-  }, [seconds, minutes])
+  }, [stopTimer, seconds, minutes])
   
 
 

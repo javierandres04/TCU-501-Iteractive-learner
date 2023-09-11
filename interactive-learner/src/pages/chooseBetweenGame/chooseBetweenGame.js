@@ -12,6 +12,7 @@ import { ConfettiRain } from '../../components/ConfettiRain/ConfettiRain';
 import './chooseBetweenGame.css';
 import '../../App.css';
 import { TripleChoice } from '../../components/TripleChoice/TripleChoice';
+import { Timer } from '../../components/Timer/Timer';
 
 const spanishInstructions = [
   'Presiona el botón de nueva partida para iniciar el juego.',
@@ -131,11 +132,12 @@ const makeGameOptions = (rightChoices, words) => {
 }
 
 
-const selectChoices = (words, setSelectedWords, setShowChoices, setTurns, setMatches) => {
+const selectChoices = (words, setSelectedWords, setShowChoices, setTurns, setMatches, setGameIsOver) => {
   let rightChoices = selectRightChoices(words);
   setSelectedWords(makeGameOptions(rightChoices, words));
   setTurns(0);
   setMatches(0);
+  setGameIsOver(false);
   setShowChoices(true);
 }
 
@@ -148,7 +150,10 @@ export const ChooseBetweenGame = () => {
   const [gameWin, setGameWin] = useState(false);
   const [selectedWords, setSelectedWords] = useState([]);
   const [showChoices, setShowChoices] = useState(false);
-  
+  const [seconds, setSeconds] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [gameIsOver, setGameIsOver] = useState(true);
+
   useEffect(() => {
     if (matches > 0) {
       playMatchSound();
@@ -157,11 +162,12 @@ export const ChooseBetweenGame = () => {
 
   useEffect(() => {
     if (matches === 8) {
+      setGameIsOver(true);
       setGameWin(true);
       playVictorySound()
       Swal.fire({
         title: 'Congratulations! You won! 😃',
-        text: 'You made ' + turns + ' attempts.',
+        text: 'You made ' + turns + ' attempts and took ' +minutes+ ' minutes and '+ seconds + ' seconds.',
         heightAuto: false,
         confirmButtonColor: '#44a49c'
       })
@@ -196,6 +202,14 @@ export const ChooseBetweenGame = () => {
         <div id="mainBox" >
           <div id='chooseBetweenContainer'>
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
+              <h5> Time </h5>
+              <Timer
+                stopTimer={gameIsOver}
+                seconds={seconds}
+                setSeconds={setSeconds}
+                minutes={minutes}
+                setMinutes={setMinutes}
+              />
               <div id='tripleChoice'>
                 { showChoices ?
                     <TripleChoice 
@@ -230,7 +244,7 @@ export const ChooseBetweenGame = () => {
               <div id='attempts'>Attempts: {turns}</div>
               <div id='attempts'>Matches: {matches}</div>
             </div>
-            <button onClick={() => selectChoices(words, setSelectedWords, setShowChoices, setTurns, setMatches)}>New Game</button>
+            <button onClick={() => selectChoices(words, setSelectedWords, setShowChoices, setTurns, setMatches, setGameIsOver)}>New Game</button>
           </div>
         </div>
       </div>
