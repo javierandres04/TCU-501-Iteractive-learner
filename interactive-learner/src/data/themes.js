@@ -8,7 +8,7 @@ export const Themes = [
       },{
         word: 'Casado',
         imageSrc: '/images/Casado.png',
-      },
+      }
       // {
       //   word: 'Bon',
       //   imageSrc: '/images/Bon_Bread.png',
@@ -903,10 +903,6 @@ export const Themes = [
       {
         word: 'Stingray',
         imageSrc: '/images/Stingray.png',
-      },
-      {
-        word: 'Firefly',
-        imageSrc: '/images/Firefly.png',
       },
       {
         word: 'Quetzal',

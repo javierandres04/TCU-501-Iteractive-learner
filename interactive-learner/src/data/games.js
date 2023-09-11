@@ -3,4 +3,5 @@ export const Games = [
   "Wordsearch Game",
   "DragAndDrop Game",
   "Memory Game",
+  "Dictionary"
 ]
