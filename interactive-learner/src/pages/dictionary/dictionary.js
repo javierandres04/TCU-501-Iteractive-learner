@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import { HeadGames } from '../../components/HeadGames/HeadGames';
 import { HelpModal } from '../../components/HelpModal/HelpModal';
 import {RiPlayMiniLine} from 'react-icons/ri';
+import './dictionary.css';
 
 const spanishInstructions = [
   ''
@@ -51,7 +52,7 @@ export const Dictionary = () => {
       <Header title={'Dictionary'} />
       <div id="bodyContainer">
         <div id="mainBox" >
-          <div id='memoryGameContainer'>
+          <div id='dictionaryContainer'>
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
             <table>
               <tr>

@@ -14,10 +14,20 @@ import '../../App.css';
 import { TripleChoice } from '../../components/TripleChoice/TripleChoice';
 
 const spanishInstructions = [
-  'TODO'
+  'Presiona el botón de nueva partida para iniciar el juego.',
+  'En cada ronda se presentan 3 imágenes de las cuales solo 1 representa la palabra de arriba.',
+  'Cada click en una imagen es un intento.',
+  'Si el jugador da click sobre la imagen correcta se avanza a la siguiente ronda y aumenta el número de aciertos.',
+  'El juego se gana cuando se completan 8 rondas.',
+  'El objetivo es completarlo en el menor número de intentos.'
 ]
 const englishInstructions = [
-  'TODO'
+  'Press the New Game button to start the game.',
+  'In each round 3 images are presented of which only 1 represents the word above.',
+  'Every click on an image is an attempt.',
+  'If the player clicks on the correct image, they advance to the next round and the number of matches increases.',
+  'The game is won when 8 rounds are completed.',
+  'The objective is to complete it in the fewest number of attempts.'
 ]
 
 /** Using sound effect "Success Fanfare Trumpets" from freesound.org

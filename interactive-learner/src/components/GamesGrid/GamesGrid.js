@@ -29,12 +29,29 @@ export const GamesGrid = ({ grade, unit, theme }) => {
   return (
     <div id='games-grid'>
       {Games.map((element) => (
-        <div onClick={() => handleSelectedGame(element)} key={element} id='games-container'>
-          <label id='game-name'> {element} </label>
-          {console.log(element)}
-          <img id='game-logo' src={`./images/${element.replace(' ', '_')}_Logo.png`} alt="error"></img>
+        <div onClick={() => handleSelectedGame(element)} key={element}>
+          { (element === "Dictionary") ?
+            <div id='games-container-alternative'>
+              <label id='game-name'> {element} </label>
+              <img id='game-logo' src={`./images/${element.replace(' ', '_')}_Logo.png`} alt="error"></img>
+            </div>
+          :
+            <div id='games-container'>
+              <label id='game-name'> {element} </label>
+              <img id='game-logo' src={`./images/${element.replace(' ', '_')}_Logo.png`} alt="error"></img>
+            </div>
+          }
         </div>
       ))}
     </div>
   );
 };
+
+/**
+ * 
+ *        { (element === "Dictionary") ?
+            <label id='game-name-alternative'> {element} </label>
+          :
+            <label id='game-name'> {element} </label>
+          }
+ */
