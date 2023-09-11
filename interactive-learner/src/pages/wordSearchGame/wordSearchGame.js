@@ -210,16 +210,6 @@ export const WordSearchGame = () => {
               setIsHelpModalOpen={setIsHelpModalOpen}
             />
             <br />
-            <div id='wordSearchGame'>
-              <LettersTable tamTable={tableSize} table={board} />
-              <div id='wordsToFind'>
-                <h3> Words to Find</h3>
-                {selectedWords.map((word, id) =>
-                  foundWords.find(element => element.toLowerCase() === word.toLowerCase().split(' ').join('')) ? <strike key={id}> {word} </strike> :
-                    <p key={id}> {word} </p>
-                )}
-              </div>
-            </div>
             <br />
             <h5> Time </h5>
             <Timer
@@ -230,6 +220,16 @@ export const WordSearchGame = () => {
               setMinutes={setMinutes}
             />
             <br />
+            <div id='wordSearchGame'>
+              <LettersTable tamTable={tableSize} table={board} />
+              <div id='wordsToFind'>
+                <h3> Words to Find</h3>
+                {selectedWords.map((word, id) =>
+                  foundWords.find(element => element.toLowerCase() === word.toLowerCase().split(' ').join('')) ? <strike key={id}> {word} </strike> :
+                    <p key={id}> {word} </p>
+                )}
+              </div>
+            </div>
             <button onClick={refresh}>New Game</button>
           </div>
         </div>

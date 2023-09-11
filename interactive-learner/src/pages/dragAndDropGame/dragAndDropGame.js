@@ -13,6 +13,7 @@ import './dragAndDropGame.css';
 import '../../App.css';
 import { DragImages } from '../../components/DragImages/DragImages';
 import { DropImages } from '../../components/DropImages/DropImages';
+import { Timer } from '../../components/Timer/Timer';
 
 const spanishInstructions = [
   'En la parte de arriba se muestran 8 imágenes  diferentes.',
@@ -100,8 +101,9 @@ export const DragAndDropGame = () => {
   const [matches, setMatches] = useState(0);
   const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
   const [gameWin, setGameWin] = useState(false);
-  // const [seconds, setSeconds] = useState(0);
-  // const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [gameIsOver, setGameIsOver] = useState(false);
 
   useEffect(() => {
     if (matches > 0) {
@@ -111,11 +113,12 @@ export const DragAndDropGame = () => {
 
   useEffect(() => {
     if (matches === 8) {
+      setGameIsOver(true);
       setGameWin(true);
       playVictorySound()
       Swal.fire({
         title: 'Congratulations! You won! 😃',
-        text: 'You made ' + turns + ' attempts.',
+        text: 'You made ' + turns + ' attempts and took ' +minutes+ ' minutes and '+ seconds + ' seconds.',
         heightAuto: false,
         confirmButtonColor: '#44a49c'
       })
@@ -152,6 +155,14 @@ export const DragAndDropGame = () => {
         <div id="mainBox" >
           <div id='memoryGameContainer'>
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
+            <h5> Time </h5>
+            <Timer
+              stopTimer={gameIsOver}
+              seconds={seconds}
+              setSeconds={setSeconds}
+              minutes={minutes}
+              setMinutes={setMinutes}
+            />
             <DragImages words={selectedWords[0]} playSelectSound = {playSelectSound} addAttemp={addAttemp} addMatch = {addMatch}>
             </DragImages>
             <DropImages words={shuffledWords[0]} turns={turns}>

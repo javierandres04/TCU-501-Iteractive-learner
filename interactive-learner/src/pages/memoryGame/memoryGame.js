@@ -12,7 +12,7 @@ import { HelpModal } from '../../components/HelpModal/HelpModal';
 import { ConfettiRain } from '../../components/ConfettiRain/ConfettiRain';
 import './memoryGame.css';
 import '../../App.css';
-
+import { Timer } from '../../components/Timer/Timer';
 
 const spanishInstructions = [
   'En pantalla se muestran 12 cartas volteadas.',
@@ -59,6 +59,7 @@ export const MemoryGame = () => {
   const [gameWin, setGameWin] = useState(false);
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
+  const [gameIsOver, setGameIsOver] = useState(false);
 
   let cardImgs = [
     { "word": "", "src": "", "Matched": false },
@@ -158,12 +159,13 @@ export const MemoryGame = () => {
 
   useEffect(() => {
     if (allCardsMatched() && turns > 0) {
+      setGameIsOver(true);
       setGameWin(true);
       playVictorySound()
       setTimeout(()=> {
         Swal.fire({
           title: 'Congratulations! You won! 😃',
-          text: 'You made ' + turns + ' attempts.',
+          text: 'You made ' + turns + ' attempts and took ' +minutes+ ' minutes and '+ seconds + ' seconds.',
           heightAuto: false,
           confirmButtonColor: '#44a49c'
         })
@@ -189,9 +191,17 @@ export const MemoryGame = () => {
       {gameWin && <ConfettiRain />}
       <Header title={'Memory Game'} />
       <div id="bodyContainer">
-        <div id="mainBox" >
+        <div id="mainBox" >            
           <div id='memoryGameContainer'>
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
+            <h5> Time </h5>
+            <Timer
+              stopTimer={gameIsOver}
+              seconds={seconds}
+              setSeconds={setSeconds}
+              minutes={minutes}
+              setMinutes={setMinutes}
+            />
             <div id='stats'>
               <div> Last word found: {lastWordFound} </div>
               <div id='attempts'>Attempts: {turns}</div>
