@@ -108,11 +108,10 @@ const makeGameOptions = (rightChoices, words) => {
   let gameOptions = [];
   for (let currentPosition = 0; currentPosition < 8; currentPosition++) {
     rightChoicePosition = Math.floor(Math.random() * 3); // position in which the right choice is
-    let randomChoices = [];
+    let randomChoices = [4];
+    randomChoices[rightChoicePosition] = rightChoices[currentPosition];
     for (let i = 0; i < 3; i++) {
-      if(rightChoicePosition == i) {
-        randomChoices[i] = rightChoices[currentPosition];
-      } else {
+      if(rightChoicePosition != i) {
         randomChoices[i] = getRandomWord(randomChoices, words);
       }
     }
@@ -132,11 +131,13 @@ const makeGameOptions = (rightChoices, words) => {
 }
 
 
-const selectChoices = (words, setSelectedWords, setShowChoices, setTurns, setMatches, setGameIsOver) => {
+const selectChoices = (words, setSelectedWords, setShowChoices, setTurns, setMatches, setGameIsOver, setGameWin) => {
   let rightChoices = selectRightChoices(words);
   setSelectedWords(makeGameOptions(rightChoices, words));
+  setGameWin(true);
   setTurns(0);
   setMatches(0);
+  setGameWin(false);
   setGameIsOver(false);
   setShowChoices(true);
 }
@@ -244,7 +245,11 @@ export const ChooseBetweenGame = () => {
               <div id='attempts'>Attempts: {turns}</div>
               <div id='attempts'>Matches: {matches}</div>
             </div>
-            <button onClick={() => selectChoices(words, setSelectedWords, setShowChoices, setTurns, setMatches, setGameIsOver)}>New Game</button>
+            {gameIsOver ?
+              <button onClick={() => {selectChoices(words, setSelectedWords, setShowChoices, setTurns, setMatches, setGameIsOver, setGameWin)}}>New Game</button>
+            :
+              <button onClick={() => {setGameIsOver(true); setShowChoices(false)}}>Stop Game</button>
+            }
           </div>
         </div>
       </div>

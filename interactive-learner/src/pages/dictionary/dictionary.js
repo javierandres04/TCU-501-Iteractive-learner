@@ -30,7 +30,7 @@ export const Dictionary = () => {
   words.forEach((word) => {
     dictionaryLines.push(
     <tr>
-    <td><img src={"../../.."+word.imageSrc} alt={word.word} width="150px"></img></td>
+    <td><img id="card" src={"../../.."+word.imageSrc} alt={word.word} width="150px"></img></td>
     <td>{word.word}</td>
     <td><button onClick={() => wordSound(word.word.replace(' ', '_'))}> {<RiPlayMiniLine />} </button></td>
     </tr>

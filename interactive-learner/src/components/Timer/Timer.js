@@ -16,8 +16,6 @@ export const Timer = ({ stopTimer, seconds, setSeconds, minutes, setMinutes}) =>
         setSeconds(0);
       }
   }, [stopTimer, seconds, minutes])
-  
-
 
   return (
     <p> {minutes < 10 ? 0:''}{minutes} : {seconds < 10 ? 0:''}{seconds}</p>
