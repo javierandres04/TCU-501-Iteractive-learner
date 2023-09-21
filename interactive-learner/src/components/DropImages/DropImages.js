@@ -42,7 +42,7 @@ export const DropImages = ({ words, turns }) => {
       <DropTarget targetKey={word.word} onHit={changePlacerholder}>
         <div>
           <img id="card" src={placeholder[index]} alt = "error"></img>
-          <b id="card-text"> {word.word} </b>
+          <b id="drop-images-text"> {word.word} </b>
         </div>
       </DropTarget>
     )
@@ -50,7 +50,7 @@ export const DropImages = ({ words, turns }) => {
     return (
       <ul>
         <div id = "cards-container">
-          <div id = "cards-grid">
+          <div id = "cards-grid-drop-images">
             {wordList}
           </div>
         </div>

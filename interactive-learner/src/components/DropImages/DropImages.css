@@ -1,25 +1,24 @@
-#cards-container {
-  margin-top: 3%;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-  align-self: center;
-}
-
-#cards-grid {
+#cards-grid-drop-images {
+  width: 67.5%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  row-gap: 2%;
-  column-gap: 2%;
-  margin-bottom: 4%;
+  row-gap: 1.25%;
+  column-gap: 1.25%;
+  padding-bottom: 2%;
+}
+
+@media (max-width: 800px) {
+  #cards-grid-drop-images {
+    width: 90%;
+    row-gap: 2%;
+    column-gap: 2%;
+  }
 }
 
 #card {
   width: 100%;
 }
 
-#card-text {
-  width: 100%;
+#drop-images-text {
+  font-size: 1.275em;
 }

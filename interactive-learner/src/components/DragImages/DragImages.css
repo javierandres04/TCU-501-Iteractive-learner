@@ -8,12 +8,20 @@
   align-self: center;
 }
 
-#cards-grid {
+#cards-grid-drag-images {
+  width: 67.5%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  row-gap: 2%;
-  column-gap: 2%;
-  margin-bottom: 4%;
+  row-gap: 1.25%;
+  column-gap: 1.25%;
+}
+
+@media (max-width: 800px) {
+  #cards-grid-drag-images {
+    width: 90%;
+    row-gap: 2%;
+    column-gap: 2%;
+  }
 }
 
 #card {

@@ -16,7 +16,7 @@ export const DragImages = ({ words, playSelectSound, addAttemp, addMatch }) => {
     return (
       <ul>
         <div id = "cards-container">
-          <div id = "cards-grid">
+          <div id = "cards-grid-drag-images">
             {wordList}
           </div>
         </div>
