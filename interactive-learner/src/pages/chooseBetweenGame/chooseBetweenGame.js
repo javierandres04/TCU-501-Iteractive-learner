@@ -31,35 +31,44 @@ const englishInstructions = [
   'The objective is to complete it in the fewest number of attempts.'
 ]
 
-/** Using sound effect "Success Fanfare Trumpets" from freesound.org
-   * https://freesound.org/people/FunWithSound/sounds/456966/
-   * created by user: FunWithSound
-  */
+/** 
+  * Using sound effect "Success Fanfare Trumpets" from freesound.org
+  * https://freesound.org/people/FunWithSound/sounds/456966/
+  * created by user: FunWithSound
+ */
 const playVictorySound = () => {
   let sound = new Audio(`./sounds/SoundEffects/Success-Fanfare-Trumpets.mp3`);
   sound.play();
 }
 
-/** Using sound effect "UI Click" from freesound.org
-   * https://freesound.org/people/EminYILDIRIM/sounds/536108/
-   * created by user: EminYILDIRIM
-  */
+/**
+  * Using sound effect "UI Click" from freesound.org
+  * https://freesound.org/people/EminYILDIRIM/sounds/536108/
+  * created by user: EminYILDIRIM
+ */
 const playSelectSound = () => {
   let sound = new Audio(`./sounds/SoundEffects/ui-click.wav`);
   sound.play();
 }
 
 /**
- * Using sound effect "dbl click" from freesound.org
- * https://freesound.org/people/7778/sounds/202312/
- * created by user: 7778
- */
+  * Using sound effect "dbl click" from freesound.org
+  * https://freesound.org/people/7778/sounds/202312/
+  * created by user: 7778
+*/
 const playMatchSound = () => {
   let sound = new Audio(`./sounds/SoundEffects/dbl-click.mp3`);
   sound.play();
 }
 
-const selectRightChoices = (words) => {
+/**
+ * This method selects a random array of 8 words from the list the contains
+ * all the vocabulary of the selected theme. Each word is the right choice
+ * of his own turn.
+ * @param {*Array of words from which the right choices are selected} words 
+ * @returns {*Array with the 8 right choices for each turn or round}
+ */
+const getRightChoices = (words) => {
   let selectedWords = [];
   let options = [];
   for (let i = 0; i < words[0].length; i++) {
@@ -74,7 +83,13 @@ const selectRightChoices = (words) => {
 }
 
 /**
- * Gets a not repeated word
+ * Gets a random word from the word list of a theme and checks
+ * that the word is not already in the selectedList. If the word
+ * is already in the list, another word is randomly selected and
+ * checked again
+ * @param {*List of words that can't be repeated} alreadySelected 
+ * @param {*List of all words of a given theme} words 
+ * @returns A not repeated word
  */
 const getRandomWord = (alreadySelected, words) => {
   let word = "";
@@ -94,6 +109,10 @@ const getRandomWord = (alreadySelected, words) => {
   return word;
 }
 
+/**
+ * Prints in a readeable format the words for a given game
+ * @param {All the options of words for all rounds} gameOptions 
+ */
 const printGameOptions = (gameOptions) => {
   for (let i = 0; i < 9; i++) {
     console.log((i+1)+" - Right choice is [" + gameOptions[3+4*i] + "]");
@@ -103,6 +122,13 @@ const printGameOptions = (gameOptions) => {
   }
 }
 
+/**
+ * Generates all the options for a given game of chooseBetween. For each round
+ * selects 2 wrong options to be along side the right choice. 
+ * @param {*The list of 8 words that are the right choices for each round} rightChoices 
+ * @param {*The list of all words of a given theme} words 
+ * @returns All the options for each round of a single game of choose Between
+ */
 const makeGameOptions = (rightChoices, words) => {
   let rightChoicePosition = 0;
   let gameOptions = [];
@@ -130,9 +156,19 @@ const makeGameOptions = (rightChoices, words) => {
   return gameOptions;
 }
 
-
-const selectChoices = (words, setSelectedWords, setShowChoices, setTurns, setMatches, setGameIsOver, setGameWin) => {
-  let rightChoices = selectRightChoices(words);
+/**
+ * Gets the random set of wrong and right choices, sets all the variables
+ * to 0 or their required boolean state
+ * @param {*List of all the words of a given theme} words 
+ * @param {*Routine that sets the variable selectedWords} setSelectedWords 
+ * @param {*Routine that sets the variable showChoices} setShowChoices 
+ * @param {*Routine that sets the variable turns} setTurns 
+ * @param {*Routine that sets the variable matches} setMatches 
+ * @param {*Routine that sets the variable gameIsOver} setGameIsOver 
+ * @param {*Routine that sets the variable gameWin} setGameWin 
+ */
+const startGame = (words, setSelectedWords, setShowChoices, setTurns, setMatches, setGameIsOver, setGameWin) => {
+  let rightChoices = getRightChoices(words);
   setSelectedWords(makeGameOptions(rightChoices, words));
   setGameWin(true);
   setTurns(0);
@@ -246,7 +282,7 @@ export const ChooseBetweenGame = () => {
               <div id='attempts'>Matches: {matches}</div>
             </div>
             {gameIsOver ?
-              <button onClick={() => {selectChoices(words, setSelectedWords, setShowChoices, setTurns, setMatches, setGameIsOver, setGameWin)}}>New Game</button>
+              <button onClick={() => {startGame(words, setSelectedWords, setShowChoices, setTurns, setMatches, setGameIsOver, setGameWin)}}>New Game</button>
             :
               <button onClick={() => {setGameIsOver(true); setShowChoices(false)}}>Stop Game</button>
             }
