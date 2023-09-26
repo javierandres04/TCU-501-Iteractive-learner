@@ -39,8 +39,27 @@ const selectWord = (words) => {
   return words[Math.floor(Math.random() * words.length)].word;
 }
 
-export const HangmanGame = () => {
+/**
+  * Using sound effect "UI Click" from freesound.org
+  * https://freesound.org/people/EminYILDIRIM/sounds/536108/
+  * created by user: EminYILDIRIM
+ */
+const playSelectSound = () => {
+  let sound = new Audio(`./sounds/SoundEffects/ui-click.wav`);
+  sound.play();
+}
 
+/**
+  * Using sound effect "dbl click" from freesound.org
+  * https://freesound.org/people/7778/sounds/202312/
+  * created by user: 7778
+*/
+const playMatchSound = () => {
+  let sound = new Audio(`./sounds/SoundEffects/dbl-click.mp3`);
+  sound.play();
+}
+
+export const HangmanGame = () => {
   const [theme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const [words] = useState(Themes.find(element => element.name === theme).words);
   const [selectedWord, setSelectedWord] = useState(selectWord(words));
@@ -54,10 +73,13 @@ export const HangmanGame = () => {
   const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
+  const [keysPressed] = useState([false, false, false, false, false, false, false, false,
+    false, false, false, false, false, false, false, false, false, false, false, false, false, false, 
+    false, false, false, false]);
 
   useEffect(() => {
     setCorrectLetters(currentLetters => [...currentLetters, ' ']);
-    document.getElementById('keyboard').style.display = 'none';
+    //document.getElementById('keyboard').style.display = 'none';
   }, []);
 
   useEffect(() => {
@@ -68,60 +90,50 @@ export const HangmanGame = () => {
         if (selectedWord.toLowerCase().includes(letter)) {
           if (!correctLetters.includes(letter)) {
             setCorrectLetters(currentLetters => [...currentLetters, letter]);
+            playMatchSound();
           } else {
             show(setShowNotification);
           }
         } else {
           if (!wrongLetters.includes(letter)) {
             setWrongLetters(currentLetters => [...currentLetters, letter]);
-            Swal.fire({
-              icon: 'error',
-              title: 'Try another letter!',
-              timer: 1500,
-              showConfirmButton: false,
-              heightAuto: false
-            })
+            playSelectSound();
           } else {
             show(setShowNotification);
           }
 
         }
+        keysPressed[keyCode-65] = true;
       }
     }
     window.addEventListener('keydown', handleKeydown);
-
     return () => window.removeEventListener('keydown', handleKeydown);
-  }, [correctLetters, wrongLetters, playable, selectedWord, display]);
+  }, [correctLetters, wrongLetters, playable, selectedWord, display, keysPressed]);
 
   useEffect(() => {
-
     if (selectedWord.toLowerCase().includes(virtualLetter)) {
       if (!correctLetters.includes(virtualLetter)) {
         setCorrectLetters(currentLetters => [...currentLetters, virtualLetter]);
+        playMatchSound();
       } else {
         show(setShowNotification);
       }
     } else {
       if (!wrongLetters.includes(virtualLetter)) {
+        playSelectSound();
         setWrongLetters(currentLetters => [...currentLetters, virtualLetter]);
       } else {
         show(setShowNotification);
       }
     }
-
-  }, [virtualLetter]);
+    keysPressed[virtualLetter.charCodeAt(0)-97] = true;
+  }, [virtualLetter, keysPressed]);
 
   const show = (setter) => {
     setter(true);
     setTimeout(() => {
       setter(false);
     }, 2000);
-  }
-
-  const displayKeyboard = () => {
-    const element = document.getElementById('keyboard')
-    element.style.display = (element.style.display === 'none' ? 'block' : 'none');
-    setDisplay((display === 'Display Keyboard' ? 'Hide Keyboard' : 'Display Keyboard'));
   }
 
   const pressVirtualKey = (event) => {
@@ -173,7 +185,6 @@ export const HangmanGame = () => {
               {gameWin && <ConfettiRain />}
               <div id='centerContainer'>
                 <Figure wrongLetters={wrongLetters} />
-                <WrongLetters wrongLetters={wrongLetters} />
               </div>
               <Word
                 selectedWord={selectedWord.toLowerCase()}
@@ -190,37 +201,60 @@ export const HangmanGame = () => {
                 seconds={seconds}
               />
               <Notification showNotification={showNotification} />
-
-              <button id='keyboardButton' onClick={displayKeyboard}>{display}</button>
-
               <div onClick={pressVirtualKey} id="keyboard">
                 <div className="keyboard__row">
-                  <div className="key--letter" data-char="Q">Q</div>
-                  <div className="key--letter" data-char="W">W</div>
-                  <div className="key--letter" data-char="E">E</div>
-                  <div className="key--letter" data-char="R">R</div>
-                  <div className="key--letter" data-char="T">T</div>
-                  <div className="key--letter" data-char="Y">Y</div>
-                  <div className="key--letter" data-char="U">U</div>
-                  <div className="key--letter" data-char="I">I</div>
-                  <div className="key--letter" data-char="O">O</div>
-                  <div className="key--letter" data-char="P">P</div>
-                  <div className="key--letter" data-char="A">A</div>
-                  <div className="key--letter" data-char="S">S</div>
-                  <div className="key--letter" data-char="D">D</div>
-                  <div className="key--letter" data-char="F">F</div>
-                  <div className="key--letter" data-char="G">G</div>
-                  <div className="key--letter" data-char="H">H</div>
-                  <div className="key--letter" data-char="J">J</div>
-                  <div className="key--letter" data-char="K">K</div>
-                  <div className="key--letter" data-char="L">L</div>
-                  <div className="key--letter" data-char="Z">Z</div>
-                  <div className="key--letter" data-char="X">X</div>
-                  <div className="key--letter" data-char="C">C</div>
-                  <div className="key--letter" data-char="V">V</div>
-                  <div className="key--letter" data-char="B">B</div>
-                  <div className="key--letter" data-char="N">N</div>
-                  <div className="key--letter" data-char="M">M</div>
+                  {keysPressed[0] ? <div className="key--letter-pressed" data-char="A">A</div> :
+                    <div className="key--letter" data-char="A">A</div>}
+                  {keysPressed[1] ? <div className="key--letter-pressed" data-char="B">B</div> :
+                    <div className="key--letter" data-char="B">B</div>}
+                  {keysPressed[2] ? <div className="key--letter-pressed" data-char="C">C</div> :
+                    <div className="key--letter" data-char="C">C</div>}
+                  {keysPressed[3] ? <div className="key--letter-pressed" data-char="D">D</div> :
+                    <div className="key--letter" data-char="D">D</div>}
+                  {keysPressed[4] ? <div className="key--letter-pressed" data-char="E">E</div> :
+                    <div className="key--letter" data-char="E">E</div>}
+                  {keysPressed[5] ? <div className="key--letter-pressed" data-char="F">F</div> :
+                    <div className="key--letter" data-char="F">F</div>}
+                  {keysPressed[6] ? <div className="key--letter-pressed" data-char="G">G</div> :
+                    <div className="key--letter" data-char="G">G</div>}
+                  {keysPressed[7] ? <div className="key--letter-pressed" data-char="H">H</div> :
+                    <div className="key--letter" data-char="H">H</div>}
+                  {keysPressed[8] ? <div className="key--letter-pressed" data-char="I">I</div> :
+                    <div className="key--letter" data-char="I">I</div>}
+                  {keysPressed[9] ? <div className="key--letter-pressed" data-char="J">J</div> :
+                    <div className="key--letter" data-char="J">J</div>}
+                  {keysPressed[10] ? <div className="key--letter-pressed" data-char="K">K</div> :
+                    <div className="key--letter" data-char="K">K</div>}
+                  {keysPressed[11] ? <div className="key--letter-pressed" data-char="L">L</div> :
+                    <div className="key--letter" data-char="L">L</div>}
+                  {keysPressed[12] ? <div className="key--letter-pressed" data-char="M">M</div> :
+                    <div className="key--letter" data-char="M">M</div>}
+                  {keysPressed[13] ? <div className="key--letter-pressed" data-char="N">N</div> :
+                    <div className="key--letter" data-char="N">N</div>}
+                  {keysPressed[14] ? <div className="key--letter-pressed" data-char="O">O</div> :
+                    <div className="key--letter" data-char="O">O</div>}
+                  {keysPressed[15] ? <div className="key--letter-pressed" data-char="P">P</div> :
+                    <div className="key--letter" data-char="P">P</div>}
+                  {keysPressed[16] ? <div className="key--letter-pressed" data-char="Q">Q</div> :
+                    <div className="key--letter" data-char="Q">Q</div>}
+                  {keysPressed[17] ? <div className="key--letter-pressed" data-char="R">R</div> :
+                    <div className="key--letter" data-char="R">R</div>}
+                  {keysPressed[18] ? <div className="key--letter-pressed" data-char="S">S</div> :
+                    <div className="key--letter" data-char="S">S</div>}
+                  {keysPressed[19] ? <div className="key--letter-pressed" data-char="T">T</div> :
+                    <div className="key--letter" data-char="T">T</div>}
+                  {keysPressed[20] ? <div className="key--letter-pressed" data-char="U">U</div> :
+                    <div className="key--letter" data-char="U">U</div>}
+                  {keysPressed[21] ? <div className="key--letter-pressed" data-char="V">V</div> :
+                    <div className="key--letter" data-char="V">V</div>}
+                  {keysPressed[22] ? <div className="key--letter-pressed" data-char="W">W</div> :
+                    <div className="key--letter" data-char="W">W</div>}
+                  {keysPressed[23] ? <div className="key--letter-pressed" data-char="X">X</div> :
+                    <div className="key--letter" data-char="X">X</div>}
+                  {keysPressed[24] ? <div className="key--letter-pressed" data-char="Y">Y</div> :
+                    <div className="key--letter" data-char="Y">Y</div>}
+                  {keysPressed[25] ? <div className="key--letter-pressed" data-char="Z">Z</div> :
+                    <div className="key--letter" data-char="Z">Z</div>}    
                 </div>
               </div>
               <button onClick={refresh}>New Game</button>

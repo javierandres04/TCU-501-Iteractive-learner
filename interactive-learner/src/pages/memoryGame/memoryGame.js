@@ -44,7 +44,6 @@ const selectWords = (words) => {
   return selectedWords;
 }
 
-
 export const MemoryGame = () => {
   const [theme, setTheme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const [words, setWords] = useState(Themes.find(element => element.name === theme).words);
