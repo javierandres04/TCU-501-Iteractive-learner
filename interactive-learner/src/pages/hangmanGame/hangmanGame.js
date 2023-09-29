@@ -40,22 +40,22 @@ const selectWord = (words) => {
 }
 
 /**
-  * Using sound effect "UI Click" from freesound.org
-  * https://freesound.org/people/EminYILDIRIM/sounds/536108/
-  * created by user: EminYILDIRIM
+  * Using sound effect "Correct and Incorrect Chime" from freesound.org
+  * https://freesound.org/people/LaurenPonder/sounds/639432/
+  * created by user: LaurenPonder
  */
-const playSelectSound = () => {
-  let sound = new Audio(`./sounds/SoundEffects/ui-click.wav`);
+const playCorrectChimeSound = () => {
+  let sound = new Audio(`./sounds/SoundEffects/correct-chime.mp3`);
   sound.play();
 }
 
 /**
-  * Using sound effect "dbl click" from freesound.org
-  * https://freesound.org/people/7778/sounds/202312/
-  * created by user: 7778
-*/
-const playMatchSound = () => {
-  let sound = new Audio(`./sounds/SoundEffects/dbl-click.mp3`);
+  * Using sound effect "Correct and Incorrect Chime" from freesound.org
+  * https://freesound.org/people/LaurenPonder/sounds/639432/
+  * created by user: LaurenPonder
+ */
+const playIncorrectChimeSound = () => {
+  let sound = new Audio(`./sounds/SoundEffects/incorrect-chime.mp3`);
   sound.play();
 }
 
@@ -90,14 +90,14 @@ export const HangmanGame = () => {
         if (selectedWord.toLowerCase().includes(letter)) {
           if (!correctLetters.includes(letter)) {
             setCorrectLetters(currentLetters => [...currentLetters, letter]);
-            playMatchSound();
+            playCorrectChimeSound();
           } else {
             show(setShowNotification);
           }
         } else {
           if (!wrongLetters.includes(letter)) {
             setWrongLetters(currentLetters => [...currentLetters, letter]);
-            playSelectSound();
+            playIncorrectChimeSound();
           } else {
             show(setShowNotification);
           }
@@ -114,13 +114,13 @@ export const HangmanGame = () => {
     if (selectedWord.toLowerCase().includes(virtualLetter)) {
       if (!correctLetters.includes(virtualLetter)) {
         setCorrectLetters(currentLetters => [...currentLetters, virtualLetter]);
-        playMatchSound();
+        playCorrectChimeSound();
       } else {
         show(setShowNotification);
       }
     } else {
       if (!wrongLetters.includes(virtualLetter)) {
-        playSelectSound();
+        playIncorrectChimeSound();
         setWrongLetters(currentLetters => [...currentLetters, virtualLetter]);
       } else {
         show(setShowNotification);

@@ -42,22 +42,23 @@ const playVictorySound = () => {
 }
 
 /**
-  * Using sound effect "UI Click" from freesound.org
-  * https://freesound.org/people/EminYILDIRIM/sounds/536108/
-  * created by user: EminYILDIRIM
+  * Using sound effect "Correct and Incorrect Chime" from freesound.org
+  * https://freesound.org/people/LaurenPonder/sounds/639432/
+  * created by user: LaurenPonder
  */
 const playSelectSound = () => {
-  let sound = new Audio(`./sounds/SoundEffects/ui-click.wav`);
+  let sound = new Audio(`./sounds/SoundEffects/incorrect-chime.mp3`);
   sound.play();
 }
 
 /**
-  * Using sound effect "dbl click" from freesound.org
-  * https://freesound.org/people/7778/sounds/202312/
-  * created by user: 7778
+ * TODO
+  * Using sound effect "Correct Choice" from freesound.org
+  * https://freesound.org/people/unadamlar/sounds/476178/
+  * created by user: unadamlar
 */
 const playMatchSound = () => {
-  let sound = new Audio(`./sounds/SoundEffects/dbl-click.mp3`);
+  let sound = new Audio(`./sounds/SoundEffects/correct-choice.wav`);
   sound.play();
 }
 

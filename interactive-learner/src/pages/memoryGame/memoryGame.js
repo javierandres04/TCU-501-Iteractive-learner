@@ -140,6 +140,7 @@ export const MemoryGame = () => {
 
 
   const cardIsMatched = (card) => {
+    playCorrectSound();
     return card.Matched === true;
   }
 
@@ -153,6 +154,15 @@ export const MemoryGame = () => {
   */
   const playVictorySound = () => {
     let sound = new Audio(`./sounds/SoundEffects/Success-Fanfare-Trumpets.mp3`);
+    sound.play();
+  }
+  
+  /** Using sound effect "correct.wav" from freesound.org
+   * https://freesound.org/people/StavSounds/sounds/546084/
+   * created by user: StavSounds
+  */
+  const playCorrectSound = () => {
+    let sound = new Audio(`./sounds/SoundEffects/correct.wav`);
     sound.play();
   }
 

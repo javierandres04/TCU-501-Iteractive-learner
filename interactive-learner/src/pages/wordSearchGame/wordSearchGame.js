@@ -56,7 +56,15 @@ const selectWords = (words, cantWords) => {
   return selectedWords;
 }
 
-
+/**
+  * Using sound effect "Correct and Incorrect Chime" from freesound.org
+  * https://freesound.org/people/LaurenPonder/sounds/639432/
+  * created by user: LaurenPonder
+ */
+const playCorrectChoiceSound = () => {
+  let sound = new Audio(`./sounds/SoundEffects/correct-chime.mp3`);
+  sound.play();
+}
 
 const playSound = (soundName) => {
   let sound = new Audio(`./sounds/${soundName}.m4a`);
@@ -173,6 +181,7 @@ export const WordSearchGame = () => {
             lettersCoordenates.map(element => document.getElementById(`${element.r}-${element.c}`).classList.add('grid-item-found'));
           }
           setWordIsFound(true);
+          playCorrectChoiceSound();
           playSound(element);
         }
         if (wordIsFound === false) {
