@@ -33,17 +33,18 @@ const englishInstructions = [
 ]
 
 /** Using sound effect "Success Fanfare Trumpets" from freesound.org
-   * https://freesound.org/people/FunWithSound/sounds/456966/
-   * created by user: FunWithSound
+  * https://freesound.org/people/FunWithSound/sounds/456966/
+  * created by user: FunWithSound
   */
 const playVictorySound = () => {
   let sound = new Audio(`./sounds/SoundEffects/Success-Fanfare-Trumpets.mp3`);
   sound.play();
 }
 
-/** Using sound effect "UI Click" from freesound.org
-   * https://freesound.org/people/EminYILDIRIM/sounds/536108/
-   * created by user: EminYILDIRIM
+/** 
+  * Using sound effect "UI Click" from freesound.org
+  * https://freesound.org/people/EminYILDIRIM/sounds/536108/
+  * created by user: EminYILDIRIM
   */
 const playSelectSound = () => {
   let sound = new Audio(`./sounds/SoundEffects/ui-click.wav`);
@@ -51,15 +52,21 @@ const playSelectSound = () => {
 }
 
 /**
- * Using sound effect "dbl click" from freesound.org
- * https://freesound.org/people/7778/sounds/202312/
- * created by user: 7778
- */
+  * Using sound effect "dbl click" from freesound.org
+  * https://freesound.org/people/7778/sounds/202312/
+  * created by user: 7778
+  */
 const playMatchSound = () => {
   let sound = new Audio(`./sounds/SoundEffects/dbl-click.mp3`);
   sound.play();
 }
 
+/**
+ * This method selects a random array of 8 words from the list the contains
+ * all the vocabulary of the selected theme
+ * @param {*Array of words all words from a given theme from which the 8 words are selected} words 
+ * @returns {*Array with the selected 8 images}
+ */
 const selectWords = (words) => {
   let options = [];
   let selectedWords = [];
@@ -77,7 +84,12 @@ const selectWords = (words) => {
   return selectedWords;
 }
 
-// ref:https://dev.to/codebubb/how-to-shuffle-an-array-in-javascript-2ikj
+/**
+ * Shuffles the 8 stops randomly
+ * ref:https://dev.to/codebubb/how-to-shuffle-an-array-in-javascript-2ikj
+ * @param {*Array to be shuffles} array 
+ * @returns shuffled array
+ */
 const shuffleArray = (array) => {
   let newArray = [];
   for (let k = 0;  array.length > k; k++){
@@ -153,22 +165,23 @@ export const DragAndDropGame = () => {
       <Header title={'Drag and Drop'} />
       <div id="bodyContainer">
         <div id="mainBox" >
-          <div id='memoryGameContainer'>
+          <div id='dragAndDropGameContainer'>
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
             <h5> Time </h5>
             <Timer
               stopTimer={gameIsOver}
-              seconds={seconds}
+              seconds={seconds}stats
               setSeconds={setSeconds}
               minutes={minutes}
               setMinutes={setMinutes}
             />
             <DragImages words={selectedWords[0]} playSelectSound = {playSelectSound} addAttemp={addAttemp} addMatch = {addMatch}>
             </DragImages>
+            <div id='middle-line'></div>
             <DropImages words={shuffledWords[0]} turns={turns}>
             </DropImages>
-            <div id='stats'>
-              <div id='attempts'>Attempts: {turns}</div>
+            <div id='stats-dd'>
+              <div>Attempts: {turns}</div>
             </div>
             <button onClick={refresh}>New Game</button>
           </div>

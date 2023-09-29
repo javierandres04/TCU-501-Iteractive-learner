@@ -499,8 +499,8 @@ export const Themes = [
         imageSrc: '/images/Sweater.png',
       },
       {
-        word: 'T-shirt',
-        imageSrc: '/images/T-shirt.png',
+        word: 'T_shirt',
+        imageSrc: '/images/T_shirt.png',
       },
       {
         word: 'Pants',

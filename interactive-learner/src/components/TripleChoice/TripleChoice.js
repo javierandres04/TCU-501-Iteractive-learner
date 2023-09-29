@@ -6,7 +6,6 @@ const route = "../../.."
 const handleClickedImage = (index, rightChoice, addMatch, playSelectSound, playMatchSound, matches, setShowChoices) => {
   console.log("HandleClick " + index);
   if(index === rightChoice) {
-    playMatchSound();
     if(matches == 7) {
       setShowChoices(false);
     }

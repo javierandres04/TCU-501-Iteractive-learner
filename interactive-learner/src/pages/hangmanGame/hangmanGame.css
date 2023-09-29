@@ -19,6 +19,10 @@
   justify-content: space-evenly;
 }
 
+#wrong-letters {
+  padding-top: 3%;
+}
+
 .figure-container {
   fill: transparent;
   stroke: #fff;
@@ -188,6 +192,11 @@
 
 .key--letter {
   line-height: 2.8em;
+}
+
+.key--letter-pressed {
+  line-height: 2.8em;
+  background-color: grey;
 }
 
 .key--bottom-left > * {

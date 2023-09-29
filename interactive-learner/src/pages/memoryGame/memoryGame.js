@@ -44,7 +44,6 @@ const selectWords = (words) => {
   return selectedWords;
 }
 
-
 export const MemoryGame = () => {
   const [theme, setTheme] = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const [words, setWords] = useState(Themes.find(element => element.name === theme).words);
@@ -111,6 +110,7 @@ export const MemoryGame = () => {
           showConfirmButton: false,
           heightAuto: false
         })
+        playCorrectSound();
         playSound(choiseOne.word)
         setCards(prevCards => {
           return prevCards.map(card => {
@@ -154,6 +154,15 @@ export const MemoryGame = () => {
   */
   const playVictorySound = () => {
     let sound = new Audio(`./sounds/SoundEffects/Success-Fanfare-Trumpets.mp3`);
+    sound.play();
+  }
+  
+  /** Using sound effect "correct.wav" from freesound.org
+   * https://freesound.org/people/StavSounds/sounds/546084/
+   * created by user: StavSounds
+  */
+  const playCorrectSound = () => {
+    let sound = new Audio(`./sounds/SoundEffects/correct.wav`);
     sound.play();
   }
 
