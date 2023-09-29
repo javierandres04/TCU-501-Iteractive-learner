@@ -52,7 +52,6 @@ const playSelectSound = () => {
 }
 
 /**
- * TODO
   * Using sound effect "Correct Choice" from freesound.org
   * https://freesound.org/people/unadamlar/sounds/476178/
   * created by user: unadamlar

@@ -110,6 +110,7 @@ export const MemoryGame = () => {
           showConfirmButton: false,
           heightAuto: false
         })
+        playCorrectSound();
         playSound(choiseOne.word)
         setCards(prevCards => {
           return prevCards.map(card => {
@@ -140,7 +141,6 @@ export const MemoryGame = () => {
 
 
   const cardIsMatched = (card) => {
-    playCorrectSound();
     return card.Matched === true;
   }
 

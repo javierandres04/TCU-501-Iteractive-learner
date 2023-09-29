@@ -69,7 +69,7 @@ export const HangmanGame = () => {
   const [wrongLetters, setWrongLetters] = useState([]);
   const [showNotification, setShowNotification] = useState(false);
   const [display, setDisplay] = useState('Display Keyboard');
-  const [virtualLetter, setVirtualLetter] = useState('');
+  const [virtualLetter, setVirtualLetter] = useState('*');
   const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
@@ -111,23 +111,25 @@ export const HangmanGame = () => {
   }, [correctLetters, wrongLetters, playable, selectedWord, display, keysPressed]);
 
   useEffect(() => {
-    if (selectedWord.toLowerCase().includes(virtualLetter)) {
-      if (!correctLetters.includes(virtualLetter)) {
-        setCorrectLetters(currentLetters => [...currentLetters, virtualLetter]);
-        playCorrectChimeSound();
+    if(virtualLetter != "*") {
+      if (selectedWord.toLowerCase().includes(virtualLetter)) {
+        if (!correctLetters.includes(virtualLetter)) {
+          setCorrectLetters(currentLetters => [...currentLetters, virtualLetter]);
+          playCorrectChimeSound();
+        } else {
+          show(setShowNotification);
+        }
       } else {
-        show(setShowNotification);
+        if (!wrongLetters.includes(virtualLetter)) {
+          playIncorrectChimeSound();
+          setWrongLetters(currentLetters => [...currentLetters, virtualLetter]);
+        } else {
+          show(setShowNotification);
+        }
       }
-    } else {
-      if (!wrongLetters.includes(virtualLetter)) {
-        playIncorrectChimeSound();
-        setWrongLetters(currentLetters => [...currentLetters, virtualLetter]);
-      } else {
-        show(setShowNotification);
-      }
+      keysPressed[virtualLetter.charCodeAt(0)-97] = true;
     }
-    keysPressed[virtualLetter.charCodeAt(0)-97] = true;
-  }, [virtualLetter, keysPressed]);
+}, [virtualLetter, keysPressed]);
 
   const show = (setter) => {
     setter(true);
