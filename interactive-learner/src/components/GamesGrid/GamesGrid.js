@@ -30,7 +30,7 @@ export const GamesGrid = ({ grade, unit, theme }) => {
     <div id='games-grid'>
       {Games.map((element) => (
         <div onClick={() => handleSelectedGame(element)} key={element}>
-          { (element === "Dictionary") ?
+          { (element === "Glosary") ?
             <div id='games-container-alternative'>
               <label id='game-name'> {element} </label>
               <img id='game-logo' src={`./images/${element.replace(' ', '_')}_Logo.png`} alt="error"></img>
@@ -46,12 +46,3 @@ export const GamesGrid = ({ grade, unit, theme }) => {
     </div>
   );
 };
-
-/**
- * 
- *        { (element === "Dictionary") ?
-            <label id='game-name-alternative'> {element} </label>
-          :
-            <label id='game-name'> {element} </label>
-          }
- */

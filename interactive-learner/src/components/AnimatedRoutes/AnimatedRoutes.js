@@ -7,7 +7,7 @@ import { DragAndDropGame } from '../../pages/dragAndDropGame/dragAndDropGame';
 import { ChooseBetweenGame } from '../../pages/chooseBetweenGame/chooseBetweenGame';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion'
-import { Dictionary } from '../../pages/dictionary/dictionary';
+import { Glosary } from '../../pages/glosary/glosary';
 
 export const AnimatedRoutes = () => {
   const location = useLocation();
@@ -20,7 +20,7 @@ export const AnimatedRoutes = () => {
         <Route path='WordSearchGame' element={<WordSearchGame></WordSearchGame>} />
         <Route path='DragAndDropGame' element={<DragAndDropGame></DragAndDropGame>} />
         <Route path='ChooseBetweenGame' element={<ChooseBetweenGame></ChooseBetweenGame>} />
-        <Route path='Dictionary' element={<Dictionary></Dictionary>} />
+        <Route path='Glosary' element={<Glosary></Glosary>} />
       </Routes>
     </AnimatePresence>
   )

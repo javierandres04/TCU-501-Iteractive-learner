@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import { HeadGames } from '../../components/HeadGames/HeadGames';
 import { HelpModal } from '../../components/HelpModal/HelpModal';
 import {RiPlayMiniLine} from 'react-icons/ri';
-import './dictionary.css';
+import './glosary.css';
 
 const spanishInstructions = [
   ''
@@ -22,7 +22,7 @@ const wordSound = (soundName) => {
   sound.play();
 }
 
-export const Dictionary = () => {
+export const Glosary = () => {
   const theme = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const words = Themes.find(element => element.name === theme[0]).words;
   const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
@@ -30,7 +30,7 @@ export const Dictionary = () => {
   words.forEach((word) => {
     dictionaryLines.push(
     <tr>
-    <td><img id="card" src={"../../.."+word.imageSrc} alt={word.word} width="150px"></img></td>
+    <td><img id="card_glosary" src={"../../.."+word.imageSrc} alt={word.word} width="150px"></img></td>
     <td>{word.word}</td>
     <td><button onClick={() => wordSound(word.word.replace(' ', '_'))}> {<RiPlayMiniLine />} </button></td>
     </tr>
@@ -49,7 +49,7 @@ export const Dictionary = () => {
         englishInstructions={englishInstructions}
         spanishInstructions={spanishInstructions}
       />
-      <Header title={'Dictionary'} />
+      <Header title={'Glosary'} />
       <div id="bodyContainer">
         <div id="mainBox" >
           <div id='dictionaryContainer'>
