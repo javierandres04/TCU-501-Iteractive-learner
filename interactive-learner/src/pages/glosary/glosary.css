@@ -92,3 +92,12 @@ button:hover {
   margin-top: 1.5%;
   margin-bottom: 1.5%;
 }
+
+#card_glosary {
+  width: 70%;
+  max-width: 150px;
+  background: #ffff;
+  border-radius: 0.5rem;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+}
