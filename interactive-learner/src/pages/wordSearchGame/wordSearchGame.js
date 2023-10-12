@@ -67,7 +67,7 @@ const playCorrectChoiceSound = () => {
 }
 
 const playSound = (soundName) => {
-  let sound = new Audio(`./sounds/${soundName}.m4a`);
+  let sound = new Audio(`./sounds/${soundName}.mp3`);
   sound.play();
 }
 

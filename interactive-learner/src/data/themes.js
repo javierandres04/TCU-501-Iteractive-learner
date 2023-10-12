@@ -9,10 +9,6 @@ export const Themes = [
         word: 'Casado',
         imageSrc: '/images/Casado.png',
       }
-      // {
-      //   word: 'Bon',
-      //   imageSrc: '/images/Bon_Bread.png',
-      // }
       ,{
         word: 'Pati',
         imageSrc: '/images/Pati.png',
@@ -27,10 +23,10 @@ export const Themes = [
         imageSrc: '/images/Tamal.png',
       },{
         word: 'Rice with Chicken',
-        imageSrc: '/images/Rice_With _Chicken.png',
+        imageSrc: '/images/Rice_with_Chicken.png',
       },{
         word: 'Soups',
-        imageSrc: '/images/Soup.png',
+        imageSrc: '/images/Soups.png',
       },
     ]
   },
@@ -110,22 +106,6 @@ export const Themes = [
         word: 'Playing Volleyball',
         imageSrc: '/images/Playing_Volleyball.png',
       },
-      // {
-      //   word: 'Playing Tennis',
-      //   imageSrc: '/images/Playing_Tennis.png',
-      // },
-      // {
-      //   word: 'Playing Hockey',
-      //   imageSrc: '/images/Playing_Hockey.png',
-      // },
-      // {
-      //   word: 'Playing Baseball',
-      //   imageSrc: '/images/Playing_Baseball.png',
-      // },
-      // {
-      //   word: 'Playing Basketball',
-      //   imageSrc: '/images/Playing_Basketball.png',
-      // },
       {
         word: 'Horseback Riding',
         imageSrc: '/images/Horseback_Riding.png',
@@ -178,10 +158,6 @@ export const Themes = [
         word: 'Singing',
         imageSrc: '/images/Singing.png',
       },
-      // {
-      //   word: 'Painting',
-      //   imageSrc: '/images/Painting.png',
-      // },
       {
         word: 'Cooking',
         imageSrc: '/images/Cooking.png',
@@ -499,7 +475,7 @@ export const Themes = [
         imageSrc: '/images/Sweater.png',
       },
       {
-        word: 'T_shirt',
+        word: 'T shirt',
         imageSrc: '/images/T_shirt.png',
       },
       {
@@ -908,10 +884,6 @@ export const Themes = [
         word: 'Quetzal',
         imageSrc: '/images/Quetzal.png',
       },
-      // {
-      //   word: 'Lion',
-      //   imageSrc: '/images/Lion.png',
-      // }
     ]
   }, 
   {
@@ -1087,7 +1059,7 @@ export const Themes = [
         imageSrc: '/images/Lanterns_Parade.png',
       },{
         word: 'New Years Eve',
-        imageSrc: '/images/New_Year_Eve.png',
+        imageSrc: '/images/New_Years_Eve.png',
       },{
         word: 'Oxcart Parade',
         imageSrc: '/images/Oxcart_Parade.png',
@@ -1142,10 +1114,6 @@ export const Themes = [
         imageSrc: '/images/Electrician.png',
       },
       {
-        word: 'Journalist',
-        imageSrc: '/images/Journalist.png',
-      },
-      {
         word: 'Priest',
         imageSrc: '/images/Priest.png',
       },
@@ -1157,10 +1125,6 @@ export const Themes = [
         word: 'Teacher',
         imageSrc: '/images/Teacher.png',
       },
-      // { 
-      //   word: 'Chef',
-      //   imageSrc: '/images/Chef.png',
-      // },
       {
         word: 'Artist',
         imageSrc: '/images/Artist.png',
@@ -1189,10 +1153,6 @@ export const Themes = [
         word: 'Construction Worker',
         imageSrc: '/images/Construction_Worker.png',
       },
-      // {
-      //   word: 'Veterinary',
-      //   imageSrc: '/images/Veterinary.png',
-      // },
       {
         word: 'Janitor',
         imageSrc: '/images/Janitor.png',
