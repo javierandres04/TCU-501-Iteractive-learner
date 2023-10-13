@@ -18,7 +18,8 @@ const englishInstructions = [
 ]
 
 const wordSound = (soundName) => {
-  let sound = new Audio(`./sounds/`+soundName+`.m4a`);
+  console.log(`./sounds/`+soundName+`.mp3`);
+  let sound = new Audio(`./sounds/`+soundName.replace("_"," ")+`.mp3`);
   sound.play();
 }
 

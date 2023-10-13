@@ -12,7 +12,7 @@ const playVictorySound = () => {
 
 const Popup = ({ correctLetters, wrongLetters, selectedWord, setPlayable, playable, setGameWin , minutes, seconds}) => {
   const playSound = (soundName) => {
-    let sound = new Audio(`./sounds/${soundName}.m4a`);
+    let sound = new Audio(`./sounds/${soundName}.mp3`);
     sound.play();
   }
   

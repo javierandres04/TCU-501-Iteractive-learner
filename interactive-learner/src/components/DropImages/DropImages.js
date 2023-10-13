@@ -10,7 +10,7 @@ var placeholder = []
 var names_order = []
 
 const playSound = (soundName) => {
-  let sound = new Audio(`./sounds/${soundName}.m4a`);
+  let sound = new Audio(`./sounds/${soundName}.mp3`);
   sound.play();
 }
 
@@ -25,8 +25,8 @@ const changePlacerholder = (e) => {
   e.containerElem.style.visibility = 'hidden';
   names_order.forEach((word, index)=>{
     if(e.dragData[0] === word.word) {  
-      placeholder[index] = route+e.dragData[0].replace(' ', '_')+format;
-      playSound(e.dragData[0].replace(' ', '_'))
+      placeholder[index] = route+e.dragData[0].replaceAll(' ', '_')+format;
+      playSound(e.dragData[0].replace('_', ' '))
     }
   })
 }
