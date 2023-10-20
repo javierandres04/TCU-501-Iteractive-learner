@@ -1833,7 +1833,7 @@ export const Themes = [
       },
       {
         word: "Fifty One",
-        imageSrc: "/images/FiftyOne.png"
+        imageSrc: "/images/Fifty_One.png"
       },
       {
         word: "Fifty Two",
