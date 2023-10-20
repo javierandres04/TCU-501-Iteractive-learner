@@ -56,7 +56,6 @@ export const dataMap = [
       }
     ]
   },
-
   {
     Id: 2,
     Grade: "5th",
@@ -66,7 +65,7 @@ export const dataMap = [
         Unit: "Unit 1",
         Themes: [
           {
-            Name: "Our Environment",
+            Name: "Our Environment"
           }
         ]
       },
@@ -85,7 +84,39 @@ export const dataMap = [
           {
             Name: "Typical Cuisine"
           }
-
+        ]
+      },
+      {
+        Id: 3,
+        Unit: "Unit 3",
+        Themes: [
+          {
+            Name: "Using Electronic Devices",
+          }
+        ]
+      },
+      {
+        Id: 4,
+        Unit: "Unit 6",
+        Themes: [
+          {
+            Name: "Sharing Hobbies and Pastimes",
+          }
+        ]
+      }
+    ]
+  },
+  {
+    Id: 3,
+    Grade: "Extra",
+    Units: [
+      {
+        Id: 1,
+        Unit: "Extra",
+        Themes: [
+          {
+            Name: "Numbers"
+          }
         ]
       }
     ]
