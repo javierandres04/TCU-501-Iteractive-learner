@@ -32,6 +32,27 @@ export const dataMap = [
             Name: "Wildlife at the Park",
           }
         ]
+      },
+      {
+        Id: 3,
+        Unit: "Unit 3",
+        Themes: [
+          {
+            Name: "Farmers' Market",
+          }
+        ]
+      },
+      {
+        Id: 4,
+        Unit: "Unit 6",
+        Themes: [
+          {
+            Name: "Where to Go",
+          },
+          {
+            Name: "Transportation",
+          }
+        ]
       }
     ]
   },

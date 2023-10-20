@@ -1178,6 +1178,332 @@ export const Themes = [
         imageSrc: '/images/Bus_Driver.png',
       }
     ]
+  },
+  {
+    name: "Farmers' Market",
+    words: [
+      {
+        word: 'Store',
+        imageSrc: '/images/Store.png',
+      },
+      {
+        word: 'Vegetables',
+        imageSrc: '/images/Vegetables.png',
+      },
+      {
+        word: 'Banana',
+        imageSrc: '/images/Banana.png',
+      },
+      {
+        word: 'Orange',
+        imageSrc: '/images/Orange.png',
+      },
+      {
+        word: 'Pineapple',
+        imageSrc: '/images/Pineapple.png',
+      },
+      {
+        word: 'Mango',
+        imageSrc: '/images/Mango.png',
+      },
+      {
+        word: 'Corn‎',
+        imageSrc: '/images/Corn‎.png',
+      },
+      {
+        word: 'Palm Oil',
+        imageSrc: '/images/Palm Oil.png',
+      },
+      {
+        word: 'Chocolate',
+        imageSrc: '/images/Chocolate.png',
+      },
+      {
+        word: 'Pork',
+        imageSrc: '/images/Pork.png',
+      },
+      {
+        word: 'Beef',
+        imageSrc: '/images/Beef.png',
+      },
+      {
+        word: 'Poultry',
+        imageSrc: '/images/Poultry.png',
+      },
+      {
+        word: 'Apple',
+        imageSrc: '/images/Apple.png',
+      },
+      {
+        word: 'Watermelon',
+        imageSrc: '/images/Watermelon.png',
+      },
+      {
+        word: 'Pear',
+        imageSrc: '/images/Pear.png',
+      },
+      {
+        word: 'Grapes',
+        imageSrc: '/images/Grapes.png',
+      },
+      {
+        word: 'Strawberry',
+        imageSrc: '/images/Strawberry.png',
+      },
+      {
+        word: 'Coffee‎',
+        imageSrc: '/images/Coffee‎.png',
+      },
+      {
+        word: 'Potato',
+        imageSrc: '/images/Potato.png',
+      },
+      {
+        word: 'Tomato',
+        imageSrc: '/images/Tomato.png',
+      },
+      {
+        word: 'Cabbage',
+        imageSrc: '/images/Cabbage.png',
+      },
+      {
+        word: 'Carrot',
+        imageSrc: '/images/Carrot.png',
+      },
+      {
+        word: 'Onion',
+        imageSrc: '/images/Onion.png',
+      },
+      {
+        word: 'Broccoli',
+        imageSrc: '/images/Broccoli.png',
+      },
+      {
+        word: 'Lettuce',
+        imageSrc: '/images/Lettuce.png',
+      },
+      {
+        word: 'Seafood',
+        imageSrc: '/images/Seafood.png',
+      },
+      {
+        word: 'Pepper',
+        imageSrc: '/images/Pepper.png',
+      }
+    ]
+  },
+  {
+    name: "Where to Go",
+    words: [
+      {
+        word: 'Beach‎',
+        imageSrc: '/images/Beach‎.png',
+      },
+      {
+        word: 'River‎',
+        imageSrc: '/images/River‎.png',
+      },
+      {
+        word: 'Mountain‎',
+        imageSrc: '/images/Mountain‎.png',
+      },
+      {
+        word: 'Lake‎',
+        imageSrc: '/images/Lake‎.png',
+      },
+      {
+        word: 'Sea‎',
+        imageSrc: '/images/Sea‎.png',
+      },
+      {
+        word: 'Hotel',
+        imageSrc: '/images/Hotel.png',
+      },
+      {
+        word: 'Waterfall‎',
+        imageSrc: '/images/Waterfall‎.png',
+      },
+      {
+        word: 'Hospital',
+        imageSrc: '/images/Hospital.png',
+      },
+      {
+        word: 'School',
+        imageSrc: '/images/School.png',
+      },
+      {
+        word: 'Library',
+        imageSrc: '/images/Library.png',
+      },
+      {
+        word: 'Church',
+        imageSrc: '/images/Church.png',
+      },
+      {
+        word: 'Bank',
+        imageSrc: '/images/Bank.png',
+      },
+      {
+        word: 'Bus Station',
+        imageSrc: '/images/Bus_Station.png',
+      },
+      {
+        word: 'Restaurant',
+        imageSrc: '/images/Restaurant.png',
+      },
+      {
+        word: 'Pool',
+        imageSrc: '/images/Pool.png',
+      },
+      {
+        word: 'Cinema',
+        imageSrc: '/images/Cinema.png',
+      },
+      {
+        word: 'Museum',
+        imageSrc: '/images/Museum.png',
+      },
+      {
+        word: 'Cemetery',
+        imageSrc: '/images/Cemetery.png',
+      },
+      {
+        word: 'Fire Station',
+        imageSrc: '/images/Fire_Station.png',
+      },
+      {
+        word: 'Stadium',
+        imageSrc: '/images/Stadium.png',
+      },
+      {
+        word: 'Police Station',
+        imageSrc: '/images/Police_Station.png',
+      },
+      {
+        word: 'Prison',
+        imageSrc: '/images/Prison.png',
+      },
+      {
+        word: 'Parking Lot',
+        imageSrc: '/images/Parking_Lot.png',
+      },
+      {
+        word: 'Park',
+        imageSrc: '/images/Park.png',
+      },
+      {
+        word: 'Supermarket',
+        imageSrc: '/images/Supermarket.png',
+      },
+      {
+        word: 'Mall',
+        imageSrc: '/images/Mall.png',
+      },
+      {
+        word: 'Bakery',
+        imageSrc: '/images/Bakery.png',
+      },
+      {
+        word: 'Butchery',
+        imageSrc: '/images/Butchery.png',
+      },
+      {
+        word: 'House',
+        imageSrc: '/images/House.png',
+      },
+      {
+        word: 'Farm',
+        imageSrc: '/images/Farm.png',
+      },
+      {
+        word: 'Gym',
+        imageSrc: '/images/Gym.png',
+      },
+      {
+        word: 'Zoo',
+        imageSrc: '/images/Zoo.png',
+      },
+      {
+        word: 'Garage',
+        imageSrc: '/images/Garage.png',
+      },
+      {
+        word: 'Airport',
+        imageSrc: '/images/Airport.png',
+      },
+      {
+        word: 'Drugstore',
+        imageSrc: '/images/Drugstore.png',
+      },
+      {
+        word: 'Dentist‎',
+        imageSrc: '/images/Dentist‎.png',
+      },
+      {
+        word: 'Volcano‎',
+        imageSrc: '/images/Volcano‎.png',
+      }
+    ]
+  },
+  {
+    name: "Transportation",
+    words: [
+      {
+        word: 'Bus',
+        imageSrc: '/images/Bus.png',
+      },
+      {
+        word: 'Car',
+        imageSrc: '/images/Car.png',
+      },
+      {
+        word: 'Motorcycle',
+        imageSrc: '/images/Motorcycle.png',
+      },
+      {
+        word: 'Train',
+        imageSrc: '/images/Train.png',
+      },
+      {
+        word: 'Airplane',
+        imageSrc: '/images/Airplane.png',
+      },
+      {
+        word: 'Bike',
+        imageSrc: '/images/Bike.png',
+      },
+      {
+        word: 'Taxi',
+        imageSrc: '/images/Taxi.png',
+      },
+      {
+        word: 'Ambulance',
+        imageSrc: '/images/Ambulance.png',
+      },
+      {
+        word: 'Police Car',
+        imageSrc: '/images/Police_Car.png',
+      },
+      {
+        word: 'Skateboard',
+        imageSrc: '/images/Skateboard.png',
+      },
+      {
+        word: 'Roller Skates',
+        imageSrc: '/images/Roller_Skates.png',
+      },
+      {
+        word: 'Horse',
+        imageSrc: '/images/Horse.png',
+      },
+      {
+        word: 'Run',
+        imageSrc: '/images/Run.png',
+      },
+      {
+        word: 'Walk‎',
+        imageSrc: '/images/Walk‎.png',
+      }
+    ]
   }
-
 ]
