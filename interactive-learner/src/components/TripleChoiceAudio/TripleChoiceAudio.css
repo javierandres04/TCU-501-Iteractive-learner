@@ -1,0 +1,20 @@
+#currentWord-Audio{
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.4in;
+  background: whitesmoke;
+  color: black;
+  width: 60%;
+  border: 3px solid black;
+}
+
+#hearButton {
+  margin-top: 3%;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.4in;
+  background: whitesmoke;
+  color: black;
+  width: 60%;
+  border: 3px solid black;
+}

@@ -9,14 +9,15 @@ import { useSelector } from 'react-redux';
 import { HeadGames } from '../../components/HeadGames/HeadGames';
 import { HelpModal } from '../../components/HelpModal/HelpModal';
 import { ConfettiRain } from '../../components/ConfettiRain/ConfettiRain';
-import './chooseBetweenGame.css';
+import './whatDidYouHeardGame.css';
 import '../../App.css';
-import { TripleChoice } from '../../components/TripleChoice/TripleChoice';
+import { TripleChoiceAudio } from '../../components/TripleChoiceAudio/TripleChoiceAudio';
 import { Timer } from '../../components/Timer/Timer';
 
 const spanishInstructions = [
   'Presiona el botón de nueva partida para iniciar el juego.',
-  'En cada ronda se presentan 3 imágenes de las cuales solo 1 representa la palabra de arriba.',
+  'En cada ronda se presentan 3 imágenes de las cuales solo 1 representa la palabra que suena.',
+  'Presiona el botón "Hear the word" para escuchar de nuevo la palabra',
   'Cada click en una imagen es un intento.',
   'Si el jugador da click sobre la imagen correcta se avanza a la siguiente ronda y aumenta el número de aciertos.',
   'El juego se gana cuando se completan 8 rondas.',
@@ -24,12 +25,26 @@ const spanishInstructions = [
 ]
 const englishInstructions = [
   'Press the New Game button to start the game.',
-  'In each round 3 images are presented of which only 1 represents the word above.',
+  'In each round 3 images are presented of which only 1 represents the word that sounds.',
+  'Press the "Hear the word" button to hear the word again',
   'Every click on an image is an attempt.',
   'If the player clicks on the correct image, they advance to the next round and the number of matches increases.',
   'The game is won when 8 rounds are completed.',
   'The objective is to complete it in the fewest number of attempts.'
 ]
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+/**
+ * Plays the sound after 0,5 seconds
+ * @param {Word to be played} soundName 
+ */
+const playDelayedSound = (soundName) => {
+  sleep(500).then(() => { let sound = new Audio(`./sounds/${soundName}.mp3`);
+  sound.play(); });
+}
 
 /** 
   * Using sound effect "Success Fanfare Trumpets" from freesound.org
@@ -153,6 +168,7 @@ const makeGameOptions = (rightChoices, words) => {
     }
   }
   printGameOptions(gameOptions);
+  playDelayedSound(gameOptions[(gameOptions[3])].word);
   return gameOptions;
 }
 
@@ -178,7 +194,7 @@ const startGame = (words, setSelectedWords, setShowChoices, setTurns, setMatches
   setShowChoices(true);
 }
 
-export const ChooseBetweenGame = () => {
+export const WhatDidYouHeardGame = () => {
   const theme = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const words = useState(Themes.find(element => element.name === theme[0]).words);
   const [turns, setTurns] = useState(0);
@@ -194,6 +210,7 @@ export const ChooseBetweenGame = () => {
   useEffect(() => {
     if (matches > 0) {
       playMatchSound();
+      playDelayedSound(selectedWords[(selectedWords[3+matches*4])+matches*4].word);
     }
   }, [matches])
 
@@ -234,7 +251,7 @@ export const ChooseBetweenGame = () => {
         spanishInstructions={spanishInstructions}
       />
       {gameWin && <ConfettiRain />}
-      <Header title={'Choose Between'} />
+      <Header title={'What did you heard?'} />
       <div id="bodyContainer">
         <div id="mainBox" >
           <div id='chooseBetweenContainer'>
@@ -249,15 +266,15 @@ export const ChooseBetweenGame = () => {
               />
               <div id='tripleChoice'>
                 { showChoices ?
-                    <TripleChoice 
+                    <TripleChoiceAudio 
                       words = {words}
                       selectedWords={selectedWords}
                       matches = {matches}
                       addMatch = {addMatch}
-                      addAttemp = {addAttemp}
+                      addAttemp={addAttemp}
                       playSelectSound = {playSelectSound}
                       setShowChoices={setShowChoices}>
-                    </TripleChoice>
+                    </TripleChoiceAudio>
                   :
                   <div>
                     <div>

@@ -1,12 +1,19 @@
 import React from 'react';
-import './TripleChoice.css';
+import './TripleChoiceAudio.css';
+import { MdAudiotrack } from 'react-icons/md';
+import { TbHandClick } from 'react-icons/tb';
 
 const route = "../../.."
+
+const playSound = (soundName) => {
+  let sound = new Audio(`./sounds/${soundName}.mp3`);
+  sound.play();
+}
 
 const handleClickedImage = (index, rightChoice, addMatch, playSelectSound, matches, setShowChoices) => {
   console.log("HandleClick " + index);
   if(index === rightChoice) {
-    if(matches == 7) {
+    if(matches === 7) {
       setShowChoices(false);
     }
     addMatch();
@@ -20,12 +27,12 @@ const handleClickedImage = (index, rightChoice, addMatch, playSelectSound, match
 /**
  * Shows 3 options, increments attemps and matches 
  */
-export const TripleChoice = ({ selectedWords, matches, addMatch, addAttemp, playSelectSound, setShowChoices}) => {
+export const TripleChoiceAudio = ({ selectedWords, matches, addMatch, addAttemp, playSelectSound, setShowChoices}) => {
     return (
       <div id = "container">
-        <div id='currentWord'>
-          {selectedWords[(selectedWords[3+matches*4])+matches*4].word}
-        </div>
+          <button id = "hearButton" onClick={() => playSound(selectedWords[(selectedWords[3+matches*4])+matches*4].word) }> {/* id='game-button' */}
+            {<MdAudiotrack />} Hear the word {<TbHandClick />}
+          </button>
         <div id = "cards-container">
           <div id = "cards-grid-tc">
             <img id = "card" src={route+selectedWords[0+matches*4].imageSrc} alt={selectedWords[0+matches*4].word} 
