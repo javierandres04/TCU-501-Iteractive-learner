@@ -43,7 +43,7 @@ export const DropImages = ({ words, turns }) => {
       <DropTarget targetKey={word.word} onHit={changePlacerholder}>
         <div>
           <img id="card" src={placeholder[index]} alt = "error"></img>
-          <ScaleText minFontSize={8} maxFontSize={14}>
+          <ScaleText minFontSize={8} maxFontSize={16}>
             <b> {word.word} </b>
           </ScaleText>
         </div>
