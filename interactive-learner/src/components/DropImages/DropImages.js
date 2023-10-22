@@ -1,6 +1,7 @@
 import React from 'react';
 import './DropImages.css';
 import { DropTarget } from "react-drag-drop-container";
+import ScaleText from 'react-scale-text';
 
 const route = "../../../images/"
 const format = ".png"
@@ -42,7 +43,9 @@ export const DropImages = ({ words, turns }) => {
       <DropTarget targetKey={word.word} onHit={changePlacerholder}>
         <div>
           <img id="card" src={placeholder[index]} alt = "error"></img>
-          <b id="drop-images-text"> {word.word} </b>
+          <ScaleText minFontSize={8} maxFontSize={14}>
+            <b> {word.word} </b>
+          </ScaleText>
         </div>
       </DropTarget>
     )
