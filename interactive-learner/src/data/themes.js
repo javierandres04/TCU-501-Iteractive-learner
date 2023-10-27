@@ -1632,6 +1632,10 @@ export const Themes = [
     name: "Numbers",
     words: [
       {
+        word: "Zero",
+        imageSrc: "/images/Zero.png"
+      },
+      {
         word: "One",
         imageSrc: "/images/One.png"
       },

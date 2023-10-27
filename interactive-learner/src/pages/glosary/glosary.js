@@ -26,9 +26,16 @@ const wordSound = (soundName) => {
 export const Glosary = () => {
   const theme = useState(useSelector((state) => state.theme.selectedTheme.Theme));
   const words = Themes.find(element => element.name === theme[0]).words;
+  const itemsPerPage = 4;
+  const [currentPage, setCurrentPage] = useState(1);
   const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
+  const paginatedData = words.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
   let dictionaryLines = [];
-  words.forEach((word) => {
+  paginatedData.forEach((word) => {
     dictionaryLines.push(
     <tr>
     <td><img id="card_glosary" src={"../../.."+word.imageSrc} alt={word.word} width="150px"></img></td>
@@ -63,6 +70,14 @@ export const Glosary = () => {
               </tr>
               {dictionaryLines}
             </table>
+            <div id="glosaryButtonsContainer">
+              <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
+                Previous
+              </button>
+              <button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage * itemsPerPage >= words.length}>
+                Next
+              </button>
+            </div>
           </div>
         </div>
       </div>
