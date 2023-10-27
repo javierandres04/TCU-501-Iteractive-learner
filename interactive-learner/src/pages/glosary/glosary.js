@@ -9,12 +9,24 @@ import { HeadGames } from '../../components/HeadGames/HeadGames';
 import { HelpModal } from '../../components/HelpModal/HelpModal';
 import {RiPlayMiniLine} from 'react-icons/ri';
 import './glosary.css';
+import { current } from '@reduxjs/toolkit';
 
 const spanishInstructions = [
-  ''
+  'El glosario contiene todo el vocabulario del tema que se selecciono.',
+  'Se muestran 4 palabras por página.',
+  'Haz click encima del botón de audio para escuchar la pronunciación.',
+  'El número de página se muestra debajo de la tabla de contenidos.',
+  'Se puede presionar el botón de \'Next\' para ir a la siguiente página.',
+  'Se puede presionar el botón de \'Previous\' para ir a la página anterior.',
 ]
+
 const englishInstructions = [
-  ''
+  'The glossary contains all the vocabulary related to the selected theme.',
+  'Each page displays 4 words.',
+  'Click on the audio button to listen to the pronunciation.',
+  'The page number is shown below the table of contents.',
+  'You can press the \'Next\' button to go to the next page.',
+  'You can press the \'Previous\' button to go to the previous page.',
 ]
 
 const wordSound = (soundName) => {
@@ -38,9 +50,9 @@ export const Glosary = () => {
   paginatedData.forEach((word) => {
     dictionaryLines.push(
     <tr>
-    <td><img id="card_glosary" src={"../../.."+word.imageSrc} alt={word.word} width="150px"></img></td>
-    <td>{word.word}</td>
-    <td><button onClick={() => wordSound(word.word.replace(' ', '_'))}> {<RiPlayMiniLine />} </button></td>
+      <td id ="glosaryImage"><img id="card_glosary" src={"../../.."+word.imageSrc} alt={word.word}></img></td>
+      <td id ="glosaryWord">{word.word}</td>
+      <td id ="glosaryTable"><button onClick={() => wordSound(word.word.replace(' ', '_'))}> {<RiPlayMiniLine />} </button></td>
     </tr>
     )
     })
@@ -62,7 +74,7 @@ export const Glosary = () => {
         <div id="mainBox" >
           <div id='dictionaryContainer'>
             <HeadGames setIsHelpModalOpen={setIsHelpModalOpen} />
-            <table>
+            <table id ="glosaryTable">
               <tr>
                 <th>Image</th>
                 <th>Word</th>
@@ -70,10 +82,12 @@ export const Glosary = () => {
               </tr>
               {dictionaryLines}
             </table>
+            <div><b>Page: </b>{currentPage}</div>
             <div id="glosaryButtonsContainer">
               <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
                 Previous
               </button>
+              {" "}
               <button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage * itemsPerPage >= words.length}>
                 Next
               </button>
