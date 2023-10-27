@@ -18,12 +18,22 @@ export const Dropdowns = ({ grade, setGrade, unit, setUnit, theme, setTheme }) =
     }
   }, [unit])
 
+  const handleGradeChange = (newGrade) => {
+    setGrade(newGrade);
+    setUnit('Unit'); // Reset the Unit when Grade changes
+    setTheme('Theme'); // Reset the Theme when Grade changes
+  };
+
+  const handleUnitChange = (newUnit) => {
+    setUnit(newUnit);
+    setTheme('Theme'); // Reset the Theme when Unit changes
+  };
 
   return (
     <div id='dropdown-bar'>
       <div id='dropdown-container'>
 
-        <Form.Select id='select-dropdown' value={grade} onChange={(e) => { setGrade(e.target.value);  }}>
+        <Form.Select id='select-dropdown' value={grade} onChange={(e) => { handleGradeChange(e.target.value);  }}>
           <option>
             Grade
           </option>
@@ -34,7 +44,7 @@ export const Dropdowns = ({ grade, setGrade, unit, setUnit, theme, setTheme }) =
 
         {grade === 'Grade' ?
           <>
-            <Form.Select id='select-dropdown' disabled onChange={(e) => { setUnit(e.target.value); }}>
+            <Form.Select id='select-dropdown' disabled onChange={(e) => { handleUnitChange(e.target.value); }}>
               <option>
                 Unit
               </option>
