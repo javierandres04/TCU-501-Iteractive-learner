@@ -5,5 +5,5 @@ export const Games = [
   "DragAndDrop Game",
   "ChooseBetween Game",
   "WhatDidYouHeard Game",
-  "Glosary",
+  "Glosary"
 ]
