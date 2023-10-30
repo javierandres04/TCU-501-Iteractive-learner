@@ -134,8 +134,11 @@ export const WordSearchGame = () => {
     if (foundWords.length === selectedWords.length) {
       playVictorySound()
       Swal.fire({
-        title: 'Congratulations! 😃',
-        text: `You found all the words in ${minutes} minutes and ${seconds} seconds.`,
+        title: 'Congratulations! You won! 😃',
+        html:
+        `You found all the words` +
+        '<br></br>'+
+        `<h6 style="text-align:left;padding-left: 120px;">Minutes: <b>${minutes}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> Seconds: <b>${seconds}</b><h6>`,
         heightAuto: false,
         confirmButtonColor: '#44a49c'
       })

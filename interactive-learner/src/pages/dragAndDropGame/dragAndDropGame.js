@@ -130,7 +130,10 @@ export const DragAndDropGame = () => {
       playVictorySound()
       Swal.fire({
         title: 'Congratulations! You won! 😃',
-        text: 'You made ' + turns + ' attempts and took ' +minutes+ ' minutes and '+ seconds + ' seconds.',
+        html:
+        `Attemps: <b>${turns}</b>` +
+        '<br></br>'+
+        `<h6 style="text-align:left;padding-left: 120px;">Minutes: <b>${minutes}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> Seconds: <b>${seconds}</b><h6>`,
         heightAuto: false,
         confirmButtonColor: '#44a49c'
       })

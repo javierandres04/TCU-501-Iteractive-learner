@@ -37,7 +37,7 @@ export const CreditsModal = ({ isCreditsModalOpen, setIsCreditsModalOpen }) => {
         <motion.label className='devLabel' variants={item}>{"Kevin Arguedas"}</motion.label>
         <motion.label className='instructionLabel' variants={item}>{"Audio voice lines:"}</motion.label>
         <motion.label className='devLabel' variants={item}>{"Ashley Jones"}</motion.label>
-        <motion.label className='instructionLabel' variants={item}>{"Recursos externos utilizados:"}</motion.label>
+        <motion.label className='instructionLabel' variants={item}>{"External resources:"}</motion.label>
         <motion.label className='devLabel' variants={item}>{"Banco de imagenes TCU 501"}</motion.label>
         <motion.label className='devLabel' variants={item}>{"Efectos de sonido de freesound.org"}</motion.label>
       </motion.div>
