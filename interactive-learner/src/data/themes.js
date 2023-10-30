@@ -1040,10 +1040,10 @@ export const Themes = [
         word: 'Masquerades',
         imageSrc: '/images/Masquerades.png',
       },{
-        word: 'Lady Of the Angels Day',
+        word: 'Lady Of The Angels Day',
         imageSrc: '/images/Lady_Of_The_Angels_Day.png',
       },{
-        word: 'The Virgin of the Sea Day',
+        word: 'The Virgin Of The Sea Day',
         imageSrc: '/images/The_Virgin_Of_The_Sea_Day.png',
       },{
         word: 'Independence Day',
