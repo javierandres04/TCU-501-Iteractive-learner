@@ -36,7 +36,7 @@ const englishInstructions = [
 ]
 
 const selectWord = (words) => {
-  return words[Math.floor(Math.random() * words.length)].word;
+  return (words[Math.floor(Math.random() * words.length)].word).replaceAll("‎",""); // remove invisible character
 }
 
 /**

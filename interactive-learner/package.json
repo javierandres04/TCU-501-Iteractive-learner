@@ -19,6 +19,7 @@
     "react-modal": "^3.16.1",
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.3.0",
+    "react-scale-text": "^1.2.2",
     "react-scripts": "5.0.1",
     "react-use": "^17.4.0",
     "redux": "^4.2.0",

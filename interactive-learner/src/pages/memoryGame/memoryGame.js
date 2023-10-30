@@ -105,8 +105,11 @@ export const MemoryGame = () => {
         setLastWordFound(choiseOne.word);
         Swal.fire({
           title: 'Good Work! 😃',
-          text: `...this word is ''${choiseOne.word}.''`,
+          html:
+          `This word is: <b>${choiseOne.word}</b>`,
           timer: 2100,
+          imageUrl: `../../../images/${choiseOne.word.replaceAll(" ", "_")}.png`,
+          imageHeight: 200,
           showConfirmButton: false,
           heightAuto: false
         })
@@ -174,7 +177,10 @@ export const MemoryGame = () => {
       setTimeout(()=> {
         Swal.fire({
           title: 'Congratulations! You won! 😃',
-          text: 'You made ' + turns + ' attempts and took ' +minutes+ ' minutes and '+ seconds + ' seconds.',
+          html:
+          `Attemps: <b>${turns}</b>` +
+          '<br></br>'+
+          `<h6 style="text-align:left;padding-left: 120px;">Minutes: <b>${minutes}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> Seconds: <b>${seconds}</b><h6>`,
           heightAuto: false,
           confirmButtonColor: '#44a49c'
         })

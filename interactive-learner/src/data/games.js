@@ -4,5 +4,6 @@ export const Games = [
   "Memory Game",
   "DragAndDrop Game",
   "ChooseBetween Game",
-  "Glosary",
+  "WhatDidYouHeard Game",
+  "Glosary"
 ]

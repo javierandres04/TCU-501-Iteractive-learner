@@ -6,7 +6,6 @@ import logo from '../../logo/logo_transparent.png';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { IoMdHelp } from 'react-icons/io';
 
-
 export const Header = ({ title, setIsHelpModalOpen }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -31,7 +30,6 @@ export const Header = ({ title, setIsHelpModalOpen }) => {
             <></>
           }
         </Container>
-
       </Navbar>
     </>
   );

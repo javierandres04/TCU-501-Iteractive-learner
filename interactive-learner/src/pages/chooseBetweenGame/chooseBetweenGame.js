@@ -2,7 +2,7 @@ import Swal from 'sweetalert2';
 import React from 'react';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
-import { useState, useEffect, Button } from 'react';
+import { useState, useEffect } from 'react';
 import { Themes } from '../../data/themes';
 import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
@@ -137,7 +137,7 @@ const makeGameOptions = (rightChoices, words) => {
     let randomChoices = [4];
     randomChoices[rightChoicePosition] = rightChoices[currentPosition];
     for (let i = 0; i < 3; i++) {
-      if(rightChoicePosition != i) {
+      if(rightChoicePosition !== i) {
         randomChoices[i] = getRandomWord(randomChoices, words);
       }
     }
@@ -145,9 +145,9 @@ const makeGameOptions = (rightChoices, words) => {
     for (let i = 0; i < 4; i++) {
       gameOptions[i + currentPosition*4] = randomChoices[i];
     }
-    if (currentPosition == 7) {
+    if (currentPosition === 7) {
       for (let i = 0; i < 4; i++) {
-        i == 3 ? gameOptions[i + (1+currentPosition)*4] = 0 : 
+        i === 3 ? gameOptions[i + (1+currentPosition)*4] = 0 : 
         gameOptions[i + (1+currentPosition)*4] = "extra_space";
       }
     }
@@ -167,7 +167,7 @@ const makeGameOptions = (rightChoices, words) => {
  * @param {*Routine that sets the variable gameIsOver} setGameIsOver 
  * @param {*Routine that sets the variable gameWin} setGameWin 
  */
-const startGame = (words, setSelectedWords, setShowChoices, setTurns, setMatches, setGameIsOver, setGameWin) => {
+const startGame = (words, setSelectedWords, setShowChoices, setTurns, setMatches, setGameIsOver, setGameWin, setVictoryActivated) => {
   let rightChoices = getRightChoices(words);
   setSelectedWords(makeGameOptions(rightChoices, words));
   setGameWin(true);
@@ -176,6 +176,7 @@ const startGame = (words, setSelectedWords, setShowChoices, setTurns, setMatches
   setGameWin(false);
   setGameIsOver(false);
   setShowChoices(true);
+  setVictoryActivated(false);
 }
 
 export const ChooseBetweenGame = () => {
@@ -190,6 +191,7 @@ export const ChooseBetweenGame = () => {
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [gameIsOver, setGameIsOver] = useState(true);
+  const [victoryActivated, setVictoryActivated] = useState(false);
 
   useEffect(() => {
     if (matches > 0) {
@@ -199,17 +201,23 @@ export const ChooseBetweenGame = () => {
 
   useEffect(() => {
     if (matches === 8) {
-      setGameIsOver(true);
-      setGameWin(true);
-      playVictorySound()
-      Swal.fire({
-        title: 'Congratulations! You won! 😃',
-        text: 'You made ' + turns + ' attempts and took ' +minutes+ ' minutes and '+ seconds + ' seconds.',
-        heightAuto: false,
-        confirmButtonColor: '#44a49c'
-      })
+      if (victoryActivated === false) {
+        setVictoryActivated(true);
+        setGameIsOver(true);
+        setGameWin(true);
+        playVictorySound()
+        Swal.fire({
+          title: 'Congratulations! You won! 😃',
+          html:
+          `Attemps: <b>${turns}</b>` +
+          '<br></br>'+
+          `<h6 style="text-align:left;padding-left: 120px;">Minutes: <b>${minutes}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> Seconds: <b>${seconds}</b><h6>`,
+          heightAuto: false,
+          confirmButtonColor: '#44a49c'
+        })
+      }
     }
-  }, [matches, turns])
+  }, [matches, turns, minutes, seconds])
 
   const addAttemp = (e) => {
     setTurns(turns+1);
@@ -254,9 +262,8 @@ export const ChooseBetweenGame = () => {
                       selectedWords={selectedWords}
                       matches = {matches}
                       addMatch = {addMatch}
-                      addAttemp={addAttemp}
+                      addAttemp = {addAttemp}
                       playSelectSound = {playSelectSound}
-                      playMatchSound = {playMatchSound}
                       setShowChoices={setShowChoices}>
                     </TripleChoice>
                   :
@@ -282,7 +289,7 @@ export const ChooseBetweenGame = () => {
               <div id='attempts'>Matches: {matches}</div>
             </div>
             {gameIsOver ?
-              <button onClick={() => {startGame(words, setSelectedWords, setShowChoices, setTurns, setMatches, setGameIsOver, setGameWin)}}>New Game</button>
+              <button onClick={() => {startGame(words, setSelectedWords, setShowChoices, setTurns, setMatches, setGameIsOver, setGameWin, setVictoryActivated)}}>New Game</button>
             :
               <button onClick={() => {setGameIsOver(true); setShowChoices(false)}}>Stop Game</button>
             }

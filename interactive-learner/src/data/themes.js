@@ -1178,6 +1178,863 @@ export const Themes = [
         imageSrc: '/images/Bus_Driver.png',
       }
     ]
+  },
+  {
+    name: "Farmers' Market",
+    words: [
+      {
+        word: 'Store',
+        imageSrc: '/images/Store.png',
+      },
+      {
+        word: 'Vegetables',
+        imageSrc: '/images/Vegetables.png',
+      },
+      {
+        word: 'Banana',
+        imageSrc: '/images/Banana.png',
+      },
+      {
+        word: 'Orange',
+        imageSrc: '/images/Orange.png',
+      },
+      {
+        word: 'Pineapple',
+        imageSrc: '/images/Pineapple.png',
+      },
+      {
+        word: 'Mango',
+        imageSrc: '/images/Mango.png',
+      },
+      {
+        word: 'Corn‎',
+        imageSrc: '/images/Corn‎.png',
+      },
+      {
+        word: 'Palm Oil',
+        imageSrc: '/images/Palm Oil.png',
+      },
+      {
+        word: 'Chocolate',
+        imageSrc: '/images/Chocolate.png',
+      },
+      {
+        word: 'Pork',
+        imageSrc: '/images/Pork.png',
+      },
+      {
+        word: 'Beef',
+        imageSrc: '/images/Beef.png',
+      },
+      {
+        word: 'Poultry',
+        imageSrc: '/images/Poultry.png',
+      },
+      {
+        word: 'Apple',
+        imageSrc: '/images/Apple.png',
+      },
+      {
+        word: 'Watermelon',
+        imageSrc: '/images/Watermelon.png',
+      },
+      {
+        word: 'Pear',
+        imageSrc: '/images/Pear.png',
+      },
+      {
+        word: 'Grapes',
+        imageSrc: '/images/Grapes.png',
+      },
+      {
+        word: 'Strawberry',
+        imageSrc: '/images/Strawberry.png',
+      },
+      {
+        word: 'Coffee‎',
+        imageSrc: '/images/Coffee‎.png',
+      },
+      {
+        word: 'Potato',
+        imageSrc: '/images/Potato.png',
+      },
+      {
+        word: 'Tomato',
+        imageSrc: '/images/Tomato.png',
+      },
+      {
+        word: 'Cabbage',
+        imageSrc: '/images/Cabbage.png',
+      },
+      {
+        word: 'Carrot',
+        imageSrc: '/images/Carrot.png',
+      },
+      {
+        word: 'Onion',
+        imageSrc: '/images/Onion.png',
+      },
+      {
+        word: 'Broccoli',
+        imageSrc: '/images/Broccoli.png',
+      },
+      {
+        word: 'Lettuce',
+        imageSrc: '/images/Lettuce.png',
+      },
+      {
+        word: 'Seafood',
+        imageSrc: '/images/Seafood.png',
+      },
+      {
+        word: 'Pepper',
+        imageSrc: '/images/Pepper.png',
+      }
+    ]
+  },
+  {
+    name: "Where to Go",
+    words: [
+      {
+        word: 'Beach‎',
+        imageSrc: '/images/Beach‎.png',
+      },
+      {
+        word: 'River‎',
+        imageSrc: '/images/River‎.png',
+      },
+      {
+        word: 'Mountain‎',
+        imageSrc: '/images/Mountain‎.png',
+      },
+      {
+        word: 'Lake‎',
+        imageSrc: '/images/Lake‎.png',
+      },
+      {
+        word: 'Sea‎',
+        imageSrc: '/images/Sea‎.png',
+      },
+      {
+        word: 'Hotel',
+        imageSrc: '/images/Hotel.png',
+      },
+      {
+        word: 'Waterfall‎',
+        imageSrc: '/images/Waterfall‎.png',
+      },
+      {
+        word: 'Hospital',
+        imageSrc: '/images/Hospital.png',
+      },
+      {
+        word: 'School',
+        imageSrc: '/images/School.png',
+      },
+      {
+        word: 'Library',
+        imageSrc: '/images/Library.png',
+      },
+      {
+        word: 'Church',
+        imageSrc: '/images/Church.png',
+      },
+      {
+        word: 'Bank',
+        imageSrc: '/images/Bank.png',
+      },
+      {
+        word: 'Bus Station',
+        imageSrc: '/images/Bus_Station.png',
+      },
+      {
+        word: 'Restaurant',
+        imageSrc: '/images/Restaurant.png',
+      },
+      {
+        word: 'Pool',
+        imageSrc: '/images/Pool.png',
+      },
+      {
+        word: 'Cinema',
+        imageSrc: '/images/Cinema.png',
+      },
+      {
+        word: 'Museum',
+        imageSrc: '/images/Museum.png',
+      },
+      {
+        word: 'Cemetery',
+        imageSrc: '/images/Cemetery.png',
+      },
+      {
+        word: 'Fire Station',
+        imageSrc: '/images/Fire_Station.png',
+      },
+      {
+        word: 'Stadium',
+        imageSrc: '/images/Stadium.png',
+      },
+      {
+        word: 'Police Station',
+        imageSrc: '/images/Police_Station.png',
+      },
+      {
+        word: 'Prison',
+        imageSrc: '/images/Prison.png',
+      },
+      {
+        word: 'Parking Lot',
+        imageSrc: '/images/Parking_Lot.png',
+      },
+      {
+        word: 'Park',
+        imageSrc: '/images/Park.png',
+      },
+      {
+        word: 'Supermarket',
+        imageSrc: '/images/Supermarket.png',
+      },
+      {
+        word: 'Mall',
+        imageSrc: '/images/Mall.png',
+      },
+      {
+        word: 'Bakery',
+        imageSrc: '/images/Bakery.png',
+      },
+      {
+        word: 'Butchery',
+        imageSrc: '/images/Butchery.png',
+      },
+      {
+        word: 'House',
+        imageSrc: '/images/House.png',
+      },
+      {
+        word: 'Farm',
+        imageSrc: '/images/Farm.png',
+      },
+      {
+        word: 'Gym',
+        imageSrc: '/images/Gym.png',
+      },
+      {
+        word: 'Zoo',
+        imageSrc: '/images/Zoo.png',
+      },
+      {
+        word: 'Garage',
+        imageSrc: '/images/Garage.png',
+      },
+      {
+        word: 'Airport',
+        imageSrc: '/images/Airport.png',
+      },
+      {
+        word: 'Drugstore',
+        imageSrc: '/images/Drugstore.png',
+      },
+      {
+        word: 'Dentist‎',
+        imageSrc: '/images/Dentist‎.png',
+      },
+      {
+        word: 'Volcano‎',
+        imageSrc: '/images/Volcano‎.png',
+      }
+    ]
+  },
+  {
+    name: "Transportation",
+    words: [
+      {
+        word: 'Bus',
+        imageSrc: '/images/Bus.png',
+      },
+      {
+        word: 'Car',
+        imageSrc: '/images/Car.png',
+      },
+      {
+        word: 'Motorcycle',
+        imageSrc: '/images/Motorcycle.png',
+      },
+      {
+        word: 'Train',
+        imageSrc: '/images/Train.png',
+      },
+      {
+        word: 'Airplane',
+        imageSrc: '/images/Airplane.png',
+      },
+      {
+        word: 'Bike',
+        imageSrc: '/images/Bike.png',
+      },
+      {
+        word: 'Taxi',
+        imageSrc: '/images/Taxi.png',
+      },
+      {
+        word: 'Ambulance',
+        imageSrc: '/images/Ambulance.png',
+      },
+      {
+        word: 'Police Car',
+        imageSrc: '/images/Police_Car.png',
+      },
+      {
+        word: 'Skateboard',
+        imageSrc: '/images/Skateboard.png',
+      },
+      {
+        word: 'Roller Skates',
+        imageSrc: '/images/Roller_Skates.png',
+      },
+      {
+        word: 'Horse',
+        imageSrc: '/images/Horse.png',
+      },
+      {
+        word: 'Run',
+        imageSrc: '/images/Run.png',
+      },
+      {
+        word: 'Walk‎',
+        imageSrc: '/images/Walk‎.png',
+      }
+    ]
+  },
+  {
+    name: "Using Electronic Devices",
+    words: [
+      {
+        word: 'Listening To Music‎',
+        imageSrc: '/images/Listening_To_Music‎.png',
+      },
+      {
+        word: 'Keyboard',
+        imageSrc: '/images/Keyboard.png',
+      },
+      {
+        word: 'Computer',
+        imageSrc: '/images/Computer.png',
+      },
+      {
+        word: 'Television',
+        imageSrc: '/images/Television.png',
+      },
+      {
+        word: 'Laptop',
+        imageSrc: '/images/Laptop.png',
+      },
+      {
+        word: 'Smartwatch',
+        imageSrc: '/images/Smartwatch.png',
+      },
+      {
+        word: 'Robots',
+        imageSrc: '/images/Robots.png',
+      },
+      {
+        word: 'Cellphone',
+        imageSrc: '/images/Cellphone.png',
+      },
+      {
+        word: 'Webcam',
+        imageSrc: '/images/Webcam.png',
+      },
+      {
+        word: 'Speakers',
+        imageSrc: '/images/Speakers.png',
+      },
+      {
+        word: 'Headphones‎',
+        imageSrc: '/images/Headphones‎.png',
+      },
+      {
+        word: 'Console',
+        imageSrc: '/images/Console.png',
+      }
+    ]
+  },
+  {
+    name: "Sharing Hobbies and Pastimes",
+    words: [
+      {
+        word: 'Go To The Movies',
+        imageSrc: '/images/Go_To_The_Movies.png',
+      },
+      {
+        word: 'Go To The Beach',
+        imageSrc: '/images/Go_To_The_Beach.png',
+      },
+      {
+        word: 'Go To The Park',
+        imageSrc: '/images/Go_To_The_Park.png',
+      },
+      {
+        word: 'Play Videogames',
+        imageSrc: '/images/Play_Videogames.png',
+      },
+      {
+        word: 'Soccer',
+        imageSrc: '/images/Soccer.png',
+      },
+      {
+        word: 'Cycling‎',
+        imageSrc: '/images/Cycling‎.png',
+      },
+      {
+        word: 'Surfing‎',
+        imageSrc: '/images/Surfing‎.png',
+      },
+      {
+        word: 'Dancing‎',
+        imageSrc: '/images/Dancing‎.png',
+      },
+      {
+        word: 'Listening To Music‎',
+        imageSrc: '/images/Listening_To_Music‎.png',
+      },
+      {
+        word: 'Playing The Violin',
+        imageSrc: '/images/Playing_The_Violin.png',
+      },
+      {
+        word: 'Skateboarding‎',
+        imageSrc: '/images/Skateboarding‎.png',
+      },
+      {
+        word: 'Painting‎',
+        imageSrc: '/images/Painting‎.png',
+      },
+      {
+        word: 'Cooking‎',
+        imageSrc: '/images/Cooking‎.png',
+      },
+      {
+        word: 'Gardening‎',
+        imageSrc: '/images/Gardening‎.png',
+      },
+      {
+        word: 'Writing‎',
+        imageSrc: '/images/Writing‎.png',
+      },
+      {
+        word: 'Basketball',
+        imageSrc: '/images/Basketball.png',
+      }
+    ]
+  },
+  {
+    name: "Numbers",
+    words: [
+      {
+        word: "Zero",
+        imageSrc: "/images/Zero.png"
+      },
+      {
+        word: "One",
+        imageSrc: "/images/One.png"
+      },
+      {
+        word: "Two",
+        imageSrc: "/images/Two.png"
+      },
+      {
+        word: "Three",
+        imageSrc: "/images/Three.png"
+      },
+      {
+        word: "Four",
+        imageSrc: "/images/Four.png"
+      },
+      {
+        word: "Five",
+        imageSrc: "/images/Five.png"
+      },
+      {
+        word: "Six",
+        imageSrc: "/images/Six.png"
+      },
+      {
+        word: "Seven",
+        imageSrc: "/images/Seven.png"
+      },
+      {
+        word: "Eight",
+        imageSrc: "/images/Eight.png"
+      },
+      {
+        word: "Nine",
+        imageSrc: "/images/Nine.png"
+      },
+      {
+        word: "Ten",
+        imageSrc: "/images/Ten.png"
+      },
+      {
+        word: "Eleven",
+        imageSrc: "/images/Eleven.png"
+      },
+      {
+        word: "Twelve",
+        imageSrc: "/images/Twelve.png"
+      },
+      {
+        word: "Thirteen",
+        imageSrc: "/images/Thirteen.png"
+      },
+      {
+        word: "Fourteen",
+        imageSrc: "/images/Fourteen.png"
+      },
+      {
+        word: "Fifteen",
+        imageSrc: "/images/Fifteen.png"
+      },
+      {
+        word: "Sixteen",
+        imageSrc: "/images/Sixteen.png"
+      },
+      {
+        word: "Seventeen",
+        imageSrc: "/images/Seventeen.png"
+      },
+      {
+        word: "Eighteen",
+        imageSrc: "/images/Eighteen.png"
+      },
+      {
+        word: "Nineteen",
+        imageSrc: "/images/Nineteen.png"
+      },
+      {
+        word: "Twenty",
+        imageSrc: "/images/Twenty.png"
+      },
+      {
+        word: "Twenty One",
+        imageSrc: "/images/Twenty_One.png"
+      },
+      {
+        word: "Twenty Two",
+        imageSrc: "/images/Twenty_Two.png"
+      },
+      {
+        word: "Twenty Three",
+        imageSrc: "/images/Twenty_Three.png"
+      },
+      {
+        word: "Twenty Four",
+        imageSrc: "/images/Twenty_Four.png"
+      },
+      {
+        word: "Twenty Five",
+        imageSrc: "/images/Twenty_Five.png"
+      },
+      {
+        word: "Twenty Six",
+        imageSrc: "/images/Twenty_Six.png"
+      },
+      {
+        word: "Twenty Seven",
+        imageSrc: "/images/Twenty_Seven.png"
+      },
+      {
+        word: "Twenty Eight",
+        imageSrc: "/images/Twenty_Eight.png"
+      },
+      {
+        word: "Twenty Nine",
+        imageSrc: "/images/Twenty_Nine.png"
+      },
+      {
+        word: "Thirty",
+        imageSrc: "/images/Thirty.png"
+      },
+      {
+        word: "Thirty One",
+        imageSrc: "/images/Thirty_One.png"
+      },
+      {
+        word: "Thirty Two",
+        imageSrc: "/images/Thirty_Two.png"
+      },
+      {
+        word: "Thirty Three",
+        imageSrc: "/images/Thirty_Three.png"
+      },
+      {
+        word: "Thirty Four",
+        imageSrc: "/images/Thirty_Four.png"
+      },
+      {
+        word: "Thirty Five",
+        imageSrc: "/images/Thirty_Five.png"
+      },
+      {
+        word: "Thirty Six",
+        imageSrc: "/images/Thirty_Six.png"
+      },
+      {
+        word: "Thirty Seven",
+        imageSrc: "/images/Thirty_Seven.png"
+      },
+      {
+        word: "Thirty Eight",
+        imageSrc: "/images/Thirty_Eight.png"
+      },
+      {
+        word: "Thirty Nine",
+        imageSrc: "/images/Thirty_Nine.png"
+      },
+      {
+        word: "Forty",
+        imageSrc: "/images/Forty.png"
+      },
+      {
+        word: "Forty One",
+        imageSrc: "/images/Forty_One.png"
+      },
+      {
+        word: "Forty Two",
+        imageSrc: "/images/Forty_Two.png"
+      },
+      {
+        word: "Forty Three",
+        imageSrc: "/images/Forty_Three.png"
+      },
+      {
+        word: "Forty Four",
+        imageSrc: "/images/Forty_Four.png"
+      },
+      {
+        word: "Forty Five",
+        imageSrc: "/images/Forty_Five.png"
+      },
+      {
+        word: "Forty Six",
+        imageSrc: "/images/Forty_Six.png"
+      },
+      {
+        word: "Forty Seven",
+        imageSrc: "/images/Forty_Seven.png"
+      },
+      {
+        word: "Forty Eight",
+        imageSrc: "/images/Forty_Eight.png"
+      },
+      {
+        word: "Forty Nine",
+        imageSrc: "/images/Forty_Nine.png"
+      },
+      {
+        word: "Fifty",
+        imageSrc: "/images/Fifty.png"
+      },
+      {
+        word: "Fifty One",
+        imageSrc: "/images/Fifty_One.png"
+      },
+      {
+        word: "Fifty Two",
+        imageSrc: "/images/Fifty_Two.png"
+      },
+      {
+        word: "Fifty Three",
+        imageSrc: "/images/Fifty_Three.png"
+      },
+      {
+        word: "Fifty Four",
+        imageSrc: "/images/Fifty_Four.png"
+      },
+      {
+        word: "Fifty Five",
+        imageSrc: "/images/Fifty_Five.png"
+      },
+      {
+        word: "Fifty Six",
+        imageSrc: "/images/Fifty_Six.png"
+      },
+      {
+        word: "Fifty Seven",
+        imageSrc: "/images/Fifty_Seven.png"
+      },
+      {
+        word: "Fifty Eight",
+        imageSrc: "/images/Fifty_Eight.png"
+      },
+      {
+        word: "Fifty Nine",
+        imageSrc: "/images/Fifty_Nine.png"
+      },
+      {
+        word: "Sixty",
+        imageSrc: "/images/Sixty.png"
+      },
+      {
+        word: "Sixty One",
+        imageSrc: "/images/Sixty_One.png"
+      },
+      {
+        word: "Sixty Two",
+        imageSrc: "/images/Sixty_Two.png"
+      },
+      {
+        word: "Sixty Three",
+        imageSrc: "/images/Sixty_Three.png"
+      },
+      {
+        word: "Sixty Four",
+        imageSrc: "/images/Sixty_Four.png"
+      },
+      {
+        word: "Sixty Five",
+        imageSrc: "/images/Sixty_Five.png"
+      },
+      {
+        word: "Sixty Six",
+        imageSrc: "/images/Sixty_Six.png"
+      },
+      {
+        word: "Sixty Seven",
+        imageSrc: "/images/Sixty_Seven.png"
+      },
+      {
+        word: "Sixty Eight",
+        imageSrc: "/images/Sixty_Eight.png"
+      },
+      {
+        word: "Sixty Nine",
+        imageSrc: "/images/Sixty_Nine.png"
+      },
+      {
+        word: "Seventy",
+        imageSrc: "/images/Seventy.png"
+      },
+      {
+        word: "Seventy One",
+        imageSrc: "/images/Seventy_One.png"
+      },
+      {
+        word: "Seventy Two",
+        imageSrc: "/images/Seventy_Two.png"
+      },
+      {
+        word: "Seventy Three",
+        imageSrc: "/images/Seventy_Three.png"
+      },
+      {
+        word: "Seventy Four",
+        imageSrc: "/images/Seventy_Four.png"
+      },
+      {
+        word: "Seventy Five",
+        imageSrc: "/images/Seventy_Five.png"
+      },
+      {
+        word: "Seventy Six",
+        imageSrc: "/images/Seventy_Six.png"
+      },
+      {
+        word: "Seventy Seven",
+        imageSrc: "/images/Seventy_Seven.png"
+      },
+      {
+        word: "Seventy Eight",
+        imageSrc: "/images/Seventy_Eight.png"
+      },
+      {
+        word: "Seventy Nine",
+        imageSrc: "/images/Seventy_Nine.png"
+      },
+      {
+        word: "Eighty",
+        imageSrc: "/images/Eighty.png"
+      },
+      {
+        word: "Eighty One",
+        imageSrc: "/images/Eighty_One.png"
+      },
+      {
+        word: "Eighty Two",
+        imageSrc: "/images/Eighty_Two.png"
+      },
+      {
+        word: "Eighty Three",
+        imageSrc: "/images/Eighty_Three.png"
+      },
+      {
+        word: "Eighty Four",
+        imageSrc: "/images/Eighty_Four.png"
+      },
+      {
+        word: "Eighty Five",
+        imageSrc: "/images/Eighty_Five.png"
+      },
+      {
+        word: "Eighty Six",
+        imageSrc: "/images/Eighty_Six.png"
+      },
+      {
+        word: "Eighty Seven",
+        imageSrc: "/images/Eighty_Seven.png"
+      },
+      {
+        word: "Eighty Eight",
+        imageSrc: "/images/Eighty_Eight.png"
+      },
+      {
+        word: "Eighty Nine",
+        imageSrc: "/images/Eighty_Nine.png"
+      },
+      {
+        word: "Ninety",
+        imageSrc: "/images/Ninety.png"
+      },
+      {
+        word: "Ninety One",
+        imageSrc: "/images/Ninety_One.png"
+      },
+      {
+        word: "Ninety Two",
+        imageSrc: "/images/Ninety_Two.png"
+      },
+      {
+        word: "Ninety Three",
+        imageSrc: "/images/Ninety_Three.png"
+      },
+      {
+        word: "Ninety Four",
+        imageSrc: "/images/Ninety_Four.png"
+      },
+      {
+        word: "Ninety Five",
+        imageSrc: "/images/Ninety_Five.png"
+      },
+      {
+        word: "Ninety Six",
+        imageSrc: "/images/Ninety_Six.png"
+      },
+      {
+        word: "Ninety Seven",
+        imageSrc: "/images/Ninety_Seven.png"
+      },
+      {
+        word: "Ninety Eight",
+        imageSrc: "/images/Ninety_Eight.png"
+      },
+      {
+        word: "Ninety Nine",
+        imageSrc: "/images/Ninety_Nine.png"
+      },
+      {
+        word: "One Hundred",
+        imageSrc: "/images/One_Hundred.png"
+      }
+    ]
   }
-
 ]

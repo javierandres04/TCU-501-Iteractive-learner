@@ -35,8 +35,13 @@ const Popup = ({ correctLetters, wrongLetters, selectedWord, setPlayable, playab
       playVictorySound()
       Swal.fire({
         title: 'Congratulations! You won! 😃',
-        text: `You found the word ''${selectedWord}'' in ${minutes} minutes and ${seconds} ...seconds.`,
+        html:
+        `You found the word: <b>${selectedWord}</b>` +
+        '<br></br>'+
+        `<h6 style="text-align:left;padding-left: 110px;">Minutes: <b>${minutes}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> Seconds: <b>${seconds}</b><h6>`,
         heightAuto: false,
+        imageUrl: `../../../images/${selectedWord.replaceAll(" ", "_")}.png`,
+        imageHeight: 200,
         confirmButtonColor: '#44a49c'
       })
       playSound(selectedWord);
@@ -44,7 +49,10 @@ const Popup = ({ correctLetters, wrongLetters, selectedWord, setPlayable, playab
     } else if (status === 'lose') {
       Swal.fire({
         title: 'Unfortunately you lost. 😕',
-        text: `he word was ''${selectedWord}.''`,
+        html:
+        `The word was: <b>${selectedWord}</b>`,
+        imageUrl: `../../../images/${selectedWord.replaceAll(" ", "_")}.png`,
+        imageHeight: 200,
         heightAuto: false,
         confirmButtonColor: '#44a49c'
       })

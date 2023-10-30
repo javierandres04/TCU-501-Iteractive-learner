@@ -3,12 +3,10 @@ import { motion } from "framer-motion";
 import { container, item } from '../../framerMotionOptions';
 import './HelpModal.css'
 
-
 export const HelpModal = ({ isHelpModalOpen, setIsHelpModalOpen, spanishInstructions, englishInstructions }) => {
   const closeModal = () => {
     setIsHelpModalOpen(false);
   }
-
 
   return (
     <Modal
