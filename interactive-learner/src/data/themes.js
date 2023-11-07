@@ -188,7 +188,7 @@ export const Themes = [
       },
       {
         word: 'Going To The Theater',
-        imageSrc: '/images/Go_To_The_Theater.png',
+        imageSrc: '/images/Going_To_The_Theater.png',
       },
       {
         word: 'Playing The Fiddle',
@@ -703,7 +703,7 @@ export const Themes = [
         imageSrc: '/images/Guidebook.png',
       },
       {
-        word: 'First aid Kit',
+        word: 'First Aid Kit',
         imageSrc: '/images/First_Aid_Kit.png',
       }
     ]
@@ -1211,8 +1211,8 @@ export const Themes = [
         imageSrc: '/images/Corn‎.png',
       },
       {
-        word: 'Palm Oil',
-        imageSrc: '/images/Palm Oil.png',
+        word: 'Palm oil',
+        imageSrc: '/images/Palm_oil.png',
       },
       {
         word: 'Chocolate',

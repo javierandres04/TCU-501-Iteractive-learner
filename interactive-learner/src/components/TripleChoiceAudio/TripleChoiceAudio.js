@@ -6,6 +6,7 @@ import { TbHandClick } from 'react-icons/tb';
 const route = "../../.."
 
 const playSound = (soundName) => {
+  console.log(soundName);
   let sound = new Audio(`./sounds/${soundName}.mp3`);
   sound.play();
 }

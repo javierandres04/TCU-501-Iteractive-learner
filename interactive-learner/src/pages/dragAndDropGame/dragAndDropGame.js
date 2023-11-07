@@ -79,8 +79,8 @@ const selectWords = (words) => {
   for (let i = 0; i < 8; i++) {
     selectedWords[i] = words[options[i]];
   }
-  console.log("selectedWords");
-  console.log(selectedWords);
+  // console.log("selectedWords");
+  // console.log(selectedWords);
   return selectedWords;
 }
 
