@@ -27,7 +27,8 @@ const changePlacerholder = (e) => {
   names_order.forEach((word, index)=>{
     if(e.dragData[0] === word.word) {  
       placeholder[index] = route+e.dragData[0].replaceAll(' ', '_')+format;
-      playSound(e.dragData[0].replace('_', ' '))
+      playSound(e.dragData[0].replace('_', ' '));
+      console.log("'"+e.dragData[0].replaceAll(' ', '_')+format+"'");
     }
   })
 }

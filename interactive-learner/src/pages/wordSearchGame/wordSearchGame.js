@@ -87,7 +87,7 @@ export const WordSearchGame = () => {
   const [minutes, setMinutes] = useState(0);
   const [gameIsOver, setGameIsOver] = useState(false);
 
-  console.log(boardWords);
+  //console.log(boardWords);
   const detectWord = (event) => {
     let text = event.target.textContent;
     if (text.length === 1 && text.match(/[a-zA-Z]/)) {
@@ -185,7 +185,12 @@ export const WordSearchGame = () => {
           }
           setWordIsFound(true);
           playCorrectChoiceSound();
-          playSound(element);
+          // Fix for the compounds words
+          for (let i = 0; i < words.length; i++) {
+            if(words[i].word.includes(element)){
+              playSound(words[i].word);
+            }
+          }
         }
         if (wordIsFound === false) {
           lettersCoordenates.map(element => document.getElementById(`${element.r}-${element.c}`).classList.add('grid-item-selected'));
